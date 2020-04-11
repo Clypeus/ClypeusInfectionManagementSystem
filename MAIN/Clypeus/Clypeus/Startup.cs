@@ -2,11 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Clypeus.Data.Model;
 using Clypeus.Support.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -30,7 +32,9 @@ namespace Clypeus
             services.AddServerSideBlazor();
 
             // These are defined as extensions in the support classes in this project
-            services.AddDataServices();
+            services.AddDataServices(Configuration);
+
+            
         }
 
        
