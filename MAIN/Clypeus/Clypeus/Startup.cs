@@ -30,6 +30,7 @@ namespace Clypeus
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
+            services.AddProtectedBrowserStorage();
 
             // These are defined as extensions in the support classes in this project
             services.AddDataServices(Configuration);
