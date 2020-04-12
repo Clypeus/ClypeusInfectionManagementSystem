@@ -1,2 +1,34 @@
-﻿body {
+﻿@import url('fonts.css');
+
+$title-banner-height: 6.5rem;
+$title-banner-standard-margins: 0.75rem;
+$title-product-name: 2rem;
+$title-tagline-size: 1.1rem;
+
+
+#title-banner .main-banner-height {
+    height: $title-banner-height;
+    min-height: $title-banner-height;
+    background-color: pink;
+}
+
+#title-banner .main-banner-title-content {
+    padding-left: $title-banner-standard-margins*1.25;
+    padding-top: $title-banner-standard-margins;
+    padding-bottom: $title-banner-standard-margins*1.1;
+}
+
+#title-banner .main-title-product-name {
+    font-family: RobotoBlack;
+    font-size: $title-product-name;
+}
+
+#title-banner .main-title-product-tagline {
+    font-family: RobotoBlack;
+    font-size: $title-tagline-size;
+}
+
+#title-banner .main-title-user-name-section-right-margin {
+    padding-right: $title-banner-standard-margins*1.25;
+    padding-top: $title-banner-standard-margins*2.5;
 }
