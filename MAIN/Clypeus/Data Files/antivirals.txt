@@ -1,0 +1,103 @@
+atc	name	atc_group
+J05AF06	abacavir	Nucleoside and nucleotide reverse transcriptase inhibitors
+J05AB01	aciclovir	Nucleosides and nucleotides excl. reverse transcriptase inhibitors
+J05AF08	adefovir dipivoxil	Nucleoside and nucleotide reverse transcriptase inhibitors
+J05AE05	amprenavir	Protease inhibitors
+J05AP06	asunaprevir	Antivirals for treatment of HCV infections
+J05AE08	atazanavir	Protease inhibitors
+J05AR15	atazanavir and cobicistat	"Antivirals for treatment of HIV infections, combinations"
+J05AR23	atazanavir and ritonavir	"Antivirals for treatment of HIV infections, combinations"
+J05AP03	boceprevir	Antivirals for treatment of HCV infections
+J05AB15	brivudine	Nucleosides and nucleotides excl. reverse transcriptase inhibitors
+J05AB12	cidofovir	Nucleosides and nucleotides excl. reverse transcriptase inhibitors
+J05AF12	clevudine	Nucleoside and nucleotide reverse transcriptase inhibitors
+J05AP07	daclatasvir	Antivirals for treatment of HCV infections
+J05AE10	darunavir	Protease inhibitors
+J05AR14	darunavir and cobicistat	"Antivirals for treatment of HIV infections, combinations"
+J05AP09	dasabuvir	Antivirals for treatment of HCV infections
+J05AP52	"dasabuvir, ombitasvir, paritaprevir and ritonavir"	Antivirals for treatment of HCV infections
+J05AG02	delavirdine	Non-nucleoside reverse transcriptase inhibitors
+J05AF02	didanosine	Nucleoside and nucleotide reverse transcriptase inhibitors
+J05AX12	dolutegravir	Other antivirals
+J05AR21	dolutegravir and rilpivirine	"Antivirals for treatment of HIV infections, combinations"
+J05AG06	doravirine	Non-nucleoside reverse transcriptase inhibitors
+J05AG03	efavirenz	Non-nucleoside reverse transcriptase inhibitors
+J05AP54	elbasvir and grazoprevir	Antivirals for treatment of HCV infections
+J05AX11	elvitegravir	Other antivirals
+J05AF09	emtricitabine	Nucleoside and nucleotide reverse transcriptase inhibitors
+J05AR17	emtricitabine and tenofovir alafenamide	"Antivirals for treatment of HIV infections, combinations"
+J05AR20	"emtricitabine, tenofovir alafenamide and bictegravir"	"Antivirals for treatment of HIV infections, combinations"
+J05AR19	"emtricitabine, tenofovir alafenamide and rilpivirine"	"Antivirals for treatment of HIV infections, combinations"
+J05AR22	"emtricitabine, tenofovir alafenamide, darunavir and cobicistat"	"Antivirals for treatment of HIV infections, combinations"
+J05AR18	"emtricitabine, tenofovir alafenamide, elvitegravir and cobicistat"	"Antivirals for treatment of HIV infections, combinations"
+J05AR06	"emtricitabine, tenofovir disoproxil and efavirenz"	"Antivirals for treatment of HIV infections, combinations"
+J05AR08	"emtricitabine, tenofovir disoproxil and rilpivirine"	"Antivirals for treatment of HIV infections, combinations"
+J05AR09	"emtricitabine, tenofovir disoproxil, elvitegravir and cobicistat"	"Antivirals for treatment of HIV infections, combinations"
+J05AX07	enfuvirtide	Other antivirals
+J05AX17	enisamium iodide	Other antivirals
+J05AF10	entecavir	Nucleoside and nucleotide reverse transcriptase inhibitors
+J05AG04	etravirine	Non-nucleoside reverse transcriptase inhibitors
+J05AP04	faldaprevir	Antivirals for treatment of HCV infections
+J05AB09	famciclovir	Nucleosides and nucleotides excl. reverse transcriptase inhibitors
+J05AE07	fosamprenavir	Protease inhibitors
+J05AD01	foscarnet	Phosphonic acid derivatives
+J05AD02	fosfonet	Phosphonic acid derivatives
+J05AB06	ganciclovir	Nucleosides and nucleotides excl. reverse transcriptase inhibitors
+J05AP57	glecaprevir and pibrentasvir	Antivirals for treatment of HCV infections
+J05AX23	ibalizumab	Other antivirals
+J05AB02	idoxuridine	Nucleosides and nucleotides excl. reverse transcriptase inhibitors
+J05AE02	indinavir	Protease inhibitors
+J05AX05	inosine pranobex	Other antivirals
+J05AF05	lamivudine	Nucleoside and nucleotide reverse transcriptase inhibitors
+J05AR02	lamivudine and abacavir	"Antivirals for treatment of HIV infections, combinations"
+J05AR16	lamivudine and raltegravir	"Antivirals for treatment of HIV infections, combinations"
+J05AR12	lamivudine and tenofovir disoproxil	"Antivirals for treatment of HIV infections, combinations"
+J05AR13	"lamivudine, abacavir and dolutegravir"	"Antivirals for treatment of HIV infections, combinations"
+J05AR24	"lamivudine, tenofovir disoproxil and doravirine"	"Antivirals for treatment of HIV infections, combinations"
+J05AR11	"lamivudine, tenofovir disoproxil and efavirenz"	"Antivirals for treatment of HIV infections, combinations"
+J05AX18	letermovir	Other antivirals
+J05AR10	lopinavir and ritonavir	"Antivirals for treatment of HIV infections, combinations"
+J05AX02	lysozyme	Other antivirals
+J05AX09	maraviroc	Other antivirals
+J05AX10	maribavir	Other antivirals
+J05AA01	metisazone	Thiosemicarbazones
+J05AX01	moroxydine	Other antivirals
+J05AE04	nelfinavir	Protease inhibitors
+J05AG01	nevirapine	Non-nucleoside reverse transcriptase inhibitors
+J05AP53	"ombitasvir, paritaprevir and ritonavir"	Antivirals for treatment of HCV infections
+J05AH02	oseltamivir	Neuraminidase inhibitors
+J05AB13	penciclovir	Nucleosides and nucleotides excl. reverse transcriptase inhibitors
+J05AX21	pentanedioic acid imidazolyl ethanamide	Other antivirals
+J05AH03	peramivir	Neuraminidase inhibitors
+J05AX06	pleconaril	Other antivirals
+J05AX08	raltegravir	Other antivirals
+J05AP01	ribavirin	Antivirals for treatment of HCV infections
+J05AG05	rilpivirine	Non-nucleoside reverse transcriptase inhibitors
+J05AC02	rimantadine	Cyclic amines
+J05AE03	ritonavir	Protease inhibitors
+J05AE01	saquinavir	Protease inhibitors
+J05AP05	simeprevir	Antivirals for treatment of HCV infections
+J05AP08	sofosbuvir	Antivirals for treatment of HCV infections
+J05AP51	sofosbuvir and ledipasvir	Antivirals for treatment of HCV infections
+J05AP55	sofosbuvir and velpatasvir	Antivirals for treatment of HCV infections
+J05AP56	"sofosbuvir, velpatasvir and voxilaprevir"	Antivirals for treatment of HCV infections
+J05AF04	stavudine	Nucleoside and nucleotide reverse transcriptase inhibitors
+J05AR07	"stavudine, lamivudine and nevirapine"	"Antivirals for treatment of HIV infections, combinations"
+J05AP02	telaprevir	Antivirals for treatment of HCV infections
+J05AF11	telbivudine	Nucleoside and nucleotide reverse transcriptase inhibitors
+J05AF13	tenofovir alafenamide	Nucleoside and nucleotide reverse transcriptase inhibitors
+J05AF07	tenofovir disoproxil	Nucleoside and nucleotide reverse transcriptase inhibitors
+J05AR03	tenofovir disoproxil and emtricitabine	"Antivirals for treatment of HIV infections, combinations"
+J05AX19	tilorone	Other antivirals
+J05AE09	tipranavir	Protease inhibitors
+J05AC03	tromantadine	Cyclic amines
+J05AX13	umifenovir	Other antivirals
+J05AB11	valaciclovir	Nucleosides and nucleotides excl. reverse transcriptase inhibitors
+J05AB14	valganciclovir	Nucleosides and nucleotides excl. reverse transcriptase inhibitors
+J05AB03	vidarabine	Nucleosides and nucleotides excl. reverse transcriptase inhibitors
+J05AF03	zalcitabine	Nucleoside and nucleotide reverse transcriptase inhibitors
+J05AH01	zanamivir	Neuraminidase inhibitors
+J05AF01	zidovudine	Nucleoside and nucleotide reverse transcriptase inhibitors
+J05AR01	zidovudine and lamivudine	"Antivirals for treatment of HIV infections, combinations"
+J05AR04	"zidovudine, lamivudine and abacavir"	"Antivirals for treatment of HIV infections, combinations"
+J05AR05	"zidovudine, lamivudine and nevirapine"	"Antivirals for treatment of HIV infections, combinations"

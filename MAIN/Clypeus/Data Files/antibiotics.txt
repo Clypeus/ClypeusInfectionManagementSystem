@@ -1,0 +1,456 @@
+ab	atc	name	group
+AMA	J04AA01	4-aminosalicylic acid	Antimycobacterials
+FCT	D01AE21	5-fluorocytosine	Antifungals/antimycotics
+ACM		Acetylmidecamycin	Macrolides/lincosamides
+ASP		Acetylspiramycin	Macrolides/lincosamides
+ALS	J04BA03	Aldesulfone sodium	Other antibacterials
+AMK	J01GB06	Amikacin	Aminoglycosides
+AKF		Amikacin/fosfomycin	Aminoglycosides
+AMX	J01CA04	Amoxicillin	Beta-lactams/penicillins
+AMC	J01CR02	Amoxicillin/clavulanic acid	Beta-lactams/penicillins
+AXS		Amoxicillin/sulbactam	Beta-lactams/penicillins
+AMB	J02AA01	Amphotericin B	Antifungals/antimycotics
+AMH		Amphotericin B-high	Aminoglycosides
+AMP	J01CA01	Ampicillin	Beta-lactams/penicillins
+SAM	J01CR01	Ampicillin/sulbactam	Beta-lactams/penicillins
+AMR		Amprolium	Other antibacterials
+ANI	J02AX06	Anidulafungin	Antifungals/antimycotics
+APL		Apalcillin	Beta-lactams/penicillins
+APR		Apramycin	Aminoglycosides
+ARB		Arbekacin	Aminoglycosides
+APX		Aspoxicillin	Beta-lactams/penicillins
+AST		Astromicin	Aminoglycosides
+AVB		Avibactam	Beta-lactams/penicillins
+AVI		Avilamycin	Other antibacterials
+AVO		Avoparcin	Glycopeptides
+AZD	J01CE04	Azidocillin	Beta-lactams/penicillins
+AZM	J01FA10	Azithromycin	Macrolides/lincosamides
+AZL	J01CA09	Azlocillin	Beta-lactams/penicillins
+ATM	J01DF01	Aztreonam	Beta-lactams/penicillins
+AZA		Aztreonam/avibactam	Beta-lactams/penicillins
+BAM	J01CA06	Bacampicillin	Beta-lactams/penicillins
+BAC	R02AB04	Bacitracin zinc	Other antibacterials
+BDQ		Bedaquiline	Other antibacterials
+BEK		Bekanamycin	Aminoglycosides
+BNB	J01CE08	Benzathine benzylpenicillin	Beta-lactams/penicillins
+BNP	J01CE10	Benzathine phenoxymethylpenicillin	Beta-lactams/penicillins
+BES		Besifloxacin	Quinolones
+BIA		Biapenem	Carbapenems
+BCZ		Bicyclomycin (Bicozamycin)	Other antibacterials
+BDP	J01EA02	Brodimoprim	Trimethoprims
+BUT		Butoconazole	Antifungals/antimycotics
+CDZ	J01DD09	Cadazolid	Cephalosporins (3rd gen.)
+CLA	J04AA03	Calcium aminosalicylate	Antimycobacterials
+CAP	J04AB30	Capreomycin	Antimycobacterials
+CRB	J01CA03	Carbenicillin	Beta-lactams/penicillins
+CRN	J01CA05	Carindacillin	Beta-lactams/penicillins
+CAR		Carumonam	Other antibacterials
+CAS	J02AX04	Caspofungin	Antifungals/antimycotics
+CAC	J01DB10	Cefacetrile	Cephalosporins (1st gen.)
+CEC	J01DC04	Cefaclor	Cephalosporins (2nd gen.)
+CFR	J01DB05	Cefadroxil	Cephalosporins (1st gen.)
+RID	J01DB02	Cefaloridine	Cephalosporins (1st gen.)
+MAN	J01DC03	Cefamandole	Cephalosporins (2nd gen.)
+CTZ	J01DB07	Cefatrizine	Cephalosporins (1st gen.)
+CZD	J01DB06	Cefazedone	Cephalosporins (1st gen.)
+CZO	J01DB04	Cefazolin	Cephalosporins (1st gen.)
+CFB		Cefbuperazone	Other antibacterials
+CCP		Cefcapene	Cephalosporins (3rd gen.)
+CCX		Cefcapene pivoxil	Cephalosporins (3rd gen.)
+CDR	J01DD15	Cefdinir	Cephalosporins (3rd gen.)
+DIT	J01DD16	Cefditoren	Cephalosporins (3rd gen.)
+DIX		Cefditoren pivoxil	Cephalosporins (3rd gen.)
+FEP	J01DE01	Cefepime	Cephalosporins (4th gen.)
+CPC		Cefepime/clavulanic acid	Cephalosporins (4th gen.)
+FPT		Cefepime/tazobactam	Cephalosporins (4th gen.)
+FPZ		Cefepime/zidebactam	Other antibacterials
+CAT	J01DD10	Cefetamet	Cephalosporins (3rd gen.)
+CPI		Cefetamet pivoxil	Cephalosporins (3rd gen.)
+CCL		Cefetecol (Cefcatacol)	Cephalosporins (4th gen.)
+CZL		Cefetrizole	Cephalosporins (unclassified gen.)
+FDC		Cefiderocol	Other antibacterials
+CFM	J01DD08	Cefixime	Cephalosporins (3rd gen.)
+CMX	J01DD05	Cefmenoxime	Cephalosporins (3rd gen.)
+CMZ	J01DC09	Cefmetazole	Cephalosporins (2nd gen.)
+CNX		Cefminox	Other antibacterials
+DIZ	J01DD09	Cefodizime	Cephalosporins (3rd gen.)
+CID	J01DC06	Cefonicid	Cephalosporins (2nd gen.)
+CFP	J01DD12	Cefoperazone	Cephalosporins (3rd gen.)
+CSL	J01DD62	Cefoperazone/sulbactam	Cephalosporins (3rd gen.)
+CND	J01DC11	Ceforanide	Cephalosporins (2nd gen.)
+CSE		Cefoselis	Cephalosporins (4th gen.)
+CTX	J01DD01	Cefotaxime	Cephalosporins (3rd gen.)
+CTC		Cefotaxime/clavulanic acid	Cephalosporins (3rd gen.)
+CTS		Cefotaxime/sulbactam	Cephalosporins (3rd gen.)
+CTT	J01DC05	Cefotetan	Cephalosporins (2nd gen.)
+CTF	J01DC07	Cefotiam	Cephalosporins (2nd gen.)
+CHE		Cefotiam hexetil	Cephalosporins (3rd gen.)
+FOV		Cefovecin	Cephalosporins (3rd gen.)
+FOX	J01DC01	Cefoxitin	Cephalosporins (2nd gen.)
+ZOP		Cefozopran	Cephalosporins (4th gen.)
+CFZ		Cefpimizole	Cephalosporins (3rd gen.)
+CPM	J01DD11	Cefpiramide	Cephalosporins (3rd gen.)
+CPO	J01DE02	Cefpirome	Cephalosporins (4th gen.)
+CPD	J01DD13	Cefpodoxime	Cephalosporins (3rd gen.)
+CPX		Cefpodoxime proxetil	Cephalosporins (3rd gen.)
+CDC		Cefpodoxime/clavulanic acid	Cephalosporins (3rd gen.)
+CPR	J01DC10	Cefprozil	Cephalosporins (2nd gen.)
+CEQ		Cefquinome	Cephalosporins (4th gen.)
+CRD	J01DB11	Cefroxadine	Cephalosporins (1st gen.)
+CFS	J01DD03	Cefsulodin	Cephalosporins (3rd gen.)
+CSU		Cefsumide	Cephalosporins (unclassified gen.)
+CPT	J01DI02	Ceftaroline	Cephalosporins (5th gen.)
+CPA		Ceftaroline/avibactam	Cephalosporins (5th gen.)
+CAZ	J01DD02	Ceftazidime	Cephalosporins (3rd gen.)
+CZA		Ceftazidime/avibactam	Cephalosporins (3rd gen.)
+CCV	J01DD52	Ceftazidime/clavulanic acid	Cephalosporins (3rd gen.)
+CEM		Cefteram	Cephalosporins (3rd gen.)
+CPL		Cefteram pivoxil	Cephalosporins (3rd gen.)
+CTL	J01DB12	Ceftezole	Cephalosporins (1st gen.)
+CTB	J01DD14	Ceftibuten	Cephalosporins (3rd gen.)
+TIO		Ceftiofur	Cephalosporins (3rd gen.)
+CZX	J01DD07	Ceftizoxime	Cephalosporins (3rd gen.)
+CZP		Ceftizoxime alapivoxil	Cephalosporins (3rd gen.)
+BPR	J01DI01	Ceftobiprole	Cephalosporins (5th gen.)
+CFM1	J01DI01	Ceftobiprole medocaril	Cephalosporins (5th gen.)
+CEI	J01DI54	Ceftolozane/enzyme inhibitor	Cephalosporins (5th gen.)
+CZT		Ceftolozane/tazobactam	Cephalosporins (5th gen.)
+CRO	J01DD04	Ceftriaxone	Cephalosporins (3rd gen.)
+CXM	J01DC02	Cefuroxime	Cephalosporins (2nd gen.)
+CXA		Cefuroxime axetil	Cephalosporins (2nd gen.)
+CFM2	J01RA03	Cefuroxime/metronidazole	Other antibacterials
+ZON		Cefuzonam	Other antibacterials
+LEX	J01DB01	Cephalexin	Cephalosporins (1st gen.)
+CEP	J01DB03	Cephalothin	Cephalosporins (1st gen.)
+HAP	J01DB08	Cephapirin	Cephalosporins (1st gen.)
+CED	J01DB09	Cephradine	Cephalosporins (1st gen.)
+CTO		Cetocycline	Tetracyclines
+CHL	J01BA01	Chloramphenicol	Amphenicols
+CTE	J01AA03	Chlortetracycline	Tetracyclines
+CIC		Ciclacillin	Beta-lactams/penicillins
+CIX	D01AE14	Ciclopirox	Antifungals/antimycotics
+CIN	J01MB06	Cinoxacin	Quinolones
+CIP	J01MA02	Ciprofloxacin	Quinolones
+CLR	J01FA09	Clarithromycin	Macrolides/lincosamides
+CLA1		Clavulanic acid	Other antibacterials
+CLX		Clinafloxacin	Quinolones
+CLI	J01FF01	Clindamycin	Macrolides/lincosamides
+CLF	J04BA01	Clofazimine	Antimycobacterials
+CLF1	J01XX03	Clofoctol	Other antibacterials
+CLM	J01CE07	Clometocillin	Beta-lactams/penicillins
+CLM1	J01AA11	Clomocycline	Tetracyclines
+CTR	G01AF02	Clotrimazole	Antifungals/antimycotics
+CLO	J01CF02	Cloxacillin	Beta-lactams/penicillins
+COL	J01XB01	Colistin	Polymyxins
+COP		Colistin/polysorbate	Other antibacterials
+CYC	J04AB01	Cycloserine	Antimycobacterials
+DAL	J01XA04	Dalbavancin	Glycopeptides
+DAN		Danofloxacin	Quinolones
+DPS	J04BA02	Dapsone	Other antibacterials
+DAP	J01XX09	Daptomycin	Other antibacterials
+DFX		Delafloxacin	Quinolones
+DLM	J04AK06	Delamanid	Antimycobacterials
+DEM	J01AA01	Demeclocycline	Tetracyclines
+DKB	J01GB09	Dibekacin	Aminoglycosides
+DIC	J01CF01	Dicloxacillin	Beta-lactams/penicillins
+DIF		Difloxacin	Quinolones
+DIR	J01FA13	Dirithromycin	Macrolides/lincosamides
+DOR	J01DH04	Doripenem	Carbapenems
+DOX	J01AA02	Doxycycline	Tetracyclines
+ECO	J01XDXX	Econazole	Antifungals/antimycotics
+ENX	J01MA04	Enoxacin	Quinolones
+ENR		Enrofloxacin	Quinolones
+ENV		Enviomycin (Tuberactinomycin)	Antimycobacterials
+EPE		Eperozolid	Other antibacterials
+EPC	J01CA07	Epicillin	Beta-lactams/penicillins
+EPP		Epiroprim	Other antibacterials
+ERV	J01AA13	Eravacycline	Tetracyclines
+ETP	J01DH03	Ertapenem	Carbapenems
+ERY	J01FA01	Erythromycin	Macrolides/lincosamides
+ETH	J04AK02	Ethambutol	Antimycobacterials
+ETI	J04AM03	Ethambutol/isoniazid	Antimycobacterials
+ETI1	J04AD03	Ethionamide	Antimycobacterials
+ETO		Ethopabate	Other antibacterials
+FAR	J01DI03	Faropenem	Other antibacterials
+FDX		Fidaxomicin	Other antibacterials
+FIN		Finafloxacin	Quinolones
+FLA		Flavomycin	Other antibacterials
+FLE	J01MA08	Fleroxacin	Quinolones
+FLO		Flomoxef	Other antibacterials
+FLR		Florfenicol	Other antibacterials
+FLC	J01CF05	Flucloxacillin	Beta-lactams/penicillins
+FLU	J02AC01	Fluconazole	Antifungals/antimycotics
+FLM	J01MB07	Flumequine	Quinolones
+FLR1	J01FA14	Flurithromycin	Macrolides/lincosamides
+FFL		Fosfluconazole	Antifungals/antimycotics
+FOS	J01XX01	Fosfomycin	Other antibacterials
+FMD		Fosmidomycin	Other antibacterials
+FRM		Framycetin	Aminoglycosides
+FRZ		Furazolidone	Other antibacterials
+FUS	J01XC01	Fusidic acid	Other antibacterials
+GAM		Gamithromycin	Macrolides/lincosamides
+GRN		Garenoxacin	Quinolones
+GAT	J01MA16	Gatifloxacin	Quinolones
+GEM	J01MA15	Gemifloxacin	Quinolones
+GEN	J01GB03	Gentamicin	Aminoglycosides
+GEH		Gentamicin-high	Aminoglycosides
+GEP		Gepotidacin	Other antibacterials
+GRX	J01MA11	Grepafloxacin	Quinolones
+GRI		Griseofulvin	Antifungals/antimycotics
+HAB		Habekacin	Aminoglycosides
+HCH	J02AA02	Hachimycin	Antifungals/antimycotics
+HET	J01CA18	Hetacillin	Beta-lactams/penicillins
+HYG		Hygromycin	Aminoglycosides
+ICL		Iclaprim	Other antibacterials
+IPM	J01DH51	Imipenem	Carbapenems
+IPE		Imipenem/EDTA	Carbapenems
+IMR		Imipenem/relebactam	Carbapenems
+ISV		Isavuconazole	Antifungals/antimycotics
+ISE	J01GB11	Isepamicin	Aminoglycosides
+ISO	D01AC05	Isoconazole	Antifungals/antimycotics
+INH	J04AC01	Isoniazid	Antimycobacterials
+ITR	J02AC02	Itraconazole	Antifungals/antimycotics
+JOS	J01FA07	Josamycin	Macrolides/lincosamides
+KAN	J01GB04	Kanamycin	Aminoglycosides
+KAH		Kanamycin-high	Aminoglycosides
+KAC		Kanamycin/cephalexin	Aminoglycosides
+KET	J02AB02	Ketoconazole	Antifungals/antimycotics
+KIT		Kitasamycin (Leucomycin)	Macrolides/lincosamides
+LAS		Lasalocid	Other antibacterials
+LTM	J01DD06	Latamoxef	Cephalosporins (3rd gen.)
+LMU		Lefamulin	Other antibacterials
+LEN		Lenampicillin	Beta-lactams/penicillins
+LVX	J01MA12	Levofloxacin	Quinolones
+LND		Levonadifloxacin	Quinolones
+LSP		Linco-spectin (lincomycin/spectinomycin)	Other antibacterials
+LIN	J01FF02	Lincomycin	Macrolides/lincosamides
+LNZ	J01XX08	Linezolid	Other antibacterials
+LFE		Linoprist-flopristin	Other antibacterials
+LOM	J01MA07	Lomefloxacin	Quinolones
+LOR	J01DC08	Loracarbef	Cephalosporins (2nd gen.)
+LYM	J01AA04	Lymecycline	Tetracyclines
+MNA	J01XX06	Mandelic acid	Other antibacterials
+MAR		Marbofloxacin	Quinolones
+MEC	J01CA11	Mecillinam (Amdinocillin)	Beta-lactams/penicillins
+MEL		Meleumycin	Macrolides/lincosamides
+MEM	J01DH02	Meropenem	Carbapenems
+MNC		Meropenem/nacubactam	Carbapenems
+MEV	J01DH52	Meropenem/vaborbactam	Carbapenems
+MES		Mesulfamide	Other antibacterials
+MTC	J01AA05	Metacycline	Tetracyclines
+MTM	J01CA14	Metampicillin	Beta-lactams/penicillins
+MTH	J01XX05	Methenamine	Other antibacterials
+MET	J01CF03	Methicillin	Beta-lactams/penicillins
+MTP		Metioprim	Other antibacterials
+MXT		Metioxate	Quinolones
+MTR	J01XD01	Metronidazole	Other antibacterials
+MEZ	J01CA10	Mezlocillin	Beta-lactams/penicillins
+MSU		Mezlocillin/sulbactam	Beta-lactams/penicillins
+MIF	J02AX05	Micafungin	Antifungals/antimycotics
+MCZ	J02AB01	Miconazole	Antifungals/antimycotics
+MCR		Micronomicin	Aminoglycosides
+MID	J01FA03	Midecamycin	Macrolides/lincosamides
+MIL		Miloxacin	Quinolones
+MNO	J01AA08	Minocycline	Tetracyclines
+MCM	J01FA11	Miocamycin	Macrolides/lincosamides
+MON		Monensin sodium	Other antibacterials
+MRN	J04AK04	Morinamide	Antimycobacterials
+MFX	J01MA14	Moxifloxacin	Quinolones
+MUP	R01AX06	Mupirocin	Other antibacterials
+NAC		Nacubactam	Beta-lactams/penicillins
+NAD		Nadifloxacin	Quinolones
+NAF		Nafcillin	Beta-lactams/penicillins
+ZWK		Nafithromycin	Macrolides/lincosamides
+NAL	J01MB02	Nalidixic acid	Quinolones
+NAR		Narasin	Other antibacterials
+NEO	J01GB05	Neomycin	Aminoglycosides
+NET	J01GB07	Netilmicin	Aminoglycosides
+NIC		Nicarbazin	Other antibacterials
+NIF		Nifuroquine	Quinolones
+NFR	J01XE02	Nifurtoinol	Other antibacterials
+NTZ		Nitazoxanide	Other antibacterials
+NIT	J01XE01	Nitrofurantoin	Other antibacterials
+NIZ		Nitrofurazone	Other antibacterials
+NTR	J01XX07	Nitroxoline	Quinolones
+NOR	J01MA06	Norfloxacin	Quinolones
+NVA		Norvancomycin	Glycopeptides
+NOV	QJ01XX95	Novobiocin	Other antibacterials
+NYS	G01AA01	Nystatin	Antifungals/antimycotics
+OFX	J01MA01	Ofloxacin	Quinolones
+OLE	J01FA05	Oleandomycin	Macrolides/lincosamides
+OMC		Omadacycline	Tetracyclines
+OPT		Optochin	Other antibacterials
+ORB		Orbifloxacin	Quinolones
+ORI	J01XA05	Oritavancin	Glycopeptides
+ORS		Ormetroprim/sulfamethoxazole	Other antibacterials
+ORN	J01XD03	Ornidazole	Other antibacterials
+OXA	J01CF04	Oxacillin	Beta-lactams/penicillins
+OXO	J01MB05	Oxolinic acid	Quinolones
+OXY	J01AA06	Oxytetracycline	Tetracyclines
+PAS		P-aminosalicylic acid	Antimycobacterials
+PAN		Panipenem	Carbapenems
+PAR		Paromomycin	Other antibacterials
+PAZ	J01MA18	Pazufloxacin	Quinolones
+PEF	J01MA03	Pefloxacin	Quinolones
+PNM	J01CE06	Penamecillin	Beta-lactams/penicillins
+PEN	J01CE01	Penicillin G	Beta-lactams/penicillins
+PNV	J01CE01	Penicillin V	Beta-lactams/penicillins
+PNO		Penicillin/novobiocin	Beta-lactams/penicillins
+PSU		Penicillin/sulbactam	Beta-lactams/penicillins
+PNM1	J01AA10	Penimepicycline	Tetracyclines
+PIM		Pentisomicin	Aminoglycosides
+PTZ		Pentizidone	Other antibacterials
+PEX		Pexiganan	Other antibacterials
+PHE	J01CE05	Phenethicillin	Beta-lactams/penicillins
+PHN	J01CE02	Phenoxymethylpenicillin	Beta-lactams/penicillins
+PMR		Pimaricin (Natamycin)	Antifungals/antimycotics
+PPA	J01MB04	Pipemidic acid	Quinolones
+PIP	J01CA12	Piperacillin	Beta-lactams/penicillins
+PIS		Piperacillin/sulbactam	Beta-lactams/penicillins
+TZP	J01CR05	Piperacillin/tazobactam	Beta-lactams/penicillins
+PRC		Piridicillin	Beta-lactams/penicillins
+PRL		Pirlimycin	Other antibacterials
+PIR	J01MB03	Piromidic acid	Quinolones
+PVM	J01CA02	Pivampicillin	Beta-lactams/penicillins
+PME	J01CA08	Pivmecillinam	Beta-lactams/penicillins
+PLZ		Plazomicin	Aminoglycosides
+PLB	J01XB02	Polymyxin B	Polymyxins
+POP		Polymyxin B/polysorbate 80	Polymyxins
+POS	J02AC04	Posaconazole	Antifungals/antimycotics
+PRA		Pradofloxacin	Quinolones
+PRX		Premafloxacin	Quinolones
+PRM		Primycin	Macrolides/lincosamides
+PRI	J01FG01	Pristinamycin	Macrolides/lincosamides
+PRB	J01CE09	Procaine benzylpenicillin	Beta-lactams/penicillins
+PRP	J01CE03	Propicillin	Beta-lactams/penicillins
+PKA		Propikacin	Aminoglycosides
+PTH	J04AD01	Prothionamide	Antimycobacterials
+PRU	J01MA17	Prulifloxacin	Quinolones
+PZA	J04AK01	Pyrazinamide	Antimycobacterials
+QDA	J01FG02	Quinupristin/dalfopristin	Macrolides/lincosamides
+RAC		Ractopamine	Other antibacterials
+RAM		Ramoplanin	Glycopeptides
+RZM		Razupenem	Carbapenems
+RTP	A07AA11	Retapamulin	Other antibacterials
+RBC	J02AC05	Ribociclib	Antifungals/antimycotics
+RST	J01GB10	Ribostamycin	Aminoglycosides
+RID1		Ridinilazole	Other antibacterials
+RIB	J04AB04	Rifabutin	Antimycobacterials
+RIF	J04AB02	Rifampicin	Antimycobacterials
+RFI	J04AM02	Rifampicin/isoniazid	Antimycobacterials
+RPEI	J04AM06	Rifampicin/pyrazinamide/ethambutol/isoniazid	Antimycobacterials
+RPI	J04AM05	Rifampicin/pyrazinamide/isoniazid	Antimycobacterials
+RFM	J04AB03	Rifamycin	Antimycobacterials
+RFP	J04AB05	Rifapentine	Antimycobacterials
+RFX	A07AA11	Rifaximin	Other antibacterials
+RIT		Ritipenem	Carbapenems
+RIA		Ritipenem acoxil	Carbapenems
+ROK	J01FA12	Rokitamycin	Macrolides/lincosamides
+RLT	J01AA09	Rolitetracycline	Tetracyclines
+ROS	J01MB01	Rosoxacin	Quinolones
+RXT	J01FA06	Roxithromycin	Macrolides/lincosamides
+RFL	J01MA10	Rufloxacin	Quinolones
+SAL		Salinomycin	Other antibacterials
+SAR		Sarafloxacin	Quinolones
+SRX		Sarmoxicillin	Beta-lactams/penicillins
+SEC		Secnidazole	Other antibacterials
+SMF	J04AK05	Simvastatin/fenofibrate	Antimycobacterials
+SIS	J01GB08	Sisomicin	Aminoglycosides
+SIT		Sitafloxacin	Quinolones
+SDA	J04AA02	Sodium aminosalicylate	Antimycobacterials
+SOL		Solithromycin	Macrolides/lincosamides
+SPX	J01MA09	Sparfloxacin	Quinolones
+SPT	J01XX04	Spectinomycin	Other antibacterials
+SPI	J01FA02	Spiramycin	Macrolides/lincosamides
+SPM	J01RA04	Spiramycin/metronidazole	Other antibacterials
+STR	J01GA02	Streptoduocin	Aminoglycosides
+STR1	J01GA01	Streptomycin	Aminoglycosides
+STH		Streptomycin-high	Aminoglycosides
+STI	J04AM01	Streptomycin/isoniazid	Antimycobacterials
+SUL	J01CG01	Sulbactam	Beta-lactams/penicillins
+SBC	J01CA16	Sulbenicillin	Beta-lactams/penicillins
+SUC		Sulconazole	Antifungals/antimycotics
+SUP		Sulfachlorpyridazine	Other antibacterials
+SDI	J01EC02	Sulfadiazine	Trimethoprims
+SLT	J01EE06	Sulfadiazine/tetroxoprim	Trimethoprims
+SLT1	J01EE02	Sulfadiazine/trimethoprim	Trimethoprims
+SUD	J01ED01	Sulfadimethoxine	Trimethoprims
+SDM	J01EB03	Sulfadimidine	Trimethoprims
+SLT2	J01EE05	Sulfadimidine/trimethoprim	Trimethoprims
+SLF	J01EB05	Sulfafurazole	Trimethoprims
+SLF1	J01EB01	Sulfaisodimidine	Trimethoprims
+SLF2	J01ED02	Sulfalene	Trimethoprims
+SZO	J01ED09	Sulfamazone	Trimethoprims
+SLF3	J01ED07	Sulfamerazine	Trimethoprims
+SLT3	J01EE07	Sulfamerazine/trimethoprim	Trimethoprims
+SUM		Sulfamethazine	Other antibacterials
+SLF4	J01EB02	Sulfamethizole	Trimethoprims
+SMX	J01EC01	Sulfamethoxazole	Trimethoprims
+SLF5	J01ED05	Sulfamethoxypyridazine	Trimethoprims
+SLF6	J01ED03	Sulfametomidine	Trimethoprims
+SLF7	J01ED04	Sulfametoxydiazine	Trimethoprims
+SLT4	J01EE03	Sulfametrole/trimethoprim	Trimethoprims
+SLF8	J01EC03	Sulfamoxole	Trimethoprims
+SLT5	J01EE04	Sulfamoxole/trimethoprim	Trimethoprims
+SLF9	J01EB06	Sulfanilamide	Trimethoprims
+SLF10	J01ED06	Sulfaperin	Trimethoprims
+SLF11	J01ED08	Sulfaphenazole	Trimethoprims
+SLF12	J01EB04	Sulfapyridine	Trimethoprims
+SNA		Sulfasuccinamide	Other antibacterials
+SUT	J01EB07	Sulfathiazole	Trimethoprims
+SLF13	J01EB08	Sulfathiourea	Trimethoprims
+SOX		Sulfisoxazole	Other antibacterials
+SSS		Sulfonamide	Other antibacterials
+SLP		Sulopenem	Other antibacterials
+SLT6	J01CR04	Sultamicillin	Beta-lactams/penicillins
+SUR		Surotomycin	Other antibacterials
+TAL	J01CA15	Talampicillin	Beta-lactams/penicillins
+TLP		Talmetoprim	Other antibacterials
+TAZ	J01CG02	Tazobactam	Beta-lactams/penicillins
+TBP		Tebipenem	Carbapenems
+TZD	J01XX11	Tedizolid	Other antibacterials
+TEC	J01XA02	Teicoplanin	Glycopeptides
+TCM		Teicoplanin-macromethod	Glycopeptides
+TLV	J01XA03	Telavancin	Glycopeptides
+TLT	J01FA15	Telithromycin	Macrolides/lincosamides
+TMX	J01MA05	Temafloxacin	Quinolones
+TEM	J01CA17	Temocillin	Beta-lactams/penicillins
+TRB	D01BA02	Terbinafine	Antifungals/antimycotics
+TRC		Terconazole	Antifungals/antimycotics
+TRZ	J04AK03	Terizidone	Antimycobacterials
+TCY	J01AA07	Tetracycline	Tetracyclines
+TET		Tetroxoprim	Other antibacterials
+THA		Thiacetazone	Antimycobacterials
+THI	J01BA02	Thiamphenicol	Amphenicols
+THI1	J04AM04	Thioacetazone/isoniazid	Antimycobacterials
+TIA		Tiamulin	Other antibacterials
+TIC	J01CA13	Ticarcillin	Beta-lactams/penicillins
+TCC	J01CR03	Ticarcillin/clavulanic acid	Beta-lactams/penicillins
+TGC	J01AA12	Tigecycline	Tetracyclines
+TBQ		Tilbroquinol	Quinolones
+TIP		Tildipirosin	Macrolides/lincosamides
+TIL		Tilmicosin	Macrolides/lincosamides
+TIN	J01XD02	Tinidazole	Other antibacterials
+TCR	J04AD02	Tiocarlide	Antimycobacterials
+TDC		Tiodonium chloride	Other antibacterials
+TXC		Tioxacin	Quinolones
+TIZ		Tizoxanide	Other antibacterials
+TOB	J01GB01	Tobramycin	Aminoglycosides
+TOH		Tobramycin-high	Aminoglycosides
+TFX		Tosufloxacin	Quinolones
+TMP	J01EA01	Trimethoprim	Trimethoprims
+SXT	J01EE01	Trimethoprim/sulfamethoxazole	Trimethoprims
+TRL	J01FA08	Troleandomycin	Macrolides/lincosamides
+TRO		Trospectomycin	Other antibacterials
+TVA	J01MA13	Trovafloxacin	Quinolones
+TUL		Tulathromycin	Macrolides/lincosamides
+TYL		Tylosin	Macrolides/lincosamides
+TYL1	A07AA11	Tylvalosin	Other antibacterials
+PRU1		Ulifloxacin (Prulifloxacin)	Other antibacterials
+VAN	J01XA01	Vancomycin	Glycopeptides
+VAM		Vancomycin-macromethod	Glycopeptides
+VIO		Viomycin	Antimycobacterials
+VIR		Virginiamycine	Other antibacterials
+VOR	J02AC03	Voriconazole	Antifungals/antimycotics
+XBR	J01XX02	Xibornol	Other antibacterials
+ZID		Zidebactam	Other antibacterials

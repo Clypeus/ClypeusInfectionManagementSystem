@@ -33,6 +33,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clypeus.Helpers", "Clypeus.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Generic", "Generic", "{5546EDA2-A9A2-406F-BFB2-ABE5D577D55C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data Files", "Data Files", "{D19E5AAC-2E91-4E00-BCEB-EAB62A2177C2}"
+	ProjectSection(SolutionItems) = preProject
+		Data Files\antibiotics.txt = Data Files\antibiotics.txt
+		Data Files\antivirals.txt = Data Files\antivirals.txt
+		Data Files\microorganisms.txt = Data Files\microorganisms.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
