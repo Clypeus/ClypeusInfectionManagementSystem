@@ -6,11 +6,11 @@ using System.Text;
 
 namespace Clypeus.Data.Model.Configurations
 {
-    public class OrganismTypesConfiguration : IEntityTypeConfiguration<OrganismTypes>
+    public class OrganismFamilyConfiguration : IEntityTypeConfiguration<OrganismFamily>
     {
-        public void Configure(EntityTypeBuilder<OrganismTypes> entity)
+        public void Configure(EntityTypeBuilder<OrganismFamily> entity)
         {
-            entity.ToTable("OrganismTypes", "medicinals");
+            entity.ToTable("OrganismFamily", "medicinals");
 
             entity.Property(e => e.Description)
                 .HasMaxLength(75)
