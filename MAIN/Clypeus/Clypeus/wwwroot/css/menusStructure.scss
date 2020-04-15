@@ -1,5 +1,7 @@
 ﻿@import url('fonts.css');
 
+@import "colors.scss";
+
 $title-banner-height: 6.5rem;
 $title-banner-standard-margins: 0.75rem;
 $title-product-name: 2rem;
@@ -9,7 +11,7 @@ $title-tagline-size: 1.1rem;
 #title-banner .main-banner-height {
     height: $title-banner-height;
     min-height: $title-banner-height;
-    background-color: pink;
+    background-color: $color-primary-7;
 }
 
 #title-banner .main-banner-title-content {
@@ -35,7 +37,7 @@ $title-tagline-size: 1.1rem;
 
 #title-banner .menunavbar {
     overflow: hidden;
-    background-color: #333;
+    background-color: $color-primary-0;
     font-family: RobotoLight;
 }
 
@@ -62,13 +64,18 @@ $title-tagline-size: 1.1rem;
     outline: none;
     color: white;
     padding: 14px 16px;
-    background-color: inherit;
-    margin: 0; /* Important for vertical align on mobile phones */
+    background-color: $color-primary-0;
 }
 
 /* Add a red background color to navbar links on hover */
 #title-banner .menunavbar a:hover, .menudropdown:hover .menudropbtn {
-    background-color: red;
+    background-color: $color-primary-7;
+    color:black;
+}
+
+#title-banner .menudropbtn:hover {
+    background-color: $color-primary-7;
+    color: black;
 }
 
 /* Dropdown content (hidden by default) */
