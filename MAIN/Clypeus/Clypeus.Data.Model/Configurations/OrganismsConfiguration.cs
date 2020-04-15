@@ -21,6 +21,10 @@ namespace Clypeus.Data.Model.Configurations
                 .HasMaxLength(75)
                 .IsUnicode(false);
 
+            entity.Property(e => e.Species)
+                .HasMaxLength(75)
+                .IsUnicode(false);
+
             entity.Property(e => e.Inserted).HasColumnType("datetime");
 
             entity.Property(e => e.Updated).HasColumnType("datetime");
@@ -44,6 +48,16 @@ namespace Clypeus.Data.Model.Configurations
              .WithMany(p => p.Organisms)
              .HasForeignKey(d => d.OrganismFamilyId)
              .HasConstraintName("FK_Organisms_ToOrganismFamily");
+
+            entity.HasOne(d => d.OrganismClass)
+           .WithMany(p => p.Organisms)
+           .HasForeignKey(d => d.OrganismClassId)
+           .HasConstraintName("FK_Organisms_ToOrganismClass");
+
+            entity.HasOne(d => d.OrganismOrder)
+         .WithMany(p => p.Organisms)
+         .HasForeignKey(d => d.OrganismOrderId)
+         .HasConstraintName("FK_Organisms_ToOrganismOrder");
 
         }
     }
