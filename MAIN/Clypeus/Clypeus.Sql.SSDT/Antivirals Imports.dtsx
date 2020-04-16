@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Antivirals Imports"
   DTS:PackageType="5"
-  DTS:VersionBuild="19"
-  DTS:VersionGUID="{31FC6E58-9B3C-46D2-A225-F03F1F1A33B9}">
+  DTS:VersionBuild="20"
+  DTS:VersionGUID="{2CE0E614-2766-43A9-8157-1FDC4F9BF383}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2583,16 +2583,16 @@
         <NodeLayout
           Size="190.4,41.6"
           Id="Package\Update Group With ATC"
-          TopLeft="37.9999984900157,96.3733340992398" />
+          TopLeft="25.3333323266772,96.3733340992398" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="110.3,47.1">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="22.8999984900157,49.2733340992398"
+              EndConnector="10.2333323266772,49.2733340992398"
               Start="0,0"
-              End="22.8999984900157,41.7733340992398">
+              End="10.2333323266772,41.7733340992398">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -2603,13 +2603,13 @@
                     Point2="0,24.6366670496199"
                     Point3="4,24.6366670496199" />
                   <mssgle:LineSegment
-                    End="18.8999984900157,24.6366670496199" />
+                    End="6.23333232667717,24.6366670496199" />
                   <mssgle:CubicBezierSegment
-                    Point1="18.8999984900157,24.6366670496199"
-                    Point2="22.8999984900157,24.6366670496199"
-                    Point3="22.8999984900157,28.6366670496199" />
+                    Point1="6.23333232667717,24.6366670496199"
+                    Point2="10.2333323266772,24.6366670496199"
+                    Point3="10.2333323266772,28.6366670496199" />
                   <mssgle:LineSegment
-                    End="22.8999984900157,41.7733340992398" />
+                    End="10.2333323266772,41.7733340992398" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
