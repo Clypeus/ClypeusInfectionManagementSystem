@@ -12,6 +12,11 @@ namespace Clypeus.Data.Model.Configurations
         {
             entity.ToTable("Drugs", "medicinals");
 
+            entity.Property(e => e.Atc)
+               .IsRequired()
+               .HasMaxLength(8)
+               .IsUnicode(false);
+
             entity.Property(e => e.Code)
                 .IsRequired()
                 .HasMaxLength(5)

@@ -14,6 +14,7 @@ namespace Clypeus.Data.Model
 
         public int Id { get; set; }
         public string Code { get; set; }
+        public string Atc { get; set; }
         public string Description { get; set; }
         public int? DrugTypeId { get; set; }
         public int? PrincipleDrugGroupId { get; set; }
