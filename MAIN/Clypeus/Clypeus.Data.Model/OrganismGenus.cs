@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace Clypeus.Data.Model
 {
-    public partial class OrganismTypes
+    public partial class OrganismGenus
     {
-        public OrganismTypes()
+        public OrganismGenus()
         {
             Organisms = new HashSet<Organisms>();
         }

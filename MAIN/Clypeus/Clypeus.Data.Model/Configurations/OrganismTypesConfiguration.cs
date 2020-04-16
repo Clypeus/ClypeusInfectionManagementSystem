@@ -6,9 +6,9 @@ using System.Text;
 
 namespace Clypeus.Data.Model.Configurations
 {
-    public class OrganismTypesConfiguration : IEntityTypeConfiguration<OrganismTypes>
+    public class OrganismTypesConfiguration : IEntityTypeConfiguration<OrganismGenus>
     {
-        public void Configure(EntityTypeBuilder<OrganismTypes> entity)
+        public void Configure(EntityTypeBuilder<OrganismGenus> entity)
         {
             entity.ToTable("OrganismTypes", "medicinals");
 

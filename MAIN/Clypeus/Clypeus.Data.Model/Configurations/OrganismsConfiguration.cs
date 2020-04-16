@@ -29,9 +29,9 @@ namespace Clypeus.Data.Model.Configurations
 
             entity.Property(e => e.Updated).HasColumnType("datetime");
 
-            entity.HasOne(d => d.OrganismType)
+            entity.HasOne(d => d.OrganismGenus)
                 .WithMany(p => p.Organisms)
-                .HasForeignKey(d => d.OrganismTypeId)
+                .HasForeignKey(d => d.OrganismGenusId)
                 .HasConstraintName("FK_Organisms_ToOrganismTypes");
 
             entity.HasOne(d => d.OrganismKingdom)
