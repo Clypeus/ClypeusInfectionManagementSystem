@@ -42,6 +42,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data Files", "Data Files", 
 EndProject
 Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Clypeus.Sql.SSDT", "Clypeus.Sql.SSDT\Clypeus.Sql.SSDT.dtproj", "{31FD1B7F-64BB-4E25-B6C8-EEDAE54F80F1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL Queries", "SQL Queries", "{246986F6-766F-4221-8E58-A096058B49C6}"
+	ProjectSection(SolutionItems) = preProject
+		Data Files\Sql Scripts\S1 - Setting Contents Of Drug Types.sql = Data Files\Sql Scripts\S1 - Setting Contents Of Drug Types.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -130,6 +135,7 @@ Global
 		{9F39E6CB-381F-4FF9-9674-A4BA95DB2373} = {5546EDA2-A9A2-406F-BFB2-ABE5D577D55C}
 		{5546EDA2-A9A2-406F-BFB2-ABE5D577D55C} = {C9190922-8ED5-4AF9-BF23-9E362141C116}
 		{31FD1B7F-64BB-4E25-B6C8-EEDAE54F80F1} = {5F81FEFF-37F6-4296-AED0-989E0FB1926A}
+		{246986F6-766F-4221-8E58-A096058B49C6} = {D19E5AAC-2E91-4E00-BCEB-EAB62A2177C2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4F451F0F-EE6B-4823-9BB3-144F8C1BB06A}
