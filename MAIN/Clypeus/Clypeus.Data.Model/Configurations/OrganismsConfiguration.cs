@@ -50,8 +50,8 @@ namespace Clypeus.Data.Model.Configurations
              .HasConstraintName("FK_Organisms_ToOrganismFamily");
 
             entity.HasOne(d => d.OrganismClass)
-           .WithMany(p => p.Organisms)
-           .HasForeignKey(d => d.OrganismClassId)
+              .WithMany(p => p.Organisms)
+            .HasForeignKey(d => d.OrganismClassId)
            .HasConstraintName("FK_Organisms_ToOrganismClass");
 
             entity.HasOne(d => d.OrganismOrder)

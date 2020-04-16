@@ -1,4 +1,5 @@
 ﻿using System;
+using Clypeus.Data.Model.Configurations;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -28,15 +29,28 @@ namespace Clypeus.Data.Model
         {
             if (!optionsBuilder.IsConfigured)
             {
+                optionsBuilder.UseSqlServer("Server=(localdb)\\ProjectsV13;Database=Clypeus;Trusted_Connection=True;");
+
+                
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Users>(entity =>
-            {
-                
-            });
+            modelBuilder.ApplyConfiguration(new DrugGroupConfiguration());
+            modelBuilder.ApplyConfiguration(new DrugGroupMembersConfiguration());
+            modelBuilder.ApplyConfiguration(new DrugsConfiguration());
+            modelBuilder.ApplyConfiguration(new DrugTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new OrganisationsConfiguration());
+            modelBuilder.ApplyConfiguration(new OrganismClassConfiguration());
+            modelBuilder.ApplyConfiguration(new OrganismFamilyConfiguration());
+            modelBuilder.ApplyConfiguration(new OrganismKingdomConfiguration());
+            modelBuilder.ApplyConfiguration(new OrganismOrderConfiguration());
+            modelBuilder.ApplyConfiguration(new OrganismPhylumConfiguration());
+            modelBuilder.ApplyConfiguration(new OrganismsConfiguration());
+            modelBuilder.ApplyConfiguration(new OrganismTypesConfiguration());
+            modelBuilder.ApplyConfiguration(new UserConfiguration());
+         
 
             OnModelCreatingPartial(modelBuilder);
         }
