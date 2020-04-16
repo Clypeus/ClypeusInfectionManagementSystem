@@ -4,14 +4,16 @@ using Clypeus.Data.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Clypeus.Data.Model.Migrations
 {
     [DbContext(typeof(ClypeusContext))]
-    partial class ClypeusContextModelSnapshot : ModelSnapshot
+    [Migration("20200416182709_Increase Length Of Group Name")]
+    partial class IncreaseLengthOfGroupName
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -31,27 +33,23 @@ namespace Clypeus.Data.Model.Migrations
 
                     b.Property<string>("Code")
                         .IsRequired()
-                        .HasColumnType("varchar(10)")
-                        .HasMaxLength(10)
+                        .HasColumnType("varchar(5)")
+                        .HasMaxLength(5)
                         .IsUnicode(false);
 
                     b.Property<string>("Description")
-                        .HasColumnType("varchar(100)")
-                        .HasMaxLength(100)
+                        .HasColumnType("varchar(50)")
+                        .HasMaxLength(50)
                         .IsUnicode(false);
 
                     b.Property<int?>("DrugTypeId")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("Inserted")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
-                        .HasDefaultValue(new DateTime(2020, 4, 16, 19, 33, 0, 788, DateTimeKind.Local).AddTicks(5466));
+                        .HasColumnType("datetime");
 
                     b.Property<DateTime?>("Updated")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
-                        .HasDefaultValue(new DateTime(2020, 4, 16, 19, 33, 0, 794, DateTimeKind.Local).AddTicks(3734));
+                        .HasColumnType("datetime");
 
                     b.HasKey("Id");
 

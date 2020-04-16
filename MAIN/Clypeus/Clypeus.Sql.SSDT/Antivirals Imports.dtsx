@@ -1,0 +1,3091 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/16/2020 6:32:12 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="RAVEN"
+  DTS:CreatorName="RAVEN\Andre"
+  DTS:DTSID="{2D87F04F-BE39-43ED-800D-2A54A9353C13}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1300.375"
+  DTS:LocaleID="2057"
+  DTS:ObjectName="Antivirals Imports"
+  DTS:PackageType="5"
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{31FC6E58-9B3C-46D2-A225-F03F1F1A33B9}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(localdb)\ProjectsV13.Clypeus]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{61694FB4-BF62-4DA4-A597-072D06FB113B}"
+      DTS:ObjectName="(localdb)\ProjectsV13.Clypeus">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=(localdb)\ProjectsV13;Initial Catalog=Clypeus;Integrated Security=True;Application Name=SSIS-Antivirals Imports-{61694FB4-BF62-4DA4-A597-072D06FB113B}(localdb)\ProjectsV13.Clypeus;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(localdb)\ProjectsV13.Clypeus1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{802A5907-361A-4AE7-AB4A-2735AC70E046}"
+      DTS:ObjectName="(localdb)\ProjectsV13.Clypeus1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=(localdb)\ProjectsV13;Initial Catalog=Clypeus;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Antiviral File Import]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{16F60ABD-5409-49BB-890B-1CF2E00C1E37}"
+      DTS:ObjectName="Antiviral File Import">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Temp\antivirals.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="7"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="atc"
+              DTS:DTSID="{595D103C-EC68-49BE-98F2-4BBF7E0D4F40}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="67"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="name"
+              DTS:DTSID="{3B50C961-162D-4708-84DA-A08263478D5C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="66"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="atc_group"
+              DTS:DTSID="{7E8A3715-D17C-42CF-9F04-5A4E3E788948}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{76403DE4-0D10-443B-BEBB-1196487DE501}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Temp\testo.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="66"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="atc_group"
+              DTS:DTSID="{33B095FB-B22D-4DDC-B815-044376FA263A}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Import Antiviral Drug Groups"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{B380600B-328D-4275-9E08-7B4253A0519B}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Import Antiviral Drug Groups">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Import Antiviral Drug Groups\ADO NET Destination"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+              name="ADO NET Destination"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The Destination database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"medicinals"."DrugGroup"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Antiviral Drug Groups\ADO NET Destination.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[(localdb)\ProjectsV13.Clypeus]"
+                  connectionManagerRefId="Package.ConnectionManagers[(localdb)\ProjectsV13.Clypeus]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import Antiviral Drug Groups\ADO NET Destination.Inputs[ADO NET Destination Input]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="ADO NET Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Antiviral Drug Groups\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[active]"
+                      cachedDataType="bool"
+                      cachedName="active"
+                      externalMetadataColumnId="Package\Import Antiviral Drug Groups\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Active]"
+                      lineageId="Package\Import Antiviral Drug Groups\Aggregate.Outputs[Aggregate Output 1].Columns[active]" />
+                    <inputColumn
+                      refId="Package\Import Antiviral Drug Groups\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[typeid]"
+                      cachedDataType="i4"
+                      cachedName="typeid"
+                      externalMetadataColumnId="Package\Import Antiviral Drug Groups\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[DrugTypeId]"
+                      lineageId="Package\Import Antiviral Drug Groups\Aggregate.Outputs[Aggregate Output 1].Columns[typeid]" />
+                    <inputColumn
+                      refId="Package\Import Antiviral Drug Groups\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[atc_group]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="66"
+                      cachedName="atc_group"
+                      externalMetadataColumnId="Package\Import Antiviral Drug Groups\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Description]"
+                      lineageId="Package\Import Antiviral Drug Groups\Aggregate.Outputs[Aggregate Output 1].Columns[atc_group]" />
+                    <inputColumn
+                      refId="Package\Import Antiviral Drug Groups\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[atcGroupCode]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="atcGroupCode"
+                      externalMetadataColumnId="Package\Import Antiviral Drug Groups\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Code]"
+                      lineageId="Package\Import Antiviral Drug Groups\Aggregate.Outputs[Aggregate Output 1].Columns[atcGroupCode]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Antiviral Drug Groups\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Id]"
+                      dataType="i4"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\Import Antiviral Drug Groups\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Code]"
+                      dataType="wstr"
+                      length="10"
+                      name="Code" />
+                    <externalMetadataColumn
+                      refId="Package\Import Antiviral Drug Groups\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Description]"
+                      dataType="wstr"
+                      length="100"
+                      name="Description" />
+                    <externalMetadataColumn
+                      refId="Package\Import Antiviral Drug Groups\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[DrugTypeId]"
+                      dataType="i4"
+                      name="DrugTypeId" />
+                    <externalMetadataColumn
+                      refId="Package\Import Antiviral Drug Groups\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Active]"
+                      dataType="bool"
+                      name="Active" />
+                    <externalMetadataColumn
+                      refId="Package\Import Antiviral Drug Groups\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Inserted]"
+                      dataType="dbTimeStamp"
+                      name="Inserted" />
+                    <externalMetadataColumn
+                      refId="Package\Import Antiviral Drug Groups\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Updated]"
+                      dataType="dbTimeStamp"
+                      name="Updated" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Antiviral Drug Groups\ADO NET Destination.Outputs[ADO NET Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="ADO NET Destination Error Output"
+                  synchronousInputId="Package\Import Antiviral Drug Groups\ADO NET Destination.Inputs[ADO NET Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Antiviral Drug Groups\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Antiviral Drug Groups\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Antiviral Drug Groups\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Antiviral Drug Groups\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Antiviral Drug Groups\Aggregate"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
+              name="Aggregate"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of distinct values in a column that the aggregation counts distinctly. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no CountDistinctScale value is used."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of distinct values in a column that the aggregation counts distinctly. If a CountDistinctScale value is specified, the value in CountDistinctKeys takes precedence."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage by which memory can be extended during the aggregation. Valid values are between 1 and 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Import Antiviral Drug Groups\Aggregate.Inputs[Aggregate Input 1]"
+                  name="Aggregate Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Antiviral Drug Groups\Aggregate.Inputs[Aggregate Input 1].Columns[atc_group]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="66"
+                      cachedName="atc_group"
+                      lineageId="Package\Import Antiviral Drug Groups\Import Groups From Antiviral File.Outputs[Flat File Source Output].Columns[atc_group]" />
+                    <inputColumn
+                      refId="Package\Import Antiviral Drug Groups\Aggregate.Inputs[Aggregate Input 1].Columns[typeid]"
+                      cachedDataType="i4"
+                      cachedName="typeid"
+                      lineageId="Package\Import Antiviral Drug Groups\Derived Column.Outputs[Derived Column Output].Columns[typeid]" />
+                    <inputColumn
+                      refId="Package\Import Antiviral Drug Groups\Aggregate.Inputs[Aggregate Input 1].Columns[active]"
+                      cachedDataType="bool"
+                      cachedName="active"
+                      lineageId="Package\Import Antiviral Drug Groups\Derived Column.Outputs[Derived Column Output].Columns[active]" />
+                    <inputColumn
+                      refId="Package\Import Antiviral Drug Groups\Aggregate.Inputs[Aggregate Input 1].Columns[atcGroupCode]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="atcGroupCode"
+                      lineageId="Package\Import Antiviral Drug Groups\Derived Column.Outputs[Derived Column Output].Columns[atcGroupCode]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Antiviral Drug Groups\Aggregate.Outputs[Aggregate Output 1]"
+                  name="Aggregate Output 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Antiviral Drug Groups\Aggregate.Outputs[Aggregate Output 1].Columns[atc_group]"
+                      codePage="1252"
+                      dataType="str"
+                      length="66"
+                      lineageId="Package\Import Antiviral Drug Groups\Aggregate.Outputs[Aggregate Output 1].Columns[atc_group]"
+                      name="atc_group">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Import Antiviral Drug Groups\Import Groups From Antiviral File.Outputs[Flat File Source Output].Columns[atc_group]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Antiviral Drug Groups\Aggregate.Outputs[Aggregate Output 1].Columns[typeid]"
+                      dataType="i4"
+                      lineageId="Package\Import Antiviral Drug Groups\Aggregate.Outputs[Aggregate Output 1].Columns[typeid]"
+                      name="typeid">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Import Antiviral Drug Groups\Derived Column.Outputs[Derived Column Output].Columns[typeid]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Antiviral Drug Groups\Aggregate.Outputs[Aggregate Output 1].Columns[active]"
+                      dataType="bool"
+                      lineageId="Package\Import Antiviral Drug Groups\Aggregate.Outputs[Aggregate Output 1].Columns[active]"
+                      name="active">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Import Antiviral Drug Groups\Derived Column.Outputs[Derived Column Output].Columns[active]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Antiviral Drug Groups\Aggregate.Outputs[Aggregate Output 1].Columns[atcGroupCode]"
+                      dataType="wstr"
+                      length="1"
+                      lineageId="Package\Import Antiviral Drug Groups\Aggregate.Outputs[Aggregate Output 1].Columns[atcGroupCode]"
+                      name="atcGroupCode">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Import Antiviral Drug Groups\Derived Column.Outputs[Derived Column Output].Columns[atcGroupCode]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Antiviral Drug Groups\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Import Antiviral Drug Groups\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Antiviral Drug Groups\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Import Antiviral Drug Groups\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Antiviral Drug Groups\Derived Column.Outputs[Derived Column Output].Columns[atcGroupCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="1"
+                      lineageId="Package\Import Antiviral Drug Groups\Derived Column.Outputs[Derived Column Output].Columns[atcGroupCode]"
+                      name="atcGroupCode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">" "</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">" "</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Antiviral Drug Groups\Derived Column.Outputs[Derived Column Output].Columns[typeid]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import Antiviral Drug Groups\Derived Column.Outputs[Derived Column Output].Columns[typeid]"
+                      name="typeid"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">2</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">2</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Antiviral Drug Groups\Derived Column.Outputs[Derived Column Output].Columns[active]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import Antiviral Drug Groups\Derived Column.Outputs[Derived Column Output].Columns[active]"
+                      name="active"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression"> TRUE </property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression"> TRUE </property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import Antiviral Drug Groups\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Import Antiviral Drug Groups\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Antiviral Drug Groups\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Antiviral Drug Groups\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Antiviral Drug Groups\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Antiviral Drug Groups\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Antiviral Drug Groups\Import Groups From Antiviral File"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="2057"
+              name="Import Groups From Antiviral File"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Antiviral Drug Groups\Import Groups From Antiviral File.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Antiviral File Import]"
+                  connectionManagerRefId="Package.ConnectionManagers[Antiviral File Import]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Import Antiviral Drug Groups\Import Groups From Antiviral File.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Antiviral Drug Groups\Import Groups From Antiviral File.Outputs[Flat File Source Output].Columns[atc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Antiviral Drug Groups\Import Groups From Antiviral File.Outputs[Flat File Source Output].ExternalColumns[atc]"
+                      length="7"
+                      lineageId="Package\Import Antiviral Drug Groups\Import Groups From Antiviral File.Outputs[Flat File Source Output].Columns[atc]"
+                      name="atc"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Antiviral Drug Groups\Import Groups From Antiviral File.Outputs[Flat File Source Output].Columns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Antiviral Drug Groups\Import Groups From Antiviral File.Outputs[Flat File Source Output].ExternalColumns[name]"
+                      length="67"
+                      lineageId="Package\Import Antiviral Drug Groups\Import Groups From Antiviral File.Outputs[Flat File Source Output].Columns[name]"
+                      name="name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Antiviral Drug Groups\Import Groups From Antiviral File.Outputs[Flat File Source Output].Columns[atc_group]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Antiviral Drug Groups\Import Groups From Antiviral File.Outputs[Flat File Source Output].ExternalColumns[atc_group]"
+                      length="66"
+                      lineageId="Package\Import Antiviral Drug Groups\Import Groups From Antiviral File.Outputs[Flat File Source Output].Columns[atc_group]"
+                      name="atc_group"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Antiviral Drug Groups\Import Groups From Antiviral File.Outputs[Flat File Source Output].ExternalColumns[atc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="7"
+                      name="atc" />
+                    <externalMetadataColumn
+                      refId="Package\Import Antiviral Drug Groups\Import Groups From Antiviral File.Outputs[Flat File Source Output].ExternalColumns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="67"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\Import Antiviral Drug Groups\Import Groups From Antiviral File.Outputs[Flat File Source Output].ExternalColumns[atc_group]"
+                      codePage="1252"
+                      dataType="str"
+                      length="66"
+                      name="atc_group" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Import Antiviral Drug Groups\Import Groups From Antiviral File.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Antiviral Drug Groups\Import Groups From Antiviral File.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Import Antiviral Drug Groups\Import Groups From Antiviral File.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Import Antiviral Drug Groups\Import Groups From Antiviral File.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Antiviral Drug Groups\Import Groups From Antiviral File.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Antiviral Drug Groups\Import Groups From Antiviral File.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Antiviral Drug Groups\Import Groups From Antiviral File.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Import Antiviral Drug Groups.Paths[Aggregate Output 1]"
+              endId="Package\Import Antiviral Drug Groups\ADO NET Destination.Inputs[ADO NET Destination Input]"
+              name="Aggregate Output 1"
+              startId="Package\Import Antiviral Drug Groups\Aggregate.Outputs[Aggregate Output 1]" />
+            <path
+              refId="Package\Import Antiviral Drug Groups.Paths[Derived Column Output]"
+              endId="Package\Import Antiviral Drug Groups\Aggregate.Inputs[Aggregate Input 1]"
+              name="Derived Column Output"
+              startId="Package\Import Antiviral Drug Groups\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Import Antiviral Drug Groups.Paths[Flat File Source Output]"
+              endId="Package\Import Antiviral Drug Groups\Derived Column.Inputs[Derived Column Input]"
+              name="Flat File Source Output"
+              startId="Package\Import Antiviral Drug Groups\Import Groups From Antiviral File.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Update Group With ATC"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{F0514833-F0A6-4161-B5EF-9F83B01026BB}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update Group With ATC"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Update Group With ATC\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Update Group With ATC\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Update Group With ATC\Data Conversion.Inputs[Data Conversion Input].Columns[Atc6]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="Atc6"
+                      lineageId="Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[Atc6]" />
+                    <inputColumn
+                      refId="Package\Update Group With ATC\Data Conversion.Inputs[Data Conversion Input].Columns[Id]"
+                      cachedDataType="i4"
+                      cachedName="Id"
+                      lineageId="Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[Id]" />
+                    <inputColumn
+                      refId="Package\Update Group With ATC\Data Conversion.Inputs[Data Conversion Input].Columns[atc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="7"
+                      cachedName="atc"
+                      lineageId="Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[atc]" />
+                    <inputColumn
+                      refId="Package\Update Group With ATC\Data Conversion.Inputs[Data Conversion Input].Columns[name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="67"
+                      cachedName="name"
+                      lineageId="Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[name]" />
+                    <inputColumn
+                      refId="Package\Update Group With ATC\Data Conversion.Inputs[Data Conversion Input].Columns[atc_group]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="66"
+                      cachedName="atc_group"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[atc_group]" />
+                    <inputColumn
+                      refId="Package\Update Group With ATC\Data Conversion.Inputs[Data Conversion Input].Columns[Code]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Code"
+                      lineageId="Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[Code]" />
+                    <inputColumn
+                      refId="Package\Update Group With ATC\Data Conversion.Inputs[Data Conversion Input].Columns[Description]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Description"
+                      lineageId="Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[Description]" />
+                    <inputColumn
+                      refId="Package\Update Group With ATC\Data Conversion.Inputs[Data Conversion Input].Columns[DrugTypeId]"
+                      cachedDataType="i4"
+                      cachedName="DrugTypeId"
+                      lineageId="Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[DrugTypeId]" />
+                    <inputColumn
+                      refId="Package\Update Group With ATC\Data Conversion.Inputs[Data Conversion Input].Columns[Active]"
+                      cachedDataType="bool"
+                      cachedName="Active"
+                      lineageId="Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[Active]" />
+                    <inputColumn
+                      refId="Package\Update Group With ATC\Data Conversion.Inputs[Data Conversion Input].Columns[Inserted]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Inserted"
+                      lineageId="Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[Inserted]" />
+                    <inputColumn
+                      refId="Package\Update Group With ATC\Data Conversion.Inputs[Data Conversion Input].Columns[Updated]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Updated"
+                      lineageId="Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[Updated]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Update Group With ATC\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Update Group With ATC\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Atc6]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="5"
+                      lineageId="Package\Update Group With ATC\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Atc6]"
+                      name="Copy of Atc6"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[Atc6]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Update Group With ATC\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Id]"
+                      name="Copy of Id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[Id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of atc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="7"
+                      lineageId="Package\Update Group With ATC\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of atc]"
+                      name="Copy of atc"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[atc]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="67"
+                      lineageId="Package\Update Group With ATC\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of name]"
+                      name="Copy of name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[name]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of atc_group]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="66"
+                      lineageId="Package\Update Group With ATC\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of atc_group]"
+                      name="Copy of atc_group"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[atc_group]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Code]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\Update Group With ATC\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Code]"
+                      name="Copy of Code"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[Code]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Description]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="100"
+                      lineageId="Package\Update Group With ATC\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Description]"
+                      name="Copy of Description"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[Description]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DrugTypeId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Update Group With ATC\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DrugTypeId]"
+                      name="Copy of DrugTypeId"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[DrugTypeId]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Active]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Update Group With ATC\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Active]"
+                      name="Copy of Active"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[Active]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Inserted]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Update Group With ATC\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Inserted]"
+                      name="Copy of Inserted"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[Inserted]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Updated]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Update Group With ATC\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Updated]"
+                      name="Copy of Updated"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[Updated]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Update Group With ATC\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Update Group With ATC\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Update Group With ATC\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Update Group With ATC\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Update Group With ATC\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Update Group With ATC\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Update Group With ATC\Derived Column.Inputs[Derived Column Input].Columns[name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="67"
+                      cachedName="name"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Update Group With ATC\Read Code.Outputs[Flat File Source Output].Columns[name]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[TRIM](#{Package\Update Group With ATC\Read Code.Outputs[Flat File Source Output].Columns[name]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">TRIM(name)</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Update Group With ATC\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Update Group With ATC\Derived Column.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Update Group With ATC\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Update Group With ATC\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Update Group With ATC\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Update Group With ATC\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Update Group With ATC\Derived Column 1"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column 1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Update Group With ATC\Derived Column 1.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Update Group With ATC\Derived Column 1.Inputs[Derived Column Input].Columns[Description]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Description"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output].Columns[Description]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[TRIM](#{Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output].Columns[Description]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">TRIM(Description)</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Update Group With ATC\Derived Column 1.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Update Group With ATC\Derived Column 1.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Update Group With ATC\Derived Column 1.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Update Group With ATC\Derived Column 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Update Group With ATC\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Update Group With ATC\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Update Group With ATC\Existing Drug Groups"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
+              name="Existing Drug Groups"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement used by the component to extract data."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from medicinals.druggroup where drugTypeId = 2</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether to allow non-string external columns to be implicitly converted to strings at the output columns."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="The Source database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the mode to retrieve external column information"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Update Group With ATC\Existing Drug Groups.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[(localdb)\ProjectsV13.Clypeus]"
+                  connectionManagerRefId="Package.ConnectionManagers[(localdb)\ProjectsV13.Clypeus]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output]"
+                  name="ADO NET Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output].Columns[Id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output].ExternalColumns[Id]"
+                      lineageId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output].Columns[Id]"
+                      name="Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output].Columns[Code]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output].ExternalColumns[Code]"
+                      length="10"
+                      lineageId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output].Columns[Code]"
+                      name="Code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output].Columns[Description]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output].ExternalColumns[Description]"
+                      length="100"
+                      lineageId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output].Columns[Description]"
+                      name="Description"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output].Columns[DrugTypeId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output].ExternalColumns[DrugTypeId]"
+                      lineageId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output].Columns[DrugTypeId]"
+                      name="DrugTypeId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output].Columns[Active]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output].ExternalColumns[Active]"
+                      lineageId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output].Columns[Active]"
+                      name="Active"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output].Columns[Inserted]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output].ExternalColumns[Inserted]"
+                      lineageId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output].Columns[Inserted]"
+                      name="Inserted"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output].Columns[Updated]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output].ExternalColumns[Updated]"
+                      lineageId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output].Columns[Updated]"
+                      name="Updated"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output].ExternalColumns[Id]"
+                      dataType="i4"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output].ExternalColumns[Code]"
+                      dataType="wstr"
+                      length="10"
+                      name="Code" />
+                    <externalMetadataColumn
+                      refId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output].ExternalColumns[Description]"
+                      dataType="wstr"
+                      length="100"
+                      name="Description" />
+                    <externalMetadataColumn
+                      refId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output].ExternalColumns[DrugTypeId]"
+                      dataType="i4"
+                      name="DrugTypeId" />
+                    <externalMetadataColumn
+                      refId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output].ExternalColumns[Active]"
+                      dataType="bool"
+                      name="Active" />
+                    <externalMetadataColumn
+                      refId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output].ExternalColumns[Inserted]"
+                      dataType="dbTimeStamp"
+                      name="Inserted" />
+                    <externalMetadataColumn
+                      refId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output].ExternalColumns[Updated]"
+                      dataType="dbTimeStamp"
+                      name="Updated" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Error Output]"
+                  isErrorOut="true"
+                  name="ADO NET Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Error Output].Columns[Id]"
+                      dataType="i4"
+                      lineageId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Error Output].Columns[Id]"
+                      name="Id" />
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Error Output].Columns[Code]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Error Output].Columns[Code]"
+                      name="Code" />
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Error Output].Columns[Description]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Error Output].Columns[Description]"
+                      name="Description" />
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Error Output].Columns[DrugTypeId]"
+                      dataType="i4"
+                      lineageId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Error Output].Columns[DrugTypeId]"
+                      name="DrugTypeId" />
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Error Output].Columns[Active]"
+                      dataType="bool"
+                      lineageId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Error Output].Columns[Active]"
+                      name="Active" />
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Error Output].Columns[Inserted]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Error Output].Columns[Inserted]"
+                      name="Inserted" />
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Error Output].Columns[Updated]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Error Output].Columns[Updated]"
+                      name="Updated" />
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Update Group With ATC\Get a reasonable atc code"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Get a reasonable atc code"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Update Group With ATC\Get a reasonable atc code.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Update Group With ATC\Get a reasonable atc code.Inputs[Derived Column Input].Columns[atc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="7"
+                      cachedName="atc"
+                      lineageId="Package\Update Group With ATC\Read Code.Outputs[Flat File Source Output].Columns[atc]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Update Group With ATC\Get a reasonable atc code.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Update Group With ATC\Get a reasonable atc code.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Get a reasonable atc code.Outputs[Derived Column Output].Columns[Atc6]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="5"
+                      lineageId="Package\Update Group With ATC\Get a reasonable atc code.Outputs[Derived Column Output].Columns[Atc6]"
+                      name="Atc6"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[SUBSTRING](#{Package\Update Group With ATC\Read Code.Outputs[Flat File Source Output].Columns[atc]},1,5)</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">SUBSTRING(atc,1,5)</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Update Group With ATC\Get a reasonable atc code.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Update Group With ATC\Get a reasonable atc code.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Get a reasonable atc code.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Update Group With ATC\Get a reasonable atc code.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Get a reasonable atc code.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Update Group With ATC\Get a reasonable atc code.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Update Group With ATC\Merge Join"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Update Group With ATC\Merge Join.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Update Group With ATC\Merge Join.Inputs[Merge Join Left Input].Columns[atc_group]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="66"
+                      cachedName="atc_group"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Update Group With ATC\Sort.Outputs[Sort Output].Columns[atc_group]" />
+                    <inputColumn
+                      refId="Package\Update Group With ATC\Merge Join.Inputs[Merge Join Left Input].Columns[Atc6]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="Atc6"
+                      lineageId="Package\Update Group With ATC\Sort.Outputs[Sort Output].Columns[Atc6]" />
+                    <inputColumn
+                      refId="Package\Update Group With ATC\Merge Join.Inputs[Merge Join Left Input].Columns[name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="67"
+                      cachedName="name"
+                      lineageId="Package\Update Group With ATC\Sort.Outputs[Sort Output].Columns[name]" />
+                    <inputColumn
+                      refId="Package\Update Group With ATC\Merge Join.Inputs[Merge Join Left Input].Columns[atc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="7"
+                      cachedName="atc"
+                      lineageId="Package\Update Group With ATC\Sort.Outputs[Sort Output].Columns[atc]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Update Group With ATC\Merge Join.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Update Group With ATC\Merge Join.Inputs[Merge Join Right Input].Columns[Description]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Description"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Update Group With ATC\Sort 1.Outputs[Sort Output].Columns[Description]" />
+                    <inputColumn
+                      refId="Package\Update Group With ATC\Merge Join.Inputs[Merge Join Right Input].Columns[Id]"
+                      cachedDataType="i4"
+                      cachedName="Id"
+                      lineageId="Package\Update Group With ATC\Sort 1.Outputs[Sort Output].Columns[Id]" />
+                    <inputColumn
+                      refId="Package\Update Group With ATC\Merge Join.Inputs[Merge Join Right Input].Columns[Code]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Code"
+                      lineageId="Package\Update Group With ATC\Sort 1.Outputs[Sort Output].Columns[Code]" />
+                    <inputColumn
+                      refId="Package\Update Group With ATC\Merge Join.Inputs[Merge Join Right Input].Columns[DrugTypeId]"
+                      cachedDataType="i4"
+                      cachedName="DrugTypeId"
+                      lineageId="Package\Update Group With ATC\Sort 1.Outputs[Sort Output].Columns[DrugTypeId]" />
+                    <inputColumn
+                      refId="Package\Update Group With ATC\Merge Join.Inputs[Merge Join Right Input].Columns[Active]"
+                      cachedDataType="bool"
+                      cachedName="Active"
+                      lineageId="Package\Update Group With ATC\Sort 1.Outputs[Sort Output].Columns[Active]" />
+                    <inputColumn
+                      refId="Package\Update Group With ATC\Merge Join.Inputs[Merge Join Right Input].Columns[Inserted]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Inserted"
+                      lineageId="Package\Update Group With ATC\Sort 1.Outputs[Sort Output].Columns[Inserted]" />
+                    <inputColumn
+                      refId="Package\Update Group With ATC\Merge Join.Inputs[Merge Join Right Input].Columns[Updated]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Updated"
+                      lineageId="Package\Update Group With ATC\Sort 1.Outputs[Sort Output].Columns[Updated]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output]"
+                  isSorted="true"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[Atc6]"
+                      dataType="wstr"
+                      length="5"
+                      lineageId="Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[Atc6]"
+                      name="Atc6">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Update Group With ATC\Merge Join.Inputs[Merge Join Left Input].Columns[Atc6]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[Id]"
+                      dataType="i4"
+                      lineageId="Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[Id]"
+                      name="Id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Update Group With ATC\Merge Join.Inputs[Merge Join Right Input].Columns[Id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[atc_group]"
+                      codePage="1252"
+                      dataType="str"
+                      length="66"
+                      lineageId="Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[atc_group]"
+                      name="atc_group"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Update Group With ATC\Merge Join.Inputs[Merge Join Left Input].Columns[atc_group]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="67"
+                      lineageId="Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[name]"
+                      name="name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Update Group With ATC\Merge Join.Inputs[Merge Join Left Input].Columns[name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[atc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="7"
+                      lineageId="Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[atc]"
+                      name="atc">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Update Group With ATC\Merge Join.Inputs[Merge Join Left Input].Columns[atc]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[Code]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[Code]"
+                      name="Code">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Update Group With ATC\Merge Join.Inputs[Merge Join Right Input].Columns[Code]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[Description]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[Description]"
+                      name="Description">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Update Group With ATC\Merge Join.Inputs[Merge Join Right Input].Columns[Description]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[DrugTypeId]"
+                      dataType="i4"
+                      lineageId="Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[DrugTypeId]"
+                      name="DrugTypeId">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Update Group With ATC\Merge Join.Inputs[Merge Join Right Input].Columns[DrugTypeId]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[Active]"
+                      dataType="bool"
+                      lineageId="Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[Active]"
+                      name="Active">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Update Group With ATC\Merge Join.Inputs[Merge Join Right Input].Columns[Active]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[Inserted]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[Inserted]"
+                      name="Inserted">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Update Group With ATC\Merge Join.Inputs[Merge Join Right Input].Columns[Inserted]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[Updated]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[Updated]"
+                      name="Updated">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Update Group With ATC\Merge Join.Inputs[Merge Join Right Input].Columns[Updated]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Update Group With ATC\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE medicinals.druggroup set Code = ? where Id = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Update Group With ATC\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[(localdb)\ProjectsV13.Clypeus1]"
+                  connectionManagerRefId="Package.ConnectionManagers[(localdb)\ProjectsV13.Clypeus1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Update Group With ATC\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Update Group With ATC\OLE DB Command.Inputs[OLE DB Command Input].Columns[Id]"
+                      cachedDataType="i4"
+                      cachedName="Id"
+                      externalMetadataColumnId="Package\Update Group With ATC\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[Id]" />
+                    <inputColumn
+                      refId="Package\Update Group With ATC\OLE DB Command.Inputs[OLE DB Command Input].Columns[Copy of Atc6]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="Copy of Atc6"
+                      externalMetadataColumnId="Package\Update Group With ATC\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Update Group With ATC\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Atc6]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Update Group With ATC\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Update Group With ATC\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Update Group With ATC\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Update Group With ATC\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Update Group With ATC\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Update Group With ATC\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Update Group With ATC\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Update Group With ATC\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Update Group With ATC\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Update Group With ATC\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Update Group With ATC\Read Code"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="2057"
+              name="Read Code"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Update Group With ATC\Read Code.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Antiviral File Import]"
+                  connectionManagerRefId="Package.ConnectionManagers[Antiviral File Import]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Update Group With ATC\Read Code.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Read Code.Outputs[Flat File Source Output].Columns[atc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Update Group With ATC\Read Code.Outputs[Flat File Source Output].ExternalColumns[atc]"
+                      length="7"
+                      lineageId="Package\Update Group With ATC\Read Code.Outputs[Flat File Source Output].Columns[atc]"
+                      name="atc"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Read Code.Outputs[Flat File Source Output].Columns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Update Group With ATC\Read Code.Outputs[Flat File Source Output].ExternalColumns[name]"
+                      length="67"
+                      lineageId="Package\Update Group With ATC\Read Code.Outputs[Flat File Source Output].Columns[name]"
+                      name="name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Read Code.Outputs[Flat File Source Output].Columns[atc_group]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Update Group With ATC\Read Code.Outputs[Flat File Source Output].ExternalColumns[atc_group]"
+                      length="66"
+                      lineageId="Package\Update Group With ATC\Read Code.Outputs[Flat File Source Output].Columns[atc_group]"
+                      name="atc_group"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Update Group With ATC\Read Code.Outputs[Flat File Source Output].ExternalColumns[atc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="7"
+                      name="atc" />
+                    <externalMetadataColumn
+                      refId="Package\Update Group With ATC\Read Code.Outputs[Flat File Source Output].ExternalColumns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="67"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\Update Group With ATC\Read Code.Outputs[Flat File Source Output].ExternalColumns[atc_group]"
+                      codePage="1252"
+                      dataType="str"
+                      length="66"
+                      name="atc_group" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Update Group With ATC\Read Code.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Read Code.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Update Group With ATC\Read Code.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Read Code.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Update Group With ATC\Read Code.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Read Code.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Update Group With ATC\Read Code.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Update Group With ATC\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Update Group With ATC\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Update Group With ATC\Sort.Inputs[Sort Input].Columns[atc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="7"
+                      cachedName="atc"
+                      lineageId="Package\Update Group With ATC\Read Code.Outputs[Flat File Source Output].Columns[atc]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Update Group With ATC\Sort.Inputs[Sort Input].Columns[name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="67"
+                      cachedName="name"
+                      lineageId="Package\Update Group With ATC\Read Code.Outputs[Flat File Source Output].Columns[name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Update Group With ATC\Sort.Inputs[Sort Input].Columns[atc_group]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="66"
+                      cachedName="atc_group"
+                      lineageId="Package\Update Group With ATC\Read Code.Outputs[Flat File Source Output].Columns[atc_group]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Update Group With ATC\Sort.Inputs[Sort Input].Columns[Atc6]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="Atc6"
+                      lineageId="Package\Update Group With ATC\Get a reasonable atc code.Outputs[Derived Column Output].Columns[Atc6]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Update Group With ATC\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Sort.Outputs[Sort Output].Columns[atc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="7"
+                      lineageId="Package\Update Group With ATC\Sort.Outputs[Sort Output].Columns[atc]"
+                      name="atc">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Update Group With ATC\Read Code.Outputs[Flat File Source Output].Columns[atc]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Sort.Outputs[Sort Output].Columns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="67"
+                      lineageId="Package\Update Group With ATC\Sort.Outputs[Sort Output].Columns[name]"
+                      name="name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Update Group With ATC\Read Code.Outputs[Flat File Source Output].Columns[name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Sort.Outputs[Sort Output].Columns[atc_group]"
+                      codePage="1252"
+                      dataType="str"
+                      length="66"
+                      lineageId="Package\Update Group With ATC\Sort.Outputs[Sort Output].Columns[atc_group]"
+                      name="atc_group"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Update Group With ATC\Read Code.Outputs[Flat File Source Output].Columns[atc_group]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Sort.Outputs[Sort Output].Columns[Atc6]"
+                      dataType="wstr"
+                      length="5"
+                      lineageId="Package\Update Group With ATC\Sort.Outputs[Sort Output].Columns[Atc6]"
+                      name="Atc6">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Update Group With ATC\Get a reasonable atc code.Outputs[Derived Column Output].Columns[Atc6]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Update Group With ATC\Sort 1"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort 1"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Update Group With ATC\Sort 1.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Update Group With ATC\Sort 1.Inputs[Sort Input].Columns[Id]"
+                      cachedDataType="i4"
+                      cachedName="Id"
+                      lineageId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output].Columns[Id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Update Group With ATC\Sort 1.Inputs[Sort Input].Columns[Code]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Code"
+                      lineageId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output].Columns[Code]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Update Group With ATC\Sort 1.Inputs[Sort Input].Columns[Description]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Description"
+                      lineageId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output].Columns[Description]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Update Group With ATC\Sort 1.Inputs[Sort Input].Columns[DrugTypeId]"
+                      cachedDataType="i4"
+                      cachedName="DrugTypeId"
+                      lineageId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output].Columns[DrugTypeId]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Update Group With ATC\Sort 1.Inputs[Sort Input].Columns[Active]"
+                      cachedDataType="bool"
+                      cachedName="Active"
+                      lineageId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output].Columns[Active]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Update Group With ATC\Sort 1.Inputs[Sort Input].Columns[Inserted]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Inserted"
+                      lineageId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output].Columns[Inserted]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Update Group With ATC\Sort 1.Inputs[Sort Input].Columns[Updated]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Updated"
+                      lineageId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output].Columns[Updated]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Update Group With ATC\Sort 1.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Sort 1.Outputs[Sort Output].Columns[Id]"
+                      dataType="i4"
+                      lineageId="Package\Update Group With ATC\Sort 1.Outputs[Sort Output].Columns[Id]"
+                      name="Id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output].Columns[Id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Sort 1.Outputs[Sort Output].Columns[Code]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Update Group With ATC\Sort 1.Outputs[Sort Output].Columns[Code]"
+                      name="Code">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output].Columns[Code]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Sort 1.Outputs[Sort Output].Columns[Description]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Update Group With ATC\Sort 1.Outputs[Sort Output].Columns[Description]"
+                      name="Description"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output].Columns[Description]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Sort 1.Outputs[Sort Output].Columns[DrugTypeId]"
+                      dataType="i4"
+                      lineageId="Package\Update Group With ATC\Sort 1.Outputs[Sort Output].Columns[DrugTypeId]"
+                      name="DrugTypeId">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output].Columns[DrugTypeId]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Sort 1.Outputs[Sort Output].Columns[Active]"
+                      dataType="bool"
+                      lineageId="Package\Update Group With ATC\Sort 1.Outputs[Sort Output].Columns[Active]"
+                      name="Active">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output].Columns[Active]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Sort 1.Outputs[Sort Output].Columns[Inserted]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Update Group With ATC\Sort 1.Outputs[Sort Output].Columns[Inserted]"
+                      name="Inserted">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output].Columns[Inserted]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update Group With ATC\Sort 1.Outputs[Sort Output].Columns[Updated]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Update Group With ATC\Sort 1.Outputs[Sort Output].Columns[Updated]"
+                      name="Updated">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output].Columns[Updated]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Update Group With ATC.Paths[ADO NET Source Output]"
+              endId="Package\Update Group With ATC\Derived Column 1.Inputs[Derived Column Input]"
+              name="ADO NET Source Output"
+              startId="Package\Update Group With ATC\Existing Drug Groups.Outputs[ADO NET Source Output]" />
+            <path
+              refId="Package\Update Group With ATC.Paths[Data Conversion Output]"
+              endId="Package\Update Group With ATC\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Data Conversion Output"
+              startId="Package\Update Group With ATC\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Update Group With ATC.Paths[Derived Column Output]"
+              endId="Package\Update Group With ATC\Derived Column.Inputs[Derived Column Input]"
+              name="Derived Column Output"
+              startId="Package\Update Group With ATC\Get a reasonable atc code.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Update Group With ATC.Paths[Derived Column Output1]"
+              endId="Package\Update Group With ATC\Sort.Inputs[Sort Input]"
+              name="Derived Column Output"
+              startId="Package\Update Group With ATC\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Update Group With ATC.Paths[Derived Column Output2]"
+              endId="Package\Update Group With ATC\Sort 1.Inputs[Sort Input]"
+              name="Derived Column Output"
+              startId="Package\Update Group With ATC\Derived Column 1.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Update Group With ATC.Paths[Flat File Source Output]"
+              endId="Package\Update Group With ATC\Get a reasonable atc code.Inputs[Derived Column Input]"
+              name="Flat File Source Output"
+              startId="Package\Update Group With ATC\Read Code.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Update Group With ATC.Paths[Merge Join Output]"
+              endId="Package\Update Group With ATC\Data Conversion.Inputs[Data Conversion Input]"
+              name="Merge Join Output"
+              startId="Package\Update Group With ATC\Merge Join.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Update Group With ATC.Paths[Sort Output]"
+              endId="Package\Update Group With ATC\Merge Join.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Update Group With ATC\Sort.Outputs[Sort Output]" />
+            <path
+              refId="Package\Update Group With ATC.Paths[Sort Output1]"
+              endId="Package\Update Group With ATC\Merge Join.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Update Group With ATC\Sort 1.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{3E420664-8D78-4909-9659-BF83323E393E}"
+      DTS:From="Package\Import Antiviral Drug Groups"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Update Group With ATC" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="209.6,41.6"
+          Id="Package\Import Antiviral Drug Groups"
+          TopLeft="5.5,5.5" />
+        <NodeLayout
+          Size="190.4,41.6"
+          Id="Package\Update Group With ATC"
+          TopLeft="37.9999984900157,96.3733340992398" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="110.3,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="22.8999984900157,49.2733340992398"
+              Start="0,0"
+              End="22.8999984900157,41.7733340992398">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.6366670496199" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.6366670496199"
+                    Point2="0,24.6366670496199"
+                    Point3="4,24.6366670496199" />
+                  <mssgle:LineSegment
+                    End="18.8999984900157,24.6366670496199" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.8999984900157,24.6366670496199"
+                    Point2="22.8999984900157,24.6366670496199"
+                    Point3="22.8999984900157,28.6366670496199" />
+                  <mssgle:LineSegment
+                    End="22.8999984900157,41.7733340992398" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Import Antiviral Drug Groups">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="231.2,41.6"
+          Id="Package\Import Antiviral Drug Groups\Import Groups From Antiviral File"
+          TopLeft="162.4,25.6" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Import Antiviral Drug Groups\Derived Column"
+          TopLeft="201.6,116.8" />
+        <EdgeLayout
+          Id="Package\Import Antiviral Drug Groups.Paths[Flat File Source Output]"
+          TopLeft="278,67.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49.6"
+              Start="0,0"
+              End="0,42.1">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.1" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="126.4,41.6"
+          Id="Package\Import Antiviral Drug Groups\Aggregate"
+          TopLeft="212.8,200.8" />
+        <EdgeLayout
+          Id="Package\Import Antiviral Drug Groups.Paths[Derived Column Output]"
+          TopLeft="277,158.4">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.4"
+              Start="0,0"
+              End="0,34.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="179.2,41.6"
+          Id="Package\Import Antiviral Drug Groups\ADO NET Destination"
+          TopLeft="204,297.6" />
+        <EdgeLayout
+          Id="Package\Import Antiviral Drug Groups.Paths[Aggregate Output 1]"
+          TopLeft="276,242.4">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="17.6,55.2"
+              Start="0,0"
+              End="17.6,47.7">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.6"
+                    Point2="0,27.6"
+                    Point3="4,27.6" />
+                  <mssgle:LineSegment
+                    End="13.6,27.6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="13.6,27.6"
+                    Point2="17.6,27.6"
+                    Point3="17.6,31.6" />
+                  <mssgle:LineSegment
+                    End="17.6,47.7" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Antiviral Drug Groups\ADO NET Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Update Group With ATC">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="131.2,41.6"
+          Id="Package\Update Group With ATC\Read Code"
+          TopLeft="103.2,29.6" />
+        <NodeLayout
+          Size="200,41.6"
+          Id="Package\Update Group With ATC\Get a reasonable atc code"
+          TopLeft="84.8,109.6" />
+        <EdgeLayout
+          Id="Package\Update Group With ATC.Paths[Flat File Source Output]"
+          TopLeft="168.8,71.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="16.0000000000001,38.4"
+              Start="0,0"
+              End="16.0000000000001,30.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.2"
+                    Point2="0,19.2"
+                    Point3="4,19.2" />
+                  <mssgle:LineSegment
+                    End="12.0000000000001,19.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="12.0000000000001,19.2"
+                    Point2="16.0000000000001,19.2"
+                    Point3="16.0000000000001,23.2" />
+                  <mssgle:LineSegment
+                    End="16.0000000000001,30.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="176.8,41.6"
+          Id="Package\Update Group With ATC\Existing Drug Groups"
+          TopLeft="341.6,25.6" />
+        <NodeLayout
+          Size="97.6,41.6"
+          Id="Package\Update Group With ATC\Sort"
+          TopLeft="118.4,250.4" />
+        <NodeLayout
+          Size="106.4,41.6"
+          Id="Package\Update Group With ATC\Sort 1"
+          TopLeft="451.2,230.4" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\Update Group With ATC\Data Conversion"
+          TopLeft="244,378.4" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Update Group With ATC\Derived Column"
+          TopLeft="121.6,169.6" />
+        <EdgeLayout
+          Id="Package\Update Group With ATC.Paths[Derived Column Output]"
+          TopLeft="184.8,151.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-63.1999999999999,39.2"
+              Start="0,0"
+              End="-55.6999999999999,39.2">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.2"
+                    Point2="0,39.2"
+                    Point3="-4,39.2" />
+                  <mssgle:LineSegment
+                    End="-55.6999999999999,39.2" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Update Group With ATC.Paths[Derived Column Output1]"
+          TopLeft="198,211.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-30.8000000000001,39.2"
+              Start="0,0"
+              End="-30.8000000000001,31.7">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.6"
+                    Point2="0,19.6"
+                    Point3="-4,19.6" />
+                  <mssgle:LineSegment
+                    End="-26.8000000000001,19.6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-26.8000000000001,19.6"
+                    Point2="-30.8000000000001,19.6"
+                    Point3="-30.8000000000001,23.6" />
+                  <mssgle:LineSegment
+                    End="-30.8000000000001,31.7" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\Update Group With ATC\Derived Column 1"
+          TopLeft="464,126.4" />
+        <EdgeLayout
+          Id="Package\Update Group With ATC.Paths[ADO NET Source Output]"
+          TopLeft="430,67.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="114.8,59.2"
+              Start="0,0"
+              End="114.8,51.7">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.6"
+                    Point2="0,29.6"
+                    Point3="4,29.6" />
+                  <mssgle:LineSegment
+                    End="110.8,29.6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="110.8,29.6"
+                    Point2="114.8,29.6"
+                    Point3="114.8,33.6" />
+                  <mssgle:LineSegment
+                    End="114.8,51.7" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Update Group With ATC.Paths[Derived Column Output2]"
+          TopLeft="544.8,168">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-40.4,62.4"
+              Start="0,0"
+              End="-40.4,54.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.2"
+                    Point2="0,31.2"
+                    Point3="-4,31.2" />
+                  <mssgle:LineSegment
+                    End="-36.4,31.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-36.4,31.2"
+                    Point2="-40.4,31.2"
+                    Point3="-40.4,35.2" />
+                  <mssgle:LineSegment
+                    End="-40.4,54.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\Update Group With ATC\Merge Join"
+          TopLeft="335.2,306.4" />
+        <EdgeLayout
+          Id="Package\Update Group With ATC.Paths[Sort Output]"
+          TopLeft="216,271.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="119.2,55.9999999999999"
+              Start="0,0"
+              End="111.7,55.9999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="55.6,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="55.6,0"
+                    Point2="59.6,0"
+                    Point3="59.6,4" />
+                  <mssgle:LineSegment
+                    End="59.6,51.9999999999999" />
+                  <mssgle:CubicBezierSegment
+                    Point1="59.6,51.9999999999999"
+                    Point2="59.6,55.9999999999999"
+                    Point3="63.6,55.9999999999999" />
+                  <mssgle:LineSegment
+                    End="111.7,55.9999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Update Group With ATC.Paths[Sort Output1]"
+          TopLeft="504.4,272">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-104.4,34.4"
+              Start="0,0"
+              End="-104.4,26.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.2"
+                    Point2="0,17.2"
+                    Point3="-4,17.2" />
+                  <mssgle:LineSegment
+                    End="-100.4,17.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-100.4,17.2"
+                    Point2="-104.4,17.2"
+                    Point3="-104.4,21.2" />
+                  <mssgle:LineSegment
+                    End="-104.4,26.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Update Group With ATC.Paths[Merge Join Output]"
+          TopLeft="400,348">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-78.0000000000001,30.4"
+              Start="0,0"
+              End="-78.0000000000001,22.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.2"
+                    Point2="0,15.2"
+                    Point3="-4,15.2" />
+                  <mssgle:LineSegment
+                    End="-74.0000000000001,15.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-74.0000000000001,15.2"
+                    Point2="-78.0000000000001,15.2"
+                    Point3="-78.0000000000001,19.2" />
+                  <mssgle:LineSegment
+                    End="-78.0000000000001,22.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\Update Group With ATC\OLE DB Command"
+          TopLeft="279.2,472.8" />
+        <EdgeLayout
+          Id="Package\Update Group With ATC.Paths[Data Conversion Output]"
+          TopLeft="322,420">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="40.8000000000001,52.8"
+              Start="0,0"
+              End="40.8000000000001,45.3">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.4" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.4"
+                    Point2="0,26.4"
+                    Point3="4,26.4" />
+                  <mssgle:LineSegment
+                    End="36.8000000000001,26.4" />
+                  <mssgle:CubicBezierSegment
+                    Point1="36.8000000000001,26.4"
+                    Point2="40.8000000000001,26.4"
+                    Point3="40.8000000000001,30.4" />
+                  <mssgle:LineSegment
+                    End="40.8000000000001,45.3" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Update Group With ATC\Existing Drug Groups">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -14,21 +14,24 @@ namespace Clypeus.Data.Model.Configurations
 
             entity.Property(e => e.Code)
                 .IsRequired()
-                .HasMaxLength(5)
+                .HasMaxLength(10)
                 .IsUnicode(false);
 
             entity.Property(e => e.Description)
-                        .HasMaxLength(50)
+                        .HasMaxLength(100)
                         .IsUnicode(false);
 
-            entity.Property(e => e.Inserted).HasColumnType("datetime");
+            entity.Property(e => e.Inserted).HasColumnType("datetime")
+                .HasDefaultValue(DateTime.Now);
 
-            entity.Property(e => e.Updated).HasColumnType("datetime");
+            entity.Property(e => e.Updated).HasColumnType("datetime")
+                .HasDefaultValue(DateTime.Now);
 
             entity.HasOne(d => d.DrugType)
                         .WithMany(p => p.DrugGroup)
                         .HasForeignKey(d => d.DrugTypeId)
                         .HasConstraintName("FK_Drugs_ToDrugsGroupTypes");
+
         }
     }
 }
