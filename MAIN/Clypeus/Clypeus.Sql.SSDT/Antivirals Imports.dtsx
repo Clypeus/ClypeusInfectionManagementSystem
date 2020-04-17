@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Antivirals Imports"
   DTS:PackageType="5"
-  DTS:VersionBuild="30"
-  DTS:VersionGUID="{52904932-CDB0-4E94-A0CD-41CBD4697AC3}">
+  DTS:VersionBuild="36"
+  DTS:VersionGUID="{D01409EA-30BF-4B08-B5EA-176B2930ECAC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -174,6 +174,7 @@
       DTS:refId="Package\Import Antibiotic Drug Groups"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{7EA285A8-2786-4D83-BF63-A8DD561409B2}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -2731,6 +2732,1402 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Update AB Group With ATC"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{F64666E7-06DE-49C9-82D2-CE951B1C5AF3}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update AB Group With ATC"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Update AB Group With ATC\Get ATC Code"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Get ATC Code"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Update AB Group With ATC\Get ATC Code.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Update AB Group With ATC\Get ATC Code.Inputs[Derived Column Input].Columns[atc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="atc"
+                      lineageId="Package\Update AB Group With ATC\Read Codes.Outputs[Flat File Source Output].Columns[atc]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Update AB Group With ATC\Get ATC Code.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Update AB Group With ATC\Get ATC Code.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\Get ATC Code.Outputs[Derived Column Output].Columns[Atc6]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="5"
+                      lineageId="Package\Update AB Group With ATC\Get ATC Code.Outputs[Derived Column Output].Columns[Atc6]"
+                      name="Atc6"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,5,1252)[SUBSTRING](#{Package\Update AB Group With ATC\Read Codes.Outputs[Flat File Source Output].Columns[atc]},1,5)</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,5,1252)SUBSTRING(atc,1,5)</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Update AB Group With ATC\Get ATC Code.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Update AB Group With ATC\Get ATC Code.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\Get ATC Code.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Update AB Group With ATC\Get ATC Code.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\Get ATC Code.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Update AB Group With ATC\Get ATC Code.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Update AB Group With ATC\Merge Join"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Update AB Group With ATC\Merge Join.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Update AB Group With ATC\Merge Join.Inputs[Merge Join Left Input].Columns[group]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="34"
+                      cachedName="group"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Update AB Group With ATC\Sort.Outputs[Sort Output].Columns[group]" />
+                    <inputColumn
+                      refId="Package\Update AB Group With ATC\Merge Join.Inputs[Merge Join Left Input].Columns[Atc6]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="Atc6"
+                      lineageId="Package\Update AB Group With ATC\Sort.Outputs[Sort Output].Columns[Atc6]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Update AB Group With ATC\Merge Join.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Update AB Group With ATC\Merge Join.Inputs[Merge Join Right Input].Columns[Description]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Description"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Update AB Group With ATC\Sort 1.Outputs[Sort Output].Columns[Description]" />
+                    <inputColumn
+                      refId="Package\Update AB Group With ATC\Merge Join.Inputs[Merge Join Right Input].Columns[Id]"
+                      cachedDataType="i4"
+                      cachedName="Id"
+                      lineageId="Package\Update AB Group With ATC\Sort 1.Outputs[Sort Output].Columns[Id]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Update AB Group With ATC\Merge Join.Outputs[Merge Join Output]"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[Atc6]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\Update AB Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[Atc6]"
+                      name="Atc6">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Update AB Group With ATC\Merge Join.Inputs[Merge Join Left Input].Columns[Atc6]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[Id]"
+                      dataType="i4"
+                      lineageId="Package\Update AB Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[Id]"
+                      name="Id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Update AB Group With ATC\Merge Join.Inputs[Merge Join Right Input].Columns[Id]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Update AB Group With ATC\name trim"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="name trim"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Update AB Group With ATC\name trim.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Update AB Group With ATC\name trim.Inputs[Derived Column Input].Columns[group]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="34"
+                      cachedName="group"
+                      lineageId="Package\Update AB Group With ATC\Read Codes.Outputs[Flat File Source Output].Columns[group]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Update AB Group With ATC\name trim.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Update AB Group With ATC\name trim.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\name trim.Outputs[Derived Column Output].Columns[Derived Column 1]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="34"
+                      lineageId="Package\Update AB Group With ATC\name trim.Outputs[Derived Column Output].Columns[Derived Column 1]"
+                      name="Derived Column 1"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[TRIM](#{Package\Update AB Group With ATC\Read Codes.Outputs[Flat File Source Output].Columns[group]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">TRIM(group)</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Update AB Group With ATC\name trim.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Update AB Group With ATC\name trim.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\name trim.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Update AB Group With ATC\name trim.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\name trim.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Update AB Group With ATC\name trim.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Update AB Group With ATC\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE medicinals.druggroup set Code = ? where Id = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Update AB Group With ATC\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[(localdb)\ProjectsV13.Clypeus1]"
+                  connectionManagerRefId="Package.ConnectionManagers[(localdb)\ProjectsV13.Clypeus1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Update AB Group With ATC\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Update AB Group With ATC\OLE DB Command.Inputs[OLE DB Command Input].Columns[Atc6]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="Atc6"
+                      externalMetadataColumnId="Package\Update AB Group With ATC\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Update AB Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[Atc6]" />
+                    <inputColumn
+                      refId="Package\Update AB Group With ATC\OLE DB Command.Inputs[OLE DB Command Input].Columns[Id]"
+                      cachedDataType="i4"
+                      cachedName="Id"
+                      externalMetadataColumnId="Package\Update AB Group With ATC\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Update AB Group With ATC\Merge Join.Outputs[Merge Join Output].Columns[Id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Update AB Group With ATC\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Update AB Group With ATC\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Update AB Group With ATC\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Update AB Group With ATC\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Update AB Group With ATC\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Update AB Group With ATC\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Update AB Group With ATC\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Update AB Group With ATC\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Update AB Group With ATC\Read Codes"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="2057"
+              name="Read Codes"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Update AB Group With ATC\Read Codes.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Antibiotic File Input]"
+                  connectionManagerRefId="Package.ConnectionManagers[Antibiotic File Input]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Update AB Group With ATC\Read Codes.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\Read Codes.Outputs[Flat File Source Output].Columns[ab]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Update AB Group With ATC\Read Codes.Outputs[Flat File Source Output].ExternalColumns[ab]"
+                      length="5"
+                      lineageId="Package\Update AB Group With ATC\Read Codes.Outputs[Flat File Source Output].Columns[ab]"
+                      name="ab"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\Read Codes.Outputs[Flat File Source Output].Columns[atc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Update AB Group With ATC\Read Codes.Outputs[Flat File Source Output].ExternalColumns[atc]"
+                      length="8"
+                      lineageId="Package\Update AB Group With ATC\Read Codes.Outputs[Flat File Source Output].Columns[atc]"
+                      name="atc"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\Read Codes.Outputs[Flat File Source Output].Columns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Update AB Group With ATC\Read Codes.Outputs[Flat File Source Output].ExternalColumns[name]"
+                      length="44"
+                      lineageId="Package\Update AB Group With ATC\Read Codes.Outputs[Flat File Source Output].Columns[name]"
+                      name="name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\Read Codes.Outputs[Flat File Source Output].Columns[group]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Update AB Group With ATC\Read Codes.Outputs[Flat File Source Output].ExternalColumns[group]"
+                      length="34"
+                      lineageId="Package\Update AB Group With ATC\Read Codes.Outputs[Flat File Source Output].Columns[group]"
+                      name="group"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Update AB Group With ATC\Read Codes.Outputs[Flat File Source Output].ExternalColumns[ab]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="ab" />
+                    <externalMetadataColumn
+                      refId="Package\Update AB Group With ATC\Read Codes.Outputs[Flat File Source Output].ExternalColumns[atc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="atc" />
+                    <externalMetadataColumn
+                      refId="Package\Update AB Group With ATC\Read Codes.Outputs[Flat File Source Output].ExternalColumns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="44"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\Update AB Group With ATC\Read Codes.Outputs[Flat File Source Output].ExternalColumns[group]"
+                      codePage="1252"
+                      dataType="str"
+                      length="34"
+                      name="group" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Update AB Group With ATC\Read Codes.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\Read Codes.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Update AB Group With ATC\Read Codes.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\Read Codes.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Update AB Group With ATC\Read Codes.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\Read Codes.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Update AB Group With ATC\Read Codes.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Update AB Group With ATC\Read Drug Groups"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
+              name="Read Drug Groups"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement used by the component to extract data."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether to allow non-string external columns to be implicitly converted to strings at the output columns."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="The Source database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"medicinals"."DrugGroup"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the mode to retrieve external column information"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">0</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Update AB Group With ATC\Read Drug Groups.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[(localdb)\ProjectsV13.Clypeus]"
+                  connectionManagerRefId="Package.ConnectionManagers[(localdb)\ProjectsV13.Clypeus]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output]"
+                  name="ADO NET Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output].Columns[Id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output].ExternalColumns[Id]"
+                      lineageId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output].Columns[Id]"
+                      name="Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output].Columns[Code]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output].ExternalColumns[Code]"
+                      length="10"
+                      lineageId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output].Columns[Code]"
+                      name="Code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output].Columns[Description]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output].ExternalColumns[Description]"
+                      length="100"
+                      lineageId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output].Columns[Description]"
+                      name="Description"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output].Columns[DrugTypeId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output].ExternalColumns[DrugTypeId]"
+                      lineageId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output].Columns[DrugTypeId]"
+                      name="DrugTypeId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output].Columns[Active]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output].ExternalColumns[Active]"
+                      lineageId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output].Columns[Active]"
+                      name="Active"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output].Columns[Inserted]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output].ExternalColumns[Inserted]"
+                      lineageId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output].Columns[Inserted]"
+                      name="Inserted"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output].Columns[Updated]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output].ExternalColumns[Updated]"
+                      lineageId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output].Columns[Updated]"
+                      name="Updated"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output].ExternalColumns[Id]"
+                      dataType="i4"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output].ExternalColumns[Code]"
+                      dataType="wstr"
+                      length="10"
+                      name="Code" />
+                    <externalMetadataColumn
+                      refId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output].ExternalColumns[Description]"
+                      dataType="wstr"
+                      length="100"
+                      name="Description" />
+                    <externalMetadataColumn
+                      refId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output].ExternalColumns[DrugTypeId]"
+                      dataType="i4"
+                      name="DrugTypeId" />
+                    <externalMetadataColumn
+                      refId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output].ExternalColumns[Active]"
+                      dataType="bool"
+                      name="Active" />
+                    <externalMetadataColumn
+                      refId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output].ExternalColumns[Inserted]"
+                      dataType="dbTimeStamp"
+                      name="Inserted" />
+                    <externalMetadataColumn
+                      refId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output].ExternalColumns[Updated]"
+                      dataType="dbTimeStamp"
+                      name="Updated" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Error Output]"
+                  isErrorOut="true"
+                  name="ADO NET Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Error Output].Columns[Id]"
+                      dataType="i4"
+                      lineageId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Error Output].Columns[Id]"
+                      name="Id" />
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Error Output].Columns[Code]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Error Output].Columns[Code]"
+                      name="Code" />
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Error Output].Columns[Description]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Error Output].Columns[Description]"
+                      name="Description" />
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Error Output].Columns[DrugTypeId]"
+                      dataType="i4"
+                      lineageId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Error Output].Columns[DrugTypeId]"
+                      name="DrugTypeId" />
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Error Output].Columns[Active]"
+                      dataType="bool"
+                      lineageId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Error Output].Columns[Active]"
+                      name="Active" />
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Error Output].Columns[Inserted]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Error Output].Columns[Inserted]"
+                      name="Inserted" />
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Error Output].Columns[Updated]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Error Output].Columns[Updated]"
+                      name="Updated" />
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Update AB Group With ATC\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Update AB Group With ATC\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Update AB Group With ATC\Sort.Inputs[Sort Input].Columns[ab]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="ab"
+                      lineageId="Package\Update AB Group With ATC\Read Codes.Outputs[Flat File Source Output].Columns[ab]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Update AB Group With ATC\Sort.Inputs[Sort Input].Columns[atc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="atc"
+                      lineageId="Package\Update AB Group With ATC\Read Codes.Outputs[Flat File Source Output].Columns[atc]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Update AB Group With ATC\Sort.Inputs[Sort Input].Columns[name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="44"
+                      cachedName="name"
+                      lineageId="Package\Update AB Group With ATC\Read Codes.Outputs[Flat File Source Output].Columns[name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Update AB Group With ATC\Sort.Inputs[Sort Input].Columns[group]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="34"
+                      cachedName="group"
+                      lineageId="Package\Update AB Group With ATC\Read Codes.Outputs[Flat File Source Output].Columns[group]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Update AB Group With ATC\Sort.Inputs[Sort Input].Columns[Atc6]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="Atc6"
+                      lineageId="Package\Update AB Group With ATC\Get ATC Code.Outputs[Derived Column Output].Columns[Atc6]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Update AB Group With ATC\Sort.Inputs[Sort Input].Columns[Derived Column 1]"
+                      cachedDataType="wstr"
+                      cachedLength="34"
+                      cachedName="Derived Column 1"
+                      lineageId="Package\Update AB Group With ATC\name trim.Outputs[Derived Column Output].Columns[Derived Column 1]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Update AB Group With ATC\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\Sort.Outputs[Sort Output].Columns[ab]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\Update AB Group With ATC\Sort.Outputs[Sort Output].Columns[ab]"
+                      name="ab">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Update AB Group With ATC\Read Codes.Outputs[Flat File Source Output].Columns[ab]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\Sort.Outputs[Sort Output].Columns[atc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Update AB Group With ATC\Sort.Outputs[Sort Output].Columns[atc]"
+                      name="atc">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Update AB Group With ATC\Read Codes.Outputs[Flat File Source Output].Columns[atc]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\Sort.Outputs[Sort Output].Columns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="44"
+                      lineageId="Package\Update AB Group With ATC\Sort.Outputs[Sort Output].Columns[name]"
+                      name="name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Update AB Group With ATC\Read Codes.Outputs[Flat File Source Output].Columns[name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\Sort.Outputs[Sort Output].Columns[group]"
+                      codePage="1252"
+                      dataType="str"
+                      length="34"
+                      lineageId="Package\Update AB Group With ATC\Sort.Outputs[Sort Output].Columns[group]"
+                      name="group"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Update AB Group With ATC\Read Codes.Outputs[Flat File Source Output].Columns[group]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\Sort.Outputs[Sort Output].Columns[Atc6]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\Update AB Group With ATC\Sort.Outputs[Sort Output].Columns[Atc6]"
+                      name="Atc6">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Update AB Group With ATC\Get ATC Code.Outputs[Derived Column Output].Columns[Atc6]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\Sort.Outputs[Sort Output].Columns[Derived Column 1]"
+                      dataType="wstr"
+                      length="34"
+                      lineageId="Package\Update AB Group With ATC\Sort.Outputs[Sort Output].Columns[Derived Column 1]"
+                      name="Derived Column 1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Update AB Group With ATC\name trim.Outputs[Derived Column Output].Columns[Derived Column 1]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Update AB Group With ATC\Sort 1"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort 1"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Update AB Group With ATC\Sort 1.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Update AB Group With ATC\Sort 1.Inputs[Sort Input].Columns[Id]"
+                      cachedDataType="i4"
+                      cachedName="Id"
+                      lineageId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output].Columns[Id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Update AB Group With ATC\Sort 1.Inputs[Sort Input].Columns[Code]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Code"
+                      lineageId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output].Columns[Code]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Update AB Group With ATC\Sort 1.Inputs[Sort Input].Columns[Description]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Description"
+                      lineageId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output].Columns[Description]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Update AB Group With ATC\Sort 1.Inputs[Sort Input].Columns[DrugTypeId]"
+                      cachedDataType="i4"
+                      cachedName="DrugTypeId"
+                      lineageId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output].Columns[DrugTypeId]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Update AB Group With ATC\Sort 1.Inputs[Sort Input].Columns[Active]"
+                      cachedDataType="bool"
+                      cachedName="Active"
+                      lineageId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output].Columns[Active]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Update AB Group With ATC\Sort 1.Inputs[Sort Input].Columns[Inserted]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Inserted"
+                      lineageId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output].Columns[Inserted]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Update AB Group With ATC\Sort 1.Inputs[Sort Input].Columns[Updated]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Updated"
+                      lineageId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output].Columns[Updated]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Update AB Group With ATC\Sort 1.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\Sort 1.Outputs[Sort Output].Columns[Id]"
+                      dataType="i4"
+                      lineageId="Package\Update AB Group With ATC\Sort 1.Outputs[Sort Output].Columns[Id]"
+                      name="Id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output].Columns[Id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\Sort 1.Outputs[Sort Output].Columns[Code]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Update AB Group With ATC\Sort 1.Outputs[Sort Output].Columns[Code]"
+                      name="Code">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output].Columns[Code]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\Sort 1.Outputs[Sort Output].Columns[Description]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Update AB Group With ATC\Sort 1.Outputs[Sort Output].Columns[Description]"
+                      name="Description"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output].Columns[Description]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\Sort 1.Outputs[Sort Output].Columns[DrugTypeId]"
+                      dataType="i4"
+                      lineageId="Package\Update AB Group With ATC\Sort 1.Outputs[Sort Output].Columns[DrugTypeId]"
+                      name="DrugTypeId">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output].Columns[DrugTypeId]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\Sort 1.Outputs[Sort Output].Columns[Active]"
+                      dataType="bool"
+                      lineageId="Package\Update AB Group With ATC\Sort 1.Outputs[Sort Output].Columns[Active]"
+                      name="Active">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output].Columns[Active]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\Sort 1.Outputs[Sort Output].Columns[Inserted]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Update AB Group With ATC\Sort 1.Outputs[Sort Output].Columns[Inserted]"
+                      name="Inserted">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output].Columns[Inserted]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\Sort 1.Outputs[Sort Output].Columns[Updated]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Update AB Group With ATC\Sort 1.Outputs[Sort Output].Columns[Updated]"
+                      name="Updated">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output].Columns[Updated]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Update AB Group With ATC\Trim Description"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Trim Description"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Update AB Group With ATC\Trim Description.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Update AB Group With ATC\Trim Description.Inputs[Derived Column Input].Columns[Description]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Description"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output].Columns[Description]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[TRIM](#{Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output].Columns[Description]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">TRIM(Description)</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Update AB Group With ATC\Trim Description.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Update AB Group With ATC\Trim Description.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Update AB Group With ATC\Trim Description.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Update AB Group With ATC\Trim Description.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\Trim Description.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Update AB Group With ATC\Trim Description.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Update AB Group With ATC\Trim Description.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Update AB Group With ATC\Trim Description.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Update AB Group With ATC.Paths[ADO NET Source Output]"
+              endId="Package\Update AB Group With ATC\Trim Description.Inputs[Derived Column Input]"
+              name="ADO NET Source Output"
+              startId="Package\Update AB Group With ATC\Read Drug Groups.Outputs[ADO NET Source Output]" />
+            <path
+              refId="Package\Update AB Group With ATC.Paths[Derived Column Output]"
+              endId="Package\Update AB Group With ATC\name trim.Inputs[Derived Column Input]"
+              name="Derived Column Output"
+              startId="Package\Update AB Group With ATC\Get ATC Code.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Update AB Group With ATC.Paths[Derived Column Output1]"
+              endId="Package\Update AB Group With ATC\Sort.Inputs[Sort Input]"
+              name="Derived Column Output"
+              startId="Package\Update AB Group With ATC\name trim.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Update AB Group With ATC.Paths[Derived Column Output2]"
+              endId="Package\Update AB Group With ATC\Sort 1.Inputs[Sort Input]"
+              name="Derived Column Output"
+              startId="Package\Update AB Group With ATC\Trim Description.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Update AB Group With ATC.Paths[Flat File Source Output]"
+              endId="Package\Update AB Group With ATC\Get ATC Code.Inputs[Derived Column Input]"
+              name="Flat File Source Output"
+              startId="Package\Update AB Group With ATC\Read Codes.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Update AB Group With ATC.Paths[Merge Join Output]"
+              endId="Package\Update AB Group With ATC\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Merge Join Output"
+              startId="Package\Update AB Group With ATC\Merge Join.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Update AB Group With ATC.Paths[Sort Output]"
+              endId="Package\Update AB Group With ATC\Merge Join.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Update AB Group With ATC\Sort.Outputs[Sort Output]" />
+            <path
+              refId="Package\Update AB Group With ATC.Paths[Sort Output1]"
+              endId="Package\Update AB Group With ATC\Merge Join.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Update AB Group With ATC\Sort 1.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Update Group With ATC"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
@@ -4557,6 +5954,14 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
       DTS:To="Package\Import Antivirals" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{AC1A9E56-708C-4D28-91E9-8E1451E576D0}"
+      DTS:From="Package\Import Antibiotic Drug Groups"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Update AB Group With ATC" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -4642,6 +6047,44 @@
           Size="215.2,41.6"
           Id="Package\Import Antibiotic Drug Groups"
           TopLeft="327.999986966452,7.62666672727799" />
+        <NodeLayout
+          Size="207.2,41.6"
+          Id="Package\Update AB Group With ATC"
+          TopLeft="360.666652335061,115.786667586856" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="435.599986966452,49.226666727278">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="28.66666536861,66.5600008595785"
+              Start="0,0"
+              End="28.66666536861,59.0600008595785">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.2800004297892" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.2800004297892"
+                    Point2="0,33.2800004297892"
+                    Point3="4,33.2800004297892" />
+                  <mssgle:LineSegment
+                    End="24.66666536861,33.2800004297892" />
+                  <mssgle:CubicBezierSegment
+                    Point1="24.66666536861,33.2800004297892"
+                    Point2="28.66666536861,33.2800004297892"
+                    Point3="28.66666536861,37.2800004297892" />
+                  <mssgle:LineSegment
+                    End="28.66666536861,59.0600008595785" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -4759,7 +6202,7 @@
     design-time-name="Package\Update Group With ATC">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="97.6,41.6"
           Id="Package\Update Group With ATC\Sort"
@@ -4831,9 +6274,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4867,9 +6308,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4903,9 +6342,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4939,9 +6376,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4975,9 +6410,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5011,9 +6444,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5041,9 +6472,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5077,9 +6506,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5113,9 +6540,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5465,6 +6890,270 @@
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Import Antibiotic Drug Groups\ADO NET Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Update AB Group With ATC">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="136,41.6"
+          Id="Package\Update AB Group With ATC\Read Codes"
+          TopLeft="160.8,61.6" />
+        <NodeLayout
+          Size="146.4,41.6"
+          Id="Package\Update AB Group With ATC\Get ATC Code"
+          TopLeft="158.4,153.6" />
+        <EdgeLayout
+          Id="Package\Update AB Group With ATC.Paths[Flat File Source Output]"
+          TopLeft="230.2,103.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.4"
+              Start="0,0"
+              End="0,42.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="124.8,41.6"
+          Id="Package\Update AB Group With ATC\name trim"
+          TopLeft="155.2,242.4" />
+        <EdgeLayout
+          Id="Package\Update AB Group With ATC.Paths[Derived Column Output]"
+          TopLeft="231.6,195.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-14.0000000000001,47.2"
+              Start="0,0"
+              End="-14.0000000000001,39.7">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.6"
+                    Point2="0,23.6"
+                    Point3="-4,23.6" />
+                  <mssgle:LineSegment
+                    End="-10.0000000000001,23.6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-10.0000000000001,23.6"
+                    Point2="-14.0000000000001,23.6"
+                    Point3="-14.0000000000001,27.6" />
+                  <mssgle:LineSegment
+                    End="-14.0000000000001,39.7" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="97.6,41.6"
+          Id="Package\Update AB Group With ATC\Sort"
+          TopLeft="168.8,317.6" />
+        <EdgeLayout
+          Id="Package\Update AB Group With ATC.Paths[Derived Column Output1]"
+          TopLeft="217.6,284">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.6"
+              Start="0,0"
+              End="0,26.1">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.1" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="165.6,41.6"
+          Id="Package\Update AB Group With ATC\Read Drug Groups"
+          TopLeft="547.2,65.6" />
+        <NodeLayout
+          Size="154.4,41.6"
+          Id="Package\Update AB Group With ATC\Trim Description"
+          TopLeft="559.2,151.2" />
+        <EdgeLayout
+          Id="Package\Update AB Group With ATC.Paths[ADO NET Source Output]"
+          TopLeft="633.2,107.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44"
+              Start="0,0"
+              End="0,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="106.4,41.6"
+          Id="Package\Update AB Group With ATC\Sort 1"
+          TopLeft="588.8,240" />
+        <EdgeLayout
+          Id="Package\Update AB Group With ATC.Paths[Derived Column Output2]"
+          TopLeft="639.2,192.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.2"
+              Start="0,0"
+              End="0,39.7">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.7" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\Update AB Group With ATC\Merge Join"
+          TopLeft="403.2,445.6" />
+        <EdgeLayout
+          Id="Package\Update AB Group With ATC.Paths[Sort Output]"
+          TopLeft="217.6,359.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="250.4,86.3999999999999"
+              Start="0,0"
+              End="250.4,78.8999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39.2"
+                    Point2="0,43.2"
+                    Point3="4,43.2" />
+                  <mssgle:LineSegment
+                    End="246.4,43.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="246.4,43.2"
+                    Point2="250.4,43.2"
+                    Point3="250.4,47.2" />
+                  <mssgle:LineSegment
+                    End="250.4,78.8999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Update AB Group With ATC.Paths[Sort Output1]"
+          TopLeft="642,281.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-153.733333333333,164"
+              Start="0,0"
+              End="-153.733333333333,156.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,93.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,93.2"
+                    Point2="0,97.2"
+                    Point3="-4,97.2" />
+                  <mssgle:LineSegment
+                    End="-149.733333333333,97.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-149.733333333333,97.2"
+                    Point2="-153.733333333333,97.2"
+                    Point3="-153.733333333333,101.2" />
+                  <mssgle:LineSegment
+                    End="-153.733333333333,156.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\Update AB Group With ATC\OLE DB Command"
+          TopLeft="385.6,561.6" />
+        <EdgeLayout
+          Id="Package\Update AB Group With ATC.Paths[Merge Join Output]"
+          TopLeft="468.6,487.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,74.3999999999999"
+              Start="0,0"
+              End="0,66.8999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,66.8999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Update AB Group With ATC\Read Drug Groups">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
