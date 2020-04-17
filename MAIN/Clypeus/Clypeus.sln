@@ -45,6 +45,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL Queries", "SQL Queries", "{246986F6-766F-4221-8E58-A096058B49C6}"
 	ProjectSection(SolutionItems) = preProject
 		Data Files\Sql Scripts\S1 - Setting Contents Of Drug Types.sql = Data Files\Sql Scripts\S1 - Setting Contents Of Drug Types.sql
+		S2 - Cleaning Up The Organism Support Tables.sql = S2 - Cleaning Up The Organism Support Tables.sql
 	EndProjectSection
 EndProject
 Global

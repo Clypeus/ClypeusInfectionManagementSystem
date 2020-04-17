@@ -1,0 +1,3111 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/17/2020 8:03:06 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="RAVEN"
+  DTS:CreatorName="RAVEN\Andre"
+  DTS:DTSID="{4CEB5C70-E81F-4F02-9435-D04033FF798C}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1300.375"
+  DTS:LocaleID="2057"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{BA13324D-1B51-4F39-B9A8-851446773408}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(localdb)\ProjectsV13.Clypeus]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{2FF6A465-85F9-44F3-9793-9A439CFF8FAE}"
+      DTS:ObjectName="(localdb)\ProjectsV13.Clypeus">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=(localdb)\ProjectsV13;Initial Catalog=Clypeus;Integrated Security=True;Application Name=SSIS-Package1-{2FF6A465-85F9-44F3-9793-9A439CFF8FAE}(localdb)\ProjectsV13.Clypeus;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{CC45D1E0-B652-48E5-B70B-F1B8B7CCD4EE}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="c:\temp\12334">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="mo"
+              DTS:DTSID="{67A0314E-6552-4AFF-91A3-7ACCED29071D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="fullname"
+              DTS:DTSID="{F87796AC-851F-4F13-B738-8F0F773585C5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="kingdom"
+              DTS:DTSID="{530E6711-9084-4271-8F5C-ACC8F9341620}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="phylum"
+              DTS:DTSID="{CCB35B40-6307-4AFE-B46E-2A72C8A2597E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="class"
+              DTS:DTSID="{9C689558-4C20-4421-B2D1-20CC77580415}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="order"
+              DTS:DTSID="{67BC7907-91C6-49DD-98E6-3B7B74EDCFE5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="family"
+              DTS:DTSID="{D3E7C3BC-48AF-4BC6-98CC-B53D1D3624D7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="genus"
+              DTS:DTSID="{621CCECD-C2D9-4C2F-B6E5-B929DD0B06F5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="species"
+              DTS:DTSID="{6DAEE680-504B-4C58-A076-85DF8FE597AC}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Organism File Reader]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{07E74660-378F-4A45-8C02-6F6EF993A6B6}"
+      DTS:ObjectName="Organism File Reader">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Temp\microorganisms.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="mo"
+              DTS:DTSID="{AD831E22-B6B1-4184-BE71-F68B63F88E8B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="fullname"
+              DTS:DTSID="{1C57015C-2737-45C8-8E46-8C9F2712CBAA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="kingdom"
+              DTS:DTSID="{DCD8EBED-E31B-49B7-A7F2-952FF5A6B0C1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="phylum"
+              DTS:DTSID="{C86D6E7E-6BA0-4634-8FF1-B101640F34D5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="class"
+              DTS:DTSID="{C254F066-CFB3-4DA7-AC97-D830E926DC8E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="order"
+              DTS:DTSID="{09793337-D480-4D7E-BDAB-E591FE3FDF70}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="family"
+              DTS:DTSID="{8BC722F2-E23C-41FC-82F2-55B5C0440756}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="genus"
+              DTS:DTSID="{F88018CD-1127-4A70-B1BF-981A0193399C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="species"
+              DTS:DTSID="{8AE99EF5-B74B-4D0D-ADC4-985C8AEBD4AE}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Import Meta Information For Organisms"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{062AD801-6A35-4B10-AE8E-ECAEB8EE38F6}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Import Meta Information For Organisms"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Import Meta Information For Organisms\Add the meta columns"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Add the meta columns"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Import Meta Information For Organisms\Add the meta columns.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Import Meta Information For Organisms\Add the meta columns.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Output].Columns[Active]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Output].Columns[Active]"
+                      name="Active"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">1</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Output].Columns[Inserted]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Output].Columns[Inserted]"
+                      name="Inserted"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Output].Columns[Updated]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Output].Columns[Updated]"
+                      name="Updated"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Import Meta Information For Organisms\Add the meta columns.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Meta Information For Organisms\Multicast"
+              componentClassID="Microsoft.Multicast"
+              contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+              name="Multicast">
+              <inputs>
+                <input
+                  refId="Package\Import Meta Information For Organisms\Multicast.Inputs[Multicast Input 1]"
+                  name="Multicast Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Meta Information For Organisms\Multicast.Outputs[Multicast Output 1]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 1"
+                  synchronousInputId="Package\Import Meta Information For Organisms\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import Meta Information For Organisms\Multicast.Outputs[Multicast Output 2]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 2"
+                  synchronousInputId="Package\Import Meta Information For Organisms\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import Meta Information For Organisms\Multicast.Outputs[Multicast Output 3]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 3"
+                  synchronousInputId="Package\Import Meta Information For Organisms\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import Meta Information For Organisms\Multicast.Outputs[Multicast Output 4]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 4"
+                  synchronousInputId="Package\Import Meta Information For Organisms\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import Meta Information For Organisms\Multicast.Outputs[Multicast Output 5]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 5"
+                  synchronousInputId="Package\Import Meta Information For Organisms\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import Meta Information For Organisms\Multicast.Outputs[Multicast Output 6]"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 6"
+                  synchronousInputId="Package\Import Meta Information For Organisms\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import Meta Information For Organisms\Multicast.Outputs[Multicast Output 8]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Multicast Output 8"
+                  synchronousInputId="Package\Import Meta Information For Organisms\Multicast.Inputs[Multicast Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Meta Information For Organisms\Read Organism File"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="2057"
+              name="Read Organism File"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Meta Information For Organisms\Read Organism File.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Organism File Reader]"
+                  connectionManagerRefId="Package.ConnectionManagers[Organism File Reader]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].Columns[mo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].ExternalColumns[mo]"
+                      length="200"
+                      lineageId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].Columns[mo]"
+                      name="mo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].Columns[fullname]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].ExternalColumns[fullname]"
+                      length="200"
+                      lineageId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].Columns[fullname]"
+                      name="fullname"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].Columns[kingdom]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].ExternalColumns[kingdom]"
+                      length="200"
+                      lineageId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].Columns[kingdom]"
+                      name="kingdom"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].Columns[phylum]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].ExternalColumns[phylum]"
+                      length="200"
+                      lineageId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].Columns[phylum]"
+                      name="phylum"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].Columns[class]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].ExternalColumns[class]"
+                      length="200"
+                      lineageId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].Columns[class]"
+                      name="class"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].Columns[order]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].ExternalColumns[order]"
+                      length="200"
+                      lineageId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].Columns[order]"
+                      name="order"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].Columns[family]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].ExternalColumns[family]"
+                      length="200"
+                      lineageId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].Columns[family]"
+                      name="family"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].Columns[genus]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].ExternalColumns[genus]"
+                      length="200"
+                      lineageId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].Columns[genus]"
+                      name="genus"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].Columns[species]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].ExternalColumns[species]"
+                      length="200"
+                      lineageId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].Columns[species]"
+                      name="species"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].ExternalColumns[mo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="mo" />
+                    <externalMetadataColumn
+                      refId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].ExternalColumns[fullname]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="fullname" />
+                    <externalMetadataColumn
+                      refId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].ExternalColumns[kingdom]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="kingdom" />
+                    <externalMetadataColumn
+                      refId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].ExternalColumns[phylum]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="phylum" />
+                    <externalMetadataColumn
+                      refId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].ExternalColumns[class]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="class" />
+                    <externalMetadataColumn
+                      refId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].ExternalColumns[order]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="order" />
+                    <externalMetadataColumn
+                      refId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].ExternalColumns[family]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="family" />
+                    <externalMetadataColumn
+                      refId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].ExternalColumns[genus]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="genus" />
+                    <externalMetadataColumn
+                      refId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].ExternalColumns[species]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="species" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Meta Information For Organisms\Sort Class"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort Class"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Import Meta Information For Organisms\Sort Class.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Class.Inputs[Sort Input].Columns[class]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="class"
+                      lineageId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].Columns[class]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Class.Inputs[Sort Input].Columns[Active]"
+                      cachedDataType="i4"
+                      cachedName="Active"
+                      lineageId="Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Output].Columns[Active]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Class.Inputs[Sort Input].Columns[Inserted]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Inserted"
+                      lineageId="Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Output].Columns[Inserted]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Class.Inputs[Sort Input].Columns[Updated]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Updated"
+                      lineageId="Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Output].Columns[Updated]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Meta Information For Organisms\Sort Class.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Class.Outputs[Sort Output].Columns[class]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Class.Outputs[Sort Output].Columns[class]"
+                      name="class"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].Columns[class]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Class.Outputs[Sort Output].Columns[Active]"
+                      dataType="i4"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Class.Outputs[Sort Output].Columns[Active]"
+                      name="Active">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Output].Columns[Active]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Class.Outputs[Sort Output].Columns[Inserted]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Class.Outputs[Sort Output].Columns[Inserted]"
+                      name="Inserted">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Output].Columns[Inserted]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Class.Outputs[Sort Output].Columns[Updated]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Class.Outputs[Sort Output].Columns[Updated]"
+                      name="Updated">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Output].Columns[Updated]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Meta Information For Organisms\Sort Family"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort Family"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Import Meta Information For Organisms\Sort Family.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Family.Inputs[Sort Input].Columns[family]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="family"
+                      lineageId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].Columns[family]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Family.Inputs[Sort Input].Columns[Active]"
+                      cachedDataType="i4"
+                      cachedName="Active"
+                      lineageId="Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Output].Columns[Active]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Family.Inputs[Sort Input].Columns[Inserted]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Inserted"
+                      lineageId="Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Output].Columns[Inserted]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Family.Inputs[Sort Input].Columns[Updated]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Updated"
+                      lineageId="Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Output].Columns[Updated]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Meta Information For Organisms\Sort Family.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Family.Outputs[Sort Output].Columns[family]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Family.Outputs[Sort Output].Columns[family]"
+                      name="family"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].Columns[family]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Family.Outputs[Sort Output].Columns[Active]"
+                      dataType="i4"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Family.Outputs[Sort Output].Columns[Active]"
+                      name="Active">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Output].Columns[Active]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Family.Outputs[Sort Output].Columns[Inserted]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Family.Outputs[Sort Output].Columns[Inserted]"
+                      name="Inserted">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Output].Columns[Inserted]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Family.Outputs[Sort Output].Columns[Updated]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Family.Outputs[Sort Output].Columns[Updated]"
+                      name="Updated">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Output].Columns[Updated]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Meta Information For Organisms\Sort Genus"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort Genus"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Import Meta Information For Organisms\Sort Genus.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Genus.Inputs[Sort Input].Columns[genus]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="genus"
+                      lineageId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].Columns[genus]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Genus.Inputs[Sort Input].Columns[Active]"
+                      cachedDataType="i4"
+                      cachedName="Active"
+                      lineageId="Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Output].Columns[Active]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Genus.Inputs[Sort Input].Columns[Inserted]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Inserted"
+                      lineageId="Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Output].Columns[Inserted]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Genus.Inputs[Sort Input].Columns[Updated]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Updated"
+                      lineageId="Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Output].Columns[Updated]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Meta Information For Organisms\Sort Genus.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Genus.Outputs[Sort Output].Columns[genus]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Genus.Outputs[Sort Output].Columns[genus]"
+                      name="genus"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].Columns[genus]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Genus.Outputs[Sort Output].Columns[Active]"
+                      dataType="i4"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Genus.Outputs[Sort Output].Columns[Active]"
+                      name="Active">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Output].Columns[Active]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Genus.Outputs[Sort Output].Columns[Inserted]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Genus.Outputs[Sort Output].Columns[Inserted]"
+                      name="Inserted">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Output].Columns[Inserted]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Genus.Outputs[Sort Output].Columns[Updated]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Genus.Outputs[Sort Output].Columns[Updated]"
+                      name="Updated">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Output].Columns[Updated]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Meta Information For Organisms\Sort Kingdom"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort Kingdom"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Import Meta Information For Organisms\Sort Kingdom.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Kingdom.Inputs[Sort Input].Columns[kingdom]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="kingdom"
+                      lineageId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].Columns[kingdom]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Kingdom.Inputs[Sort Input].Columns[Active]"
+                      cachedDataType="i4"
+                      cachedName="Active"
+                      lineageId="Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Output].Columns[Active]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Kingdom.Inputs[Sort Input].Columns[Inserted]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Inserted"
+                      lineageId="Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Output].Columns[Inserted]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Kingdom.Inputs[Sort Input].Columns[Updated]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Updated"
+                      lineageId="Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Output].Columns[Updated]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Meta Information For Organisms\Sort Kingdom.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Kingdom.Outputs[Sort Output].Columns[kingdom]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Kingdom.Outputs[Sort Output].Columns[kingdom]"
+                      name="kingdom"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].Columns[kingdom]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Kingdom.Outputs[Sort Output].Columns[Active]"
+                      dataType="i4"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Kingdom.Outputs[Sort Output].Columns[Active]"
+                      name="Active">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Output].Columns[Active]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Kingdom.Outputs[Sort Output].Columns[Inserted]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Kingdom.Outputs[Sort Output].Columns[Inserted]"
+                      name="Inserted">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Output].Columns[Inserted]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Kingdom.Outputs[Sort Output].Columns[Updated]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Kingdom.Outputs[Sort Output].Columns[Updated]"
+                      name="Updated">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Output].Columns[Updated]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Meta Information For Organisms\Sort Order"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort Order"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Import Meta Information For Organisms\Sort Order.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Order.Inputs[Sort Input].Columns[order]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="order"
+                      lineageId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].Columns[order]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Order.Inputs[Sort Input].Columns[Active]"
+                      cachedDataType="i4"
+                      cachedName="Active"
+                      lineageId="Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Output].Columns[Active]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Order.Inputs[Sort Input].Columns[Inserted]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Inserted"
+                      lineageId="Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Output].Columns[Inserted]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Order.Inputs[Sort Input].Columns[Updated]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Updated"
+                      lineageId="Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Output].Columns[Updated]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Meta Information For Organisms\Sort Order.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Order.Outputs[Sort Output].Columns[order]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Order.Outputs[Sort Output].Columns[order]"
+                      name="order"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].Columns[order]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Order.Outputs[Sort Output].Columns[Active]"
+                      dataType="i4"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Order.Outputs[Sort Output].Columns[Active]"
+                      name="Active">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Output].Columns[Active]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Order.Outputs[Sort Output].Columns[Inserted]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Order.Outputs[Sort Output].Columns[Inserted]"
+                      name="Inserted">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Output].Columns[Inserted]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Order.Outputs[Sort Output].Columns[Updated]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Order.Outputs[Sort Output].Columns[Updated]"
+                      name="Updated">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Output].Columns[Updated]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Meta Information For Organisms\Sort Phylum"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort Phylum"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Import Meta Information For Organisms\Sort Phylum.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Phylum.Inputs[Sort Input].Columns[phylum]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="phylum"
+                      lineageId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].Columns[phylum]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Phylum.Inputs[Sort Input].Columns[Active]"
+                      cachedDataType="i4"
+                      cachedName="Active"
+                      lineageId="Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Output].Columns[Active]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Phylum.Inputs[Sort Input].Columns[Inserted]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Inserted"
+                      lineageId="Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Output].Columns[Inserted]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Phylum.Inputs[Sort Input].Columns[Updated]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Updated"
+                      lineageId="Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Output].Columns[Updated]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Meta Information For Organisms\Sort Phylum.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Phylum.Outputs[Sort Output].Columns[phylum]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Phylum.Outputs[Sort Output].Columns[phylum]"
+                      name="phylum"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output].Columns[phylum]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Phylum.Outputs[Sort Output].Columns[Active]"
+                      dataType="i4"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Phylum.Outputs[Sort Output].Columns[Active]"
+                      name="Active">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Output].Columns[Active]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Phylum.Outputs[Sort Output].Columns[Inserted]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Phylum.Outputs[Sort Output].Columns[Inserted]"
+                      name="Inserted">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Output].Columns[Inserted]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Sort Phylum.Outputs[Sort Output].Columns[Updated]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Phylum.Outputs[Sort Output].Columns[Updated]"
+                      name="Updated">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Output].Columns[Updated]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Meta Information For Organisms\Write Class Information"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+              name="Write Class Information"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The Destination database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"medicinals"."OrganismClass"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Meta Information For Organisms\Write Class Information.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[(localdb)\ProjectsV13.Clypeus]"
+                  connectionManagerRefId="Package.ConnectionManagers[(localdb)\ProjectsV13.Clypeus]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import Meta Information For Organisms\Write Class Information.Inputs[ADO NET Destination Input]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="ADO NET Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Write Class Information.Inputs[ADO NET Destination Input].Columns[Active]"
+                      cachedDataType="i4"
+                      cachedName="Active"
+                      externalMetadataColumnId="Package\Import Meta Information For Organisms\Write Class Information.Inputs[ADO NET Destination Input].ExternalColumns[Active]"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Class.Outputs[Sort Output].Columns[Active]" />
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Write Class Information.Inputs[ADO NET Destination Input].Columns[Inserted]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Inserted"
+                      externalMetadataColumnId="Package\Import Meta Information For Organisms\Write Class Information.Inputs[ADO NET Destination Input].ExternalColumns[Inserted]"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Class.Outputs[Sort Output].Columns[Inserted]" />
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Write Class Information.Inputs[ADO NET Destination Input].Columns[Updated]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Updated"
+                      externalMetadataColumnId="Package\Import Meta Information For Organisms\Write Class Information.Inputs[ADO NET Destination Input].ExternalColumns[Updated]"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Class.Outputs[Sort Output].Columns[Updated]" />
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Write Class Information.Inputs[ADO NET Destination Input].Columns[class]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="class"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Import Meta Information For Organisms\Write Class Information.Inputs[ADO NET Destination Input].ExternalColumns[Description]"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Class.Outputs[Sort Output].Columns[class]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Meta Information For Organisms\Write Class Information.Inputs[ADO NET Destination Input].ExternalColumns[Id]"
+                      dataType="i4"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\Import Meta Information For Organisms\Write Class Information.Inputs[ADO NET Destination Input].ExternalColumns[Description]"
+                      dataType="wstr"
+                      length="75"
+                      name="Description" />
+                    <externalMetadataColumn
+                      refId="Package\Import Meta Information For Organisms\Write Class Information.Inputs[ADO NET Destination Input].ExternalColumns[Active]"
+                      dataType="bool"
+                      name="Active" />
+                    <externalMetadataColumn
+                      refId="Package\Import Meta Information For Organisms\Write Class Information.Inputs[ADO NET Destination Input].ExternalColumns[Inserted]"
+                      dataType="dbTimeStamp"
+                      name="Inserted" />
+                    <externalMetadataColumn
+                      refId="Package\Import Meta Information For Organisms\Write Class Information.Inputs[ADO NET Destination Input].ExternalColumns[Updated]"
+                      dataType="dbTimeStamp"
+                      name="Updated" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Meta Information For Organisms\Write Class Information.Outputs[ADO NET Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="ADO NET Destination Error Output"
+                  synchronousInputId="Package\Import Meta Information For Organisms\Write Class Information.Inputs[ADO NET Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Write Class Information.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Meta Information For Organisms\Write Class Information.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Write Class Information.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Meta Information For Organisms\Write Class Information.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Meta Information For Organisms\Write Family Information"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+              name="Write Family Information"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The Destination database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"medicinals"."OrganismFamily"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Meta Information For Organisms\Write Family Information.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[(localdb)\ProjectsV13.Clypeus]"
+                  connectionManagerRefId="Package.ConnectionManagers[(localdb)\ProjectsV13.Clypeus]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import Meta Information For Organisms\Write Family Information.Inputs[ADO NET Destination Input]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="ADO NET Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Write Family Information.Inputs[ADO NET Destination Input].Columns[Active]"
+                      cachedDataType="i4"
+                      cachedName="Active"
+                      externalMetadataColumnId="Package\Import Meta Information For Organisms\Write Family Information.Inputs[ADO NET Destination Input].ExternalColumns[Active]"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Family.Outputs[Sort Output].Columns[Active]" />
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Write Family Information.Inputs[ADO NET Destination Input].Columns[Inserted]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Inserted"
+                      externalMetadataColumnId="Package\Import Meta Information For Organisms\Write Family Information.Inputs[ADO NET Destination Input].ExternalColumns[Inserted]"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Family.Outputs[Sort Output].Columns[Inserted]" />
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Write Family Information.Inputs[ADO NET Destination Input].Columns[Updated]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Updated"
+                      externalMetadataColumnId="Package\Import Meta Information For Organisms\Write Family Information.Inputs[ADO NET Destination Input].ExternalColumns[Updated]"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Family.Outputs[Sort Output].Columns[Updated]" />
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Write Family Information.Inputs[ADO NET Destination Input].Columns[family]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="family"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Import Meta Information For Organisms\Write Family Information.Inputs[ADO NET Destination Input].ExternalColumns[Description]"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Family.Outputs[Sort Output].Columns[family]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Meta Information For Organisms\Write Family Information.Inputs[ADO NET Destination Input].ExternalColumns[Id]"
+                      dataType="i4"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\Import Meta Information For Organisms\Write Family Information.Inputs[ADO NET Destination Input].ExternalColumns[Description]"
+                      dataType="wstr"
+                      length="75"
+                      name="Description" />
+                    <externalMetadataColumn
+                      refId="Package\Import Meta Information For Organisms\Write Family Information.Inputs[ADO NET Destination Input].ExternalColumns[Active]"
+                      dataType="bool"
+                      name="Active" />
+                    <externalMetadataColumn
+                      refId="Package\Import Meta Information For Organisms\Write Family Information.Inputs[ADO NET Destination Input].ExternalColumns[Inserted]"
+                      dataType="dbTimeStamp"
+                      name="Inserted" />
+                    <externalMetadataColumn
+                      refId="Package\Import Meta Information For Organisms\Write Family Information.Inputs[ADO NET Destination Input].ExternalColumns[Updated]"
+                      dataType="dbTimeStamp"
+                      name="Updated" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Meta Information For Organisms\Write Family Information.Outputs[ADO NET Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="ADO NET Destination Error Output"
+                  synchronousInputId="Package\Import Meta Information For Organisms\Write Family Information.Inputs[ADO NET Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Write Family Information.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Meta Information For Organisms\Write Family Information.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Write Family Information.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Meta Information For Organisms\Write Family Information.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Meta Information For Organisms\Write Genus Information"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+              name="Write Genus Information"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The Destination database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"medicinals"."OrganismTypes"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Meta Information For Organisms\Write Genus Information.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[(localdb)\ProjectsV13.Clypeus]"
+                  connectionManagerRefId="Package.ConnectionManagers[(localdb)\ProjectsV13.Clypeus]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import Meta Information For Organisms\Write Genus Information.Inputs[ADO NET Destination Input]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="ADO NET Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Write Genus Information.Inputs[ADO NET Destination Input].Columns[Active]"
+                      cachedDataType="i4"
+                      cachedName="Active"
+                      externalMetadataColumnId="Package\Import Meta Information For Organisms\Write Genus Information.Inputs[ADO NET Destination Input].ExternalColumns[Active]"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Genus.Outputs[Sort Output].Columns[Active]" />
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Write Genus Information.Inputs[ADO NET Destination Input].Columns[Inserted]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Inserted"
+                      externalMetadataColumnId="Package\Import Meta Information For Organisms\Write Genus Information.Inputs[ADO NET Destination Input].ExternalColumns[Inserted]"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Genus.Outputs[Sort Output].Columns[Inserted]" />
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Write Genus Information.Inputs[ADO NET Destination Input].Columns[Updated]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Updated"
+                      externalMetadataColumnId="Package\Import Meta Information For Organisms\Write Genus Information.Inputs[ADO NET Destination Input].ExternalColumns[Updated]"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Genus.Outputs[Sort Output].Columns[Updated]" />
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Write Genus Information.Inputs[ADO NET Destination Input].Columns[genus]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="genus"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Import Meta Information For Organisms\Write Genus Information.Inputs[ADO NET Destination Input].ExternalColumns[Description]"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Genus.Outputs[Sort Output].Columns[genus]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Meta Information For Organisms\Write Genus Information.Inputs[ADO NET Destination Input].ExternalColumns[Id]"
+                      dataType="i4"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\Import Meta Information For Organisms\Write Genus Information.Inputs[ADO NET Destination Input].ExternalColumns[Description]"
+                      dataType="wstr"
+                      length="75"
+                      name="Description" />
+                    <externalMetadataColumn
+                      refId="Package\Import Meta Information For Organisms\Write Genus Information.Inputs[ADO NET Destination Input].ExternalColumns[Active]"
+                      dataType="bool"
+                      name="Active" />
+                    <externalMetadataColumn
+                      refId="Package\Import Meta Information For Organisms\Write Genus Information.Inputs[ADO NET Destination Input].ExternalColumns[Inserted]"
+                      dataType="dbTimeStamp"
+                      name="Inserted" />
+                    <externalMetadataColumn
+                      refId="Package\Import Meta Information For Organisms\Write Genus Information.Inputs[ADO NET Destination Input].ExternalColumns[Updated]"
+                      dataType="dbTimeStamp"
+                      name="Updated" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Meta Information For Organisms\Write Genus Information.Outputs[ADO NET Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="ADO NET Destination Error Output"
+                  synchronousInputId="Package\Import Meta Information For Organisms\Write Genus Information.Inputs[ADO NET Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Write Genus Information.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Meta Information For Organisms\Write Genus Information.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Write Genus Information.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Meta Information For Organisms\Write Genus Information.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Meta Information For Organisms\Write Kingdom Infomation"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+              name="Write Kingdom Infomation"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The Destination database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"medicinals"."OrganismKingdom"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Meta Information For Organisms\Write Kingdom Infomation.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[(localdb)\ProjectsV13.Clypeus]"
+                  connectionManagerRefId="Package.ConnectionManagers[(localdb)\ProjectsV13.Clypeus]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import Meta Information For Organisms\Write Kingdom Infomation.Inputs[ADO NET Destination Input]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="ADO NET Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Write Kingdom Infomation.Inputs[ADO NET Destination Input].Columns[Active]"
+                      cachedDataType="i4"
+                      cachedName="Active"
+                      externalMetadataColumnId="Package\Import Meta Information For Organisms\Write Kingdom Infomation.Inputs[ADO NET Destination Input].ExternalColumns[Active]"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Kingdom.Outputs[Sort Output].Columns[Active]" />
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Write Kingdom Infomation.Inputs[ADO NET Destination Input].Columns[Inserted]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Inserted"
+                      externalMetadataColumnId="Package\Import Meta Information For Organisms\Write Kingdom Infomation.Inputs[ADO NET Destination Input].ExternalColumns[Inserted]"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Kingdom.Outputs[Sort Output].Columns[Inserted]" />
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Write Kingdom Infomation.Inputs[ADO NET Destination Input].Columns[Updated]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Updated"
+                      externalMetadataColumnId="Package\Import Meta Information For Organisms\Write Kingdom Infomation.Inputs[ADO NET Destination Input].ExternalColumns[Updated]"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Kingdom.Outputs[Sort Output].Columns[Updated]" />
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Write Kingdom Infomation.Inputs[ADO NET Destination Input].Columns[kingdom]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="kingdom"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Import Meta Information For Organisms\Write Kingdom Infomation.Inputs[ADO NET Destination Input].ExternalColumns[Description]"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Kingdom.Outputs[Sort Output].Columns[kingdom]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Meta Information For Organisms\Write Kingdom Infomation.Inputs[ADO NET Destination Input].ExternalColumns[Id]"
+                      dataType="i4"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\Import Meta Information For Organisms\Write Kingdom Infomation.Inputs[ADO NET Destination Input].ExternalColumns[Description]"
+                      dataType="wstr"
+                      length="75"
+                      name="Description" />
+                    <externalMetadataColumn
+                      refId="Package\Import Meta Information For Organisms\Write Kingdom Infomation.Inputs[ADO NET Destination Input].ExternalColumns[Active]"
+                      dataType="bool"
+                      name="Active" />
+                    <externalMetadataColumn
+                      refId="Package\Import Meta Information For Organisms\Write Kingdom Infomation.Inputs[ADO NET Destination Input].ExternalColumns[Inserted]"
+                      dataType="dbTimeStamp"
+                      name="Inserted" />
+                    <externalMetadataColumn
+                      refId="Package\Import Meta Information For Organisms\Write Kingdom Infomation.Inputs[ADO NET Destination Input].ExternalColumns[Updated]"
+                      dataType="dbTimeStamp"
+                      name="Updated" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Meta Information For Organisms\Write Kingdom Infomation.Outputs[ADO NET Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="ADO NET Destination Error Output"
+                  synchronousInputId="Package\Import Meta Information For Organisms\Write Kingdom Infomation.Inputs[ADO NET Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Write Kingdom Infomation.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Meta Information For Organisms\Write Kingdom Infomation.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Write Kingdom Infomation.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Meta Information For Organisms\Write Kingdom Infomation.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Meta Information For Organisms\Write Order Information"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+              name="Write Order Information"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The Destination database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"medicinals"."OrganismOrder"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Meta Information For Organisms\Write Order Information.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[(localdb)\ProjectsV13.Clypeus]"
+                  connectionManagerRefId="Package.ConnectionManagers[(localdb)\ProjectsV13.Clypeus]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import Meta Information For Organisms\Write Order Information.Inputs[ADO NET Destination Input]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="ADO NET Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Write Order Information.Inputs[ADO NET Destination Input].Columns[Active]"
+                      cachedDataType="i4"
+                      cachedName="Active"
+                      externalMetadataColumnId="Package\Import Meta Information For Organisms\Write Order Information.Inputs[ADO NET Destination Input].ExternalColumns[Active]"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Order.Outputs[Sort Output].Columns[Active]" />
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Write Order Information.Inputs[ADO NET Destination Input].Columns[Inserted]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Inserted"
+                      externalMetadataColumnId="Package\Import Meta Information For Organisms\Write Order Information.Inputs[ADO NET Destination Input].ExternalColumns[Inserted]"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Order.Outputs[Sort Output].Columns[Inserted]" />
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Write Order Information.Inputs[ADO NET Destination Input].Columns[Updated]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Updated"
+                      externalMetadataColumnId="Package\Import Meta Information For Organisms\Write Order Information.Inputs[ADO NET Destination Input].ExternalColumns[Updated]"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Order.Outputs[Sort Output].Columns[Updated]" />
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Write Order Information.Inputs[ADO NET Destination Input].Columns[order]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="order"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Import Meta Information For Organisms\Write Order Information.Inputs[ADO NET Destination Input].ExternalColumns[Description]"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Order.Outputs[Sort Output].Columns[order]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Meta Information For Organisms\Write Order Information.Inputs[ADO NET Destination Input].ExternalColumns[Id]"
+                      dataType="i4"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\Import Meta Information For Organisms\Write Order Information.Inputs[ADO NET Destination Input].ExternalColumns[Description]"
+                      dataType="wstr"
+                      length="75"
+                      name="Description" />
+                    <externalMetadataColumn
+                      refId="Package\Import Meta Information For Organisms\Write Order Information.Inputs[ADO NET Destination Input].ExternalColumns[Active]"
+                      dataType="bool"
+                      name="Active" />
+                    <externalMetadataColumn
+                      refId="Package\Import Meta Information For Organisms\Write Order Information.Inputs[ADO NET Destination Input].ExternalColumns[Inserted]"
+                      dataType="dbTimeStamp"
+                      name="Inserted" />
+                    <externalMetadataColumn
+                      refId="Package\Import Meta Information For Organisms\Write Order Information.Inputs[ADO NET Destination Input].ExternalColumns[Updated]"
+                      dataType="dbTimeStamp"
+                      name="Updated" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Meta Information For Organisms\Write Order Information.Outputs[ADO NET Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="ADO NET Destination Error Output"
+                  synchronousInputId="Package\Import Meta Information For Organisms\Write Order Information.Inputs[ADO NET Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Write Order Information.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Meta Information For Organisms\Write Order Information.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Write Order Information.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Meta Information For Organisms\Write Order Information.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Meta Information For Organisms\Write Phylum Information"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+              name="Write Phylum Information"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The Destination database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"medicinals"."OrganismPhylum"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Meta Information For Organisms\Write Phylum Information.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[(localdb)\ProjectsV13.Clypeus]"
+                  connectionManagerRefId="Package.ConnectionManagers[(localdb)\ProjectsV13.Clypeus]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import Meta Information For Organisms\Write Phylum Information.Inputs[ADO NET Destination Input]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="ADO NET Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Write Phylum Information.Inputs[ADO NET Destination Input].Columns[Active]"
+                      cachedDataType="i4"
+                      cachedName="Active"
+                      externalMetadataColumnId="Package\Import Meta Information For Organisms\Write Phylum Information.Inputs[ADO NET Destination Input].ExternalColumns[Active]"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Phylum.Outputs[Sort Output].Columns[Active]" />
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Write Phylum Information.Inputs[ADO NET Destination Input].Columns[Inserted]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Inserted"
+                      externalMetadataColumnId="Package\Import Meta Information For Organisms\Write Phylum Information.Inputs[ADO NET Destination Input].ExternalColumns[Inserted]"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Phylum.Outputs[Sort Output].Columns[Inserted]" />
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Write Phylum Information.Inputs[ADO NET Destination Input].Columns[Updated]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Updated"
+                      externalMetadataColumnId="Package\Import Meta Information For Organisms\Write Phylum Information.Inputs[ADO NET Destination Input].ExternalColumns[Updated]"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Phylum.Outputs[Sort Output].Columns[Updated]" />
+                    <inputColumn
+                      refId="Package\Import Meta Information For Organisms\Write Phylum Information.Inputs[ADO NET Destination Input].Columns[phylum]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="phylum"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Import Meta Information For Organisms\Write Phylum Information.Inputs[ADO NET Destination Input].ExternalColumns[Description]"
+                      lineageId="Package\Import Meta Information For Organisms\Sort Phylum.Outputs[Sort Output].Columns[phylum]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Meta Information For Organisms\Write Phylum Information.Inputs[ADO NET Destination Input].ExternalColumns[Id]"
+                      dataType="i4"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\Import Meta Information For Organisms\Write Phylum Information.Inputs[ADO NET Destination Input].ExternalColumns[Description]"
+                      dataType="wstr"
+                      length="75"
+                      name="Description" />
+                    <externalMetadataColumn
+                      refId="Package\Import Meta Information For Organisms\Write Phylum Information.Inputs[ADO NET Destination Input].ExternalColumns[Active]"
+                      dataType="bool"
+                      name="Active" />
+                    <externalMetadataColumn
+                      refId="Package\Import Meta Information For Organisms\Write Phylum Information.Inputs[ADO NET Destination Input].ExternalColumns[Inserted]"
+                      dataType="dbTimeStamp"
+                      name="Inserted" />
+                    <externalMetadataColumn
+                      refId="Package\Import Meta Information For Organisms\Write Phylum Information.Inputs[ADO NET Destination Input].ExternalColumns[Updated]"
+                      dataType="dbTimeStamp"
+                      name="Updated" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Meta Information For Organisms\Write Phylum Information.Outputs[ADO NET Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="ADO NET Destination Error Output"
+                  synchronousInputId="Package\Import Meta Information For Organisms\Write Phylum Information.Inputs[ADO NET Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Write Phylum Information.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Meta Information For Organisms\Write Phylum Information.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Meta Information For Organisms\Write Phylum Information.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Meta Information For Organisms\Write Phylum Information.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Import Meta Information For Organisms.Paths[Derived Column Output]"
+              endId="Package\Import Meta Information For Organisms\Multicast.Inputs[Multicast Input 1]"
+              name="Derived Column Output"
+              startId="Package\Import Meta Information For Organisms\Add the meta columns.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Import Meta Information For Organisms.Paths[Flat File Source Output]"
+              endId="Package\Import Meta Information For Organisms\Add the meta columns.Inputs[Derived Column Input]"
+              name="Flat File Source Output"
+              startId="Package\Import Meta Information For Organisms\Read Organism File.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Import Meta Information For Organisms.Paths[Multicast Output 1]"
+              endId="Package\Import Meta Information For Organisms\Sort Kingdom.Inputs[Sort Input]"
+              name="Multicast Output 1"
+              startId="Package\Import Meta Information For Organisms\Multicast.Outputs[Multicast Output 1]" />
+            <path
+              refId="Package\Import Meta Information For Organisms.Paths[Multicast Output 2]"
+              endId="Package\Import Meta Information For Organisms\Sort Phylum.Inputs[Sort Input]"
+              name="Multicast Output 2"
+              startId="Package\Import Meta Information For Organisms\Multicast.Outputs[Multicast Output 2]" />
+            <path
+              refId="Package\Import Meta Information For Organisms.Paths[Multicast Output 3]"
+              endId="Package\Import Meta Information For Organisms\Sort Class.Inputs[Sort Input]"
+              name="Multicast Output 3"
+              startId="Package\Import Meta Information For Organisms\Multicast.Outputs[Multicast Output 3]" />
+            <path
+              refId="Package\Import Meta Information For Organisms.Paths[Multicast Output 4]"
+              endId="Package\Import Meta Information For Organisms\Sort Order.Inputs[Sort Input]"
+              name="Multicast Output 4"
+              startId="Package\Import Meta Information For Organisms\Multicast.Outputs[Multicast Output 4]" />
+            <path
+              refId="Package\Import Meta Information For Organisms.Paths[Multicast Output 5]"
+              endId="Package\Import Meta Information For Organisms\Sort Family.Inputs[Sort Input]"
+              name="Multicast Output 5"
+              startId="Package\Import Meta Information For Organisms\Multicast.Outputs[Multicast Output 5]" />
+            <path
+              refId="Package\Import Meta Information For Organisms.Paths[Multicast Output 6]"
+              endId="Package\Import Meta Information For Organisms\Sort Genus.Inputs[Sort Input]"
+              name="Multicast Output 6"
+              startId="Package\Import Meta Information For Organisms\Multicast.Outputs[Multicast Output 6]" />
+            <path
+              refId="Package\Import Meta Information For Organisms.Paths[Sort Output]"
+              endId="Package\Import Meta Information For Organisms\Write Kingdom Infomation.Inputs[ADO NET Destination Input]"
+              name="Sort Output"
+              startId="Package\Import Meta Information For Organisms\Sort Kingdom.Outputs[Sort Output]" />
+            <path
+              refId="Package\Import Meta Information For Organisms.Paths[Sort Output1]"
+              endId="Package\Import Meta Information For Organisms\Write Phylum Information.Inputs[ADO NET Destination Input]"
+              name="Sort Output"
+              startId="Package\Import Meta Information For Organisms\Sort Phylum.Outputs[Sort Output]" />
+            <path
+              refId="Package\Import Meta Information For Organisms.Paths[Sort Output2]"
+              endId="Package\Import Meta Information For Organisms\Write Class Information.Inputs[ADO NET Destination Input]"
+              name="Sort Output"
+              startId="Package\Import Meta Information For Organisms\Sort Class.Outputs[Sort Output]" />
+            <path
+              refId="Package\Import Meta Information For Organisms.Paths[Sort Output3]"
+              endId="Package\Import Meta Information For Organisms\Write Order Information.Inputs[ADO NET Destination Input]"
+              name="Sort Output"
+              startId="Package\Import Meta Information For Organisms\Sort Order.Outputs[Sort Output]" />
+            <path
+              refId="Package\Import Meta Information For Organisms.Paths[Sort Output4]"
+              endId="Package\Import Meta Information For Organisms\Write Family Information.Inputs[ADO NET Destination Input]"
+              name="Sort Output"
+              startId="Package\Import Meta Information For Organisms\Sort Family.Outputs[Sort Output]" />
+            <path
+              refId="Package\Import Meta Information For Organisms.Paths[Sort Output5]"
+              endId="Package\Import Meta Information For Organisms\Write Genus Information.Inputs[ADO NET Destination Input]"
+              name="Sort Output"
+              startId="Package\Import Meta Information For Organisms\Sort Genus.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="260,41.6"
+          Id="Package\Import Meta Information For Organisms"
+          TopLeft="291.999988396963,14.5600001157125" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Import Meta Information For Organisms">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Import Meta Information For Organisms\Read Organism File"
+          TopLeft="359.33331905471,9.70666674380832" />
+        <NodeLayout
+          Size="141.6,41.6"
+          Id="Package\Import Meta Information For Organisms\Sort Kingdom"
+          TopLeft="75.9999969800314,294.45333502494" />
+        <NodeLayout
+          Size="181.6,41.6"
+          Id="Package\Import Meta Information For Organisms\Add the meta columns"
+          TopLeft="361.999985615413,113.706667570326" />
+        <EdgeLayout
+          Id="Package\Import Meta Information For Organisms.Paths[Flat File Source Output]"
+          TopLeft="444.53331905471,51.3066667438083">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8.2666665607029,62.4000008265178"
+              Start="0,0"
+              End="8.2666665607029,54.9000008265178">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.2000004132589" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.2000004132589"
+                    Point2="0,31.2000004132589"
+                    Point3="4,31.2000004132589" />
+                  <mssgle:LineSegment
+                    End="4.2666665607029,31.2000004132589" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.2666665607029,31.2000004132589"
+                    Point2="8.2666665607029,31.2000004132589"
+                    Point3="8.2666665607029,35.2000004132589" />
+                  <mssgle:LineSegment
+                    End="8.2666665607029,54.9000008265178" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="119.2,41.6"
+          Id="Package\Import Meta Information For Organisms\Multicast"
+          TopLeft="385.333318021563,197.600001570384" />
+        <EdgeLayout
+          Id="Package\Import Meta Information For Organisms.Paths[Derived Column Output]"
+          TopLeft="448.866651818488,155.306667570326">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.2933340000576"
+              Start="0,0"
+              End="0,34.7933340000576">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.7933340000576" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Meta Information For Organisms.Paths[Multicast Output 1]"
+          TopLeft="444.933318021563,239.200001570384">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-298.133321041532,55.253333454556"
+              Start="0,0"
+              End="-298.133321041532,47.753333454556">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.626666727278" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.626666727278"
+                    Point2="0,27.626666727278"
+                    Point3="-4,27.626666727278" />
+                  <mssgle:LineSegment
+                    End="-294.133321041532,27.626666727278" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-294.133321041532,27.626666727278"
+                    Point2="-298.133321041532,27.626666727278"
+                    Point3="-298.133321041532,31.626666727278" />
+                  <mssgle:LineSegment
+                    End="-298.133321041532,47.753333454556" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="197.6,41.6"
+          Id="Package\Import Meta Information For Organisms\Write Kingdom Infomation"
+          TopLeft="40.6666650507185,424.266668760512" />
+        <EdgeLayout
+          Id="Package\Import Meta Information For Organisms.Paths[Sort Output]"
+          TopLeft="143.133331015375,336.05333502494">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,88.213333735572"
+              Start="0,0"
+              End="0,80.713333735572">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,80.713333735572" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="126.4,41.6"
+          Id="Package\Import Meta Information For Organisms\Sort Class"
+          TopLeft="478.166647884582,294.963203147109" />
+        <NodeLayout
+          Size="135.2,41.6"
+          Id="Package\Import Meta Information For Organisms\Sort Phylum"
+          TopLeft="303.999987920126,295.306667405022" />
+        <EdgeLayout
+          Id="Package\Import Meta Information For Organisms.Paths[Multicast Output 2]"
+          TopLeft="444.933318021563,239.200001570384">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-73.3333301014372,56.1066658346388"
+              Start="0,0"
+              End="-73.3333301014372,48.6066658346388">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.0533329173194" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.0533329173194"
+                    Point2="0,28.0533329173194"
+                    Point3="-4,28.0533329173194" />
+                  <mssgle:LineSegment
+                    End="-69.3333301014372,28.0533329173194" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-69.3333301014372,28.0533329173194"
+                    Point2="-73.3333301014372,28.0533329173194"
+                    Point3="-73.3333301014372,32.0533329173194" />
+                  <mssgle:LineSegment
+                    End="-73.3333301014372,48.6066658346388" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="195.2,41.6"
+          Id="Package\Import Meta Information For Organisms\Write Phylum Information"
+          TopLeft="268.666655990813,422.933335124122" />
+        <EdgeLayout
+          Id="Package\Import Meta Information For Organisms.Paths[Sort Output1]"
+          TopLeft="368.933321955469,336.906667405023">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,86.0266677190993"
+              Start="0,0"
+              End="0,78.5266677190993">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,78.5266677190993" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Meta Information For Organisms.Paths[Multicast Output 3]"
+          TopLeft="472.733318021563,239.200001570384">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="68.6333298630186,55.7632015767248"
+              Start="0,0"
+              End="68.6333298630186,48.2632015767248">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.4012014238496" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.4012014238496"
+                    Point2="0,19.4012014238496"
+                    Point3="4,19.4012014238496" />
+                  <mssgle:LineSegment
+                    End="64.6333298630186,19.4012014238496" />
+                  <mssgle:CubicBezierSegment
+                    Point1="64.6333298630186,19.4012014238496"
+                    Point2="68.6333298630186,19.4012014238496"
+                    Point3="68.6333298630186,23.4012014238496" />
+                  <mssgle:LineSegment
+                    End="68.6333298630186,48.2632015767248" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="186.4,41.6"
+          Id="Package\Import Meta Information For Organisms\Write Class Information"
+          TopLeft="480.66664756669,422.933335124122" />
+        <EdgeLayout
+          Id="Package\Import Meta Information For Organisms.Paths[Sort Output2]"
+          TopLeft="541.366647884582,336.563203147109">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="32.4999996821085,86.3701319770132"
+              Start="0,0"
+              End="32.4999996821085,78.8701319770132">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.1850659885066" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39.1850659885066"
+                    Point2="0,43.1850659885066"
+                    Point3="4,43.1850659885066" />
+                  <mssgle:LineSegment
+                    End="28.4999996821085,43.1850659885066" />
+                  <mssgle:CubicBezierSegment
+                    Point1="28.4999996821085,43.1850659885066"
+                    Point2="32.4999996821085,43.1850659885066"
+                    Point3="32.4999996821085,47.1850659885066" />
+                  <mssgle:LineSegment
+                    End="32.4999996821085,78.8701319770132" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="127.2,41.6"
+          Id="Package\Import Meta Information For Organisms\Sort Order"
+          TopLeft="691.999972502392,293.333333966997" />
+        <EdgeLayout
+          Id="Package\Import Meta Information For Organisms.Paths[Multicast Output 4]"
+          TopLeft="478.293318021563,239.200001570384">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="277.306654480829,54.1333323966131"
+              Start="0,0"
+              End="277.306654480829,46.6333323966131">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.5477474614065" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.5477474614065"
+                    Point2="0,16.5477474614065"
+                    Point3="4,16.5477474614065" />
+                  <mssgle:LineSegment
+                    End="273.306654480829,16.5477474614065" />
+                  <mssgle:CubicBezierSegment
+                    Point1="273.306654480829,16.5477474614065"
+                    Point2="277.306654480829,16.5477474614065"
+                    Point3="277.306654480829,20.5477474614065" />
+                  <mssgle:LineSegment
+                    End="277.306654480829,46.6333323966131" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\Import Meta Information For Organisms\Write Order Information"
+          TopLeft="693.999972422919,422.933335124122" />
+        <EdgeLayout
+          Id="Package\Import Meta Information For Organisms.Paths[Sort Output3]"
+          TopLeft="755.599972502392,334.933333966997">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="31.9999999205271,88.0000011571249"
+              Start="0,0"
+              End="31.9999999205271,80.5000011571249">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.0000005785624" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,40.0000005785624"
+                    Point2="0,44.0000005785624"
+                    Point3="4,44.0000005785624" />
+                  <mssgle:LineSegment
+                    End="27.9999999205271,44.0000005785624" />
+                  <mssgle:CubicBezierSegment
+                    Point1="27.9999999205271,44.0000005785624"
+                    Point2="31.9999999205271,44.0000005785624"
+                    Point3="31.9999999205271,48.0000005785624" />
+                  <mssgle:LineSegment
+                    End="31.9999999205271,80.5000011571249" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="131.2,41.6"
+          Id="Package\Import Meta Information For Organisms\Sort Family"
+          TopLeft="900.666632307902,294.29333176846" />
+        <EdgeLayout
+          Id="Package\Import Meta Information For Organisms.Paths[Multicast Output 5]"
+          TopLeft="481.99998468823,239.200001570384">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="484.266647619672,55.0933301980759"
+              Start="0,0"
+              End="484.266647619672,47.5933301980759">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.1148909147319" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.1148909147319"
+                    Point2="0,15.1148909147319"
+                    Point3="4,15.1148909147319" />
+                  <mssgle:LineSegment
+                    End="480.266647619672,15.1148909147319" />
+                  <mssgle:CubicBezierSegment
+                    Point1="480.266647619672,15.1148909147319"
+                    Point2="484.266647619672,15.1148909147319"
+                    Point3="484.266647619672,19.1148909147319" />
+                  <mssgle:LineSegment
+                    End="484.266647619672,47.5933301980759" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="191.2,41.6"
+          Id="Package\Import Meta Information For Organisms\Write Family Information"
+          TopLeft="900.933302524356,425.013335140652" />
+        <EdgeLayout
+          Id="Package\Import Meta Information For Organisms.Paths[Sort Output4]"
+          TopLeft="966.266632307902,335.89333176846">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="30.2666702164544,89.1200033721925"
+              Start="0,0"
+              End="30.2666702164544,81.6200033721925">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5600016860963" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,40.5600016860963"
+                    Point2="0,44.5600016860963"
+                    Point3="4,44.5600016860963" />
+                  <mssgle:LineSegment
+                    End="26.2666702164544,44.5600016860963" />
+                  <mssgle:CubicBezierSegment
+                    Point1="26.2666702164544,44.5600016860963"
+                    Point2="30.2666702164544,44.5600016860963"
+                    Point3="30.2666702164544,48.5600016860963" />
+                  <mssgle:LineSegment
+                    End="30.2666702164544,81.6200033721925" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="131.2,41.6"
+          Id="Package\Import Meta Information For Organisms\Sort Genus"
+          TopLeft="191.33332573043,354.400001239777" />
+        <EdgeLayout
+          Id="Package\Import Meta Information For Organisms.Paths[Multicast Output 6]"
+          TopLeft="421.104746592992,239.200001570384">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-164.171420862562,115.199999669393"
+              Start="0,0"
+              End="-164.171420862562,107.699999669393">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.2086277969083" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39.2086277969083"
+                    Point2="0,43.2086277969083"
+                    Point3="-4,43.2086277969083" />
+                  <mssgle:LineSegment
+                    End="-160.171420862562,43.2086277969083" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-160.171420862562,43.2086277969083"
+                    Point2="-164.171420862562,43.2086277969083"
+                    Point3="-164.171420862562,47.2086277969083" />
+                  <mssgle:LineSegment
+                    End="-164.171420862562,107.699999669393" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="191.2,41.6"
+          Id="Package\Import Meta Information For Organisms\Write Genus Information"
+          TopLeft="165.999993403753,485.759999785105" />
+        <EdgeLayout
+          Id="Package\Import Meta Information For Organisms.Paths[Sort Output5]"
+          TopLeft="259.266659567091,396.000001239777">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,89.7599985453287"
+              Start="0,0"
+              End="0,82.2599985453287">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,82.2599985453287" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Meta Information For Organisms\Write Kingdom Infomation">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Meta Information For Organisms\Write Phylum Information">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Meta Information For Organisms\Write Class Information">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Meta Information For Organisms\Write Order Information">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Meta Information For Organisms\Write Family Information">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Meta Information For Organisms\Write Genus Information">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
