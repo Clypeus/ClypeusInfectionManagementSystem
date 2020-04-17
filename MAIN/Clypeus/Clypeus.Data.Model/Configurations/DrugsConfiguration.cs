@@ -23,7 +23,7 @@ namespace Clypeus.Data.Model.Configurations
                 .IsUnicode(false);
 
             entity.Property(e => e.Description)
-                .HasMaxLength(50)
+                .HasMaxLength(100)
                 .IsUnicode(false);
 
             entity.Property(e => e.Inserted).HasColumnType("datetime");

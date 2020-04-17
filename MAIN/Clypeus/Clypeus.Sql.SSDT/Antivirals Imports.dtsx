@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Antivirals Imports"
   DTS:PackageType="5"
-  DTS:VersionBuild="20"
-  DTS:VersionGUID="{2CE0E614-2766-43A9-8157-1FDC4F9BF383}">
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{33CFBF4F-0DD2-4136-B83E-4F7D732EC9F5}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -740,6 +740,1281 @@
               endId="Package\Import Antiviral Drug Groups\Derived Column.Inputs[Derived Column Input]"
               name="Flat File Source Output"
               startId="Package\Import Antiviral Drug Groups\Import Groups From Antiviral File.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Import Antivirals"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{C6C99FA3-8DF5-4833-85AB-FB4912D9ECE2}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Import Antivirals"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Import Antivirals\Add Drug Type"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Add Drug Type"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Import Antivirals\Add Drug Type.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Antivirals\Add Drug Type.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Import Antivirals\Add Drug Type.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Antivirals\Add Drug Type.Outputs[Derived Column Output].Columns[DrugTypeId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import Antivirals\Add Drug Type.Outputs[Derived Column Output].Columns[DrugTypeId]"
+                      name="DrugTypeId"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">2</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">2</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Antivirals\Add Drug Type.Outputs[Derived Column Output].Columns[Active]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import Antivirals\Add Drug Type.Outputs[Derived Column Output].Columns[Active]"
+                      name="Active"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression"> TRUE </property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression"> TRUE </property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Antivirals\Add Drug Type.Outputs[Derived Column Output].Columns[Code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import Antivirals\Add Drug Type.Outputs[Derived Column Output].Columns[Code]"
+                      name="Code"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,0,1252)""</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,0,1252)""</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Antivirals\Add Drug Type.Outputs[Derived Column Output].Columns[Inserted]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import Antivirals\Add Drug Type.Outputs[Derived Column Output].Columns[Inserted]"
+                      name="Inserted"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Antivirals\Add Drug Type.Outputs[Derived Column Output].Columns[Updated]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import Antivirals\Add Drug Type.Outputs[Derived Column Output].Columns[Updated]"
+                      name="Updated"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import Antivirals\Add Drug Type.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Import Antivirals\Add Drug Type.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Antivirals\Add Drug Type.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Antivirals\Add Drug Type.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Antivirals\Add Drug Type.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Antivirals\Add Drug Type.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Antivirals\Get antiviral group information"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
+              name="Get antiviral group information"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement used by the component to extract data."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether to allow non-string external columns to be implicitly converted to strings at the output columns."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="The Source database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"medicinals"."DrugGroup"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the mode to retrieve external column information"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">0</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Antivirals\Get antiviral group information.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[(localdb)\ProjectsV13.Clypeus]"
+                  connectionManagerRefId="Package.ConnectionManagers[(localdb)\ProjectsV13.Clypeus]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Output]"
+                  name="ADO NET Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Output].Columns[Id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Output].ExternalColumns[Id]"
+                      lineageId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Output].Columns[Id]"
+                      name="Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Output].Columns[Code]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Output].ExternalColumns[Code]"
+                      length="10"
+                      lineageId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Output].Columns[Code]"
+                      name="Code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Output].Columns[Description]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Output].ExternalColumns[Description]"
+                      length="100"
+                      lineageId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Output].Columns[Description]"
+                      name="Description"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Output].Columns[DrugTypeId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Output].ExternalColumns[DrugTypeId]"
+                      lineageId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Output].Columns[DrugTypeId]"
+                      name="DrugTypeId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Output].Columns[Active]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Output].ExternalColumns[Active]"
+                      lineageId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Output].Columns[Active]"
+                      name="Active"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Output].Columns[Inserted]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Output].ExternalColumns[Inserted]"
+                      lineageId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Output].Columns[Inserted]"
+                      name="Inserted"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Output].Columns[Updated]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Output].ExternalColumns[Updated]"
+                      lineageId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Output].Columns[Updated]"
+                      name="Updated"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Output].ExternalColumns[Id]"
+                      dataType="i4"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Output].ExternalColumns[Code]"
+                      dataType="wstr"
+                      length="10"
+                      name="Code" />
+                    <externalMetadataColumn
+                      refId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Output].ExternalColumns[Description]"
+                      dataType="wstr"
+                      length="100"
+                      name="Description" />
+                    <externalMetadataColumn
+                      refId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Output].ExternalColumns[DrugTypeId]"
+                      dataType="i4"
+                      name="DrugTypeId" />
+                    <externalMetadataColumn
+                      refId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Output].ExternalColumns[Active]"
+                      dataType="bool"
+                      name="Active" />
+                    <externalMetadataColumn
+                      refId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Output].ExternalColumns[Inserted]"
+                      dataType="dbTimeStamp"
+                      name="Inserted" />
+                    <externalMetadataColumn
+                      refId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Output].ExternalColumns[Updated]"
+                      dataType="dbTimeStamp"
+                      name="Updated" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Error Output]"
+                  isErrorOut="true"
+                  name="ADO NET Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Error Output].Columns[Id]"
+                      dataType="i4"
+                      lineageId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Error Output].Columns[Id]"
+                      name="Id" />
+                    <outputColumn
+                      refId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Error Output].Columns[Code]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Error Output].Columns[Code]"
+                      name="Code" />
+                    <outputColumn
+                      refId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Error Output].Columns[Description]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Error Output].Columns[Description]"
+                      name="Description" />
+                    <outputColumn
+                      refId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Error Output].Columns[DrugTypeId]"
+                      dataType="i4"
+                      lineageId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Error Output].Columns[DrugTypeId]"
+                      name="DrugTypeId" />
+                    <outputColumn
+                      refId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Error Output].Columns[Active]"
+                      dataType="bool"
+                      lineageId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Error Output].Columns[Active]"
+                      name="Active" />
+                    <outputColumn
+                      refId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Error Output].Columns[Inserted]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Error Output].Columns[Inserted]"
+                      name="Inserted" />
+                    <outputColumn
+                      refId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Error Output].Columns[Updated]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Error Output].Columns[Updated]"
+                      name="Updated" />
+                    <outputColumn
+                      refId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Antivirals\Get antivirals from file"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="2057"
+              name="Get antivirals from file"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Antivirals\Get antivirals from file.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Antiviral File Import]"
+                  connectionManagerRefId="Package.ConnectionManagers[Antiviral File Import]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Import Antivirals\Get antivirals from file.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Antivirals\Get antivirals from file.Outputs[Flat File Source Output].Columns[atc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Antivirals\Get antivirals from file.Outputs[Flat File Source Output].ExternalColumns[atc]"
+                      length="7"
+                      lineageId="Package\Import Antivirals\Get antivirals from file.Outputs[Flat File Source Output].Columns[atc]"
+                      name="atc"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Antivirals\Get antivirals from file.Outputs[Flat File Source Output].Columns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Antivirals\Get antivirals from file.Outputs[Flat File Source Output].ExternalColumns[name]"
+                      length="67"
+                      lineageId="Package\Import Antivirals\Get antivirals from file.Outputs[Flat File Source Output].Columns[name]"
+                      name="name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Antivirals\Get antivirals from file.Outputs[Flat File Source Output].Columns[atc_group]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Antivirals\Get antivirals from file.Outputs[Flat File Source Output].ExternalColumns[atc_group]"
+                      length="66"
+                      lineageId="Package\Import Antivirals\Get antivirals from file.Outputs[Flat File Source Output].Columns[atc_group]"
+                      name="atc_group"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Antivirals\Get antivirals from file.Outputs[Flat File Source Output].ExternalColumns[atc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="7"
+                      name="atc" />
+                    <externalMetadataColumn
+                      refId="Package\Import Antivirals\Get antivirals from file.Outputs[Flat File Source Output].ExternalColumns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="67"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\Import Antivirals\Get antivirals from file.Outputs[Flat File Source Output].ExternalColumns[atc_group]"
+                      codePage="1252"
+                      dataType="str"
+                      length="66"
+                      name="atc_group" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Import Antivirals\Get antivirals from file.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Antivirals\Get antivirals from file.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Import Antivirals\Get antivirals from file.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Import Antivirals\Get antivirals from file.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Antivirals\Get antivirals from file.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Antivirals\Get antivirals from file.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Antivirals\Get antivirals from file.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Antivirals\Join File To DB"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Join File To DB"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Import Antivirals\Join File To DB.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Antivirals\Join File To DB.Inputs[Merge Join Left Input].Columns[atc_group]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="66"
+                      cachedName="atc_group"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Import Antivirals\Sort.Outputs[Sort Output].Columns[atc_group]" />
+                    <inputColumn
+                      refId="Package\Import Antivirals\Join File To DB.Inputs[Merge Join Left Input].Columns[name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="67"
+                      cachedName="name"
+                      lineageId="Package\Import Antivirals\Sort.Outputs[Sort Output].Columns[name]" />
+                    <inputColumn
+                      refId="Package\Import Antivirals\Join File To DB.Inputs[Merge Join Left Input].Columns[atc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="7"
+                      cachedName="atc"
+                      lineageId="Package\Import Antivirals\Sort.Outputs[Sort Output].Columns[atc]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Import Antivirals\Join File To DB.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Antivirals\Join File To DB.Inputs[Merge Join Right Input].Columns[Description]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Description"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Import Antivirals\Sort 1.Outputs[Sort Output].Columns[Description]" />
+                    <inputColumn
+                      refId="Package\Import Antivirals\Join File To DB.Inputs[Merge Join Right Input].Columns[Id]"
+                      cachedDataType="i4"
+                      cachedName="Id"
+                      lineageId="Package\Import Antivirals\Sort 1.Outputs[Sort Output].Columns[Id]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Antivirals\Join File To DB.Outputs[Merge Join Output]"
+                  isSorted="true"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Antivirals\Join File To DB.Outputs[Merge Join Output].Columns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="67"
+                      lineageId="Package\Import Antivirals\Join File To DB.Outputs[Merge Join Output].Columns[name]"
+                      name="name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Import Antivirals\Join File To DB.Inputs[Merge Join Left Input].Columns[name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Antivirals\Join File To DB.Outputs[Merge Join Output].Columns[atc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="7"
+                      lineageId="Package\Import Antivirals\Join File To DB.Outputs[Merge Join Output].Columns[atc]"
+                      name="atc">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Import Antivirals\Join File To DB.Inputs[Merge Join Left Input].Columns[atc]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Antivirals\Join File To DB.Outputs[Merge Join Output].Columns[Id]"
+                      dataType="i4"
+                      lineageId="Package\Import Antivirals\Join File To DB.Outputs[Merge Join Output].Columns[Id]"
+                      name="Id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Import Antivirals\Join File To DB.Inputs[Merge Join Right Input].Columns[Id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Antivirals\Join File To DB.Outputs[Merge Join Output].Columns[atc_group]"
+                      codePage="1252"
+                      dataType="str"
+                      length="66"
+                      lineageId="Package\Import Antivirals\Join File To DB.Outputs[Merge Join Output].Columns[atc_group]"
+                      name="atc_group"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Import Antivirals\Join File To DB.Inputs[Merge Join Left Input].Columns[atc_group]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Antivirals\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Import Antivirals\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Antivirals\Sort.Inputs[Sort Input].Columns[atc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="7"
+                      cachedName="atc"
+                      lineageId="Package\Import Antivirals\Get antivirals from file.Outputs[Flat File Source Output].Columns[atc]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Antivirals\Sort.Inputs[Sort Input].Columns[name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="67"
+                      cachedName="name"
+                      lineageId="Package\Import Antivirals\Get antivirals from file.Outputs[Flat File Source Output].Columns[name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Antivirals\Sort.Inputs[Sort Input].Columns[atc_group]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="66"
+                      cachedName="atc_group"
+                      lineageId="Package\Import Antivirals\Get antivirals from file.Outputs[Flat File Source Output].Columns[atc_group]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Antivirals\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Antivirals\Sort.Outputs[Sort Output].Columns[atc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="7"
+                      lineageId="Package\Import Antivirals\Sort.Outputs[Sort Output].Columns[atc]"
+                      name="atc">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Antivirals\Get antivirals from file.Outputs[Flat File Source Output].Columns[atc]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Antivirals\Sort.Outputs[Sort Output].Columns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="67"
+                      lineageId="Package\Import Antivirals\Sort.Outputs[Sort Output].Columns[name]"
+                      name="name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Antivirals\Get antivirals from file.Outputs[Flat File Source Output].Columns[name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Antivirals\Sort.Outputs[Sort Output].Columns[atc_group]"
+                      codePage="1252"
+                      dataType="str"
+                      length="66"
+                      lineageId="Package\Import Antivirals\Sort.Outputs[Sort Output].Columns[atc_group]"
+                      name="atc_group"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Antivirals\Get antivirals from file.Outputs[Flat File Source Output].Columns[atc_group]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Antivirals\Sort 1"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort 1"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Import Antivirals\Sort 1.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Antivirals\Sort 1.Inputs[Sort Input].Columns[Id]"
+                      cachedDataType="i4"
+                      cachedName="Id"
+                      lineageId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Output].Columns[Id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Antivirals\Sort 1.Inputs[Sort Input].Columns[Code]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Code"
+                      lineageId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Output].Columns[Code]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Antivirals\Sort 1.Inputs[Sort Input].Columns[Description]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Description"
+                      lineageId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Output].Columns[Description]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Antivirals\Sort 1.Inputs[Sort Input].Columns[DrugTypeId]"
+                      cachedDataType="i4"
+                      cachedName="DrugTypeId"
+                      lineageId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Output].Columns[DrugTypeId]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Antivirals\Sort 1.Inputs[Sort Input].Columns[Active]"
+                      cachedDataType="bool"
+                      cachedName="Active"
+                      lineageId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Output].Columns[Active]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Antivirals\Sort 1.Inputs[Sort Input].Columns[Inserted]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Inserted"
+                      lineageId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Output].Columns[Inserted]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Antivirals\Sort 1.Inputs[Sort Input].Columns[Updated]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Updated"
+                      lineageId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Output].Columns[Updated]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Antivirals\Sort 1.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Antivirals\Sort 1.Outputs[Sort Output].Columns[Id]"
+                      dataType="i4"
+                      lineageId="Package\Import Antivirals\Sort 1.Outputs[Sort Output].Columns[Id]"
+                      name="Id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Output].Columns[Id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Antivirals\Sort 1.Outputs[Sort Output].Columns[Code]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Import Antivirals\Sort 1.Outputs[Sort Output].Columns[Code]"
+                      name="Code">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Output].Columns[Code]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Antivirals\Sort 1.Outputs[Sort Output].Columns[Description]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Import Antivirals\Sort 1.Outputs[Sort Output].Columns[Description]"
+                      name="Description"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Output].Columns[Description]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Antivirals\Sort 1.Outputs[Sort Output].Columns[DrugTypeId]"
+                      dataType="i4"
+                      lineageId="Package\Import Antivirals\Sort 1.Outputs[Sort Output].Columns[DrugTypeId]"
+                      name="DrugTypeId">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Output].Columns[DrugTypeId]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Antivirals\Sort 1.Outputs[Sort Output].Columns[Active]"
+                      dataType="bool"
+                      lineageId="Package\Import Antivirals\Sort 1.Outputs[Sort Output].Columns[Active]"
+                      name="Active">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Output].Columns[Active]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Antivirals\Sort 1.Outputs[Sort Output].Columns[Inserted]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Import Antivirals\Sort 1.Outputs[Sort Output].Columns[Inserted]"
+                      name="Inserted">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Output].Columns[Inserted]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Antivirals\Sort 1.Outputs[Sort Output].Columns[Updated]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Import Antivirals\Sort 1.Outputs[Sort Output].Columns[Updated]"
+                      name="Updated">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Output].Columns[Updated]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Antivirals\Write To Database"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+              name="Write To Database"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The Destination database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"medicinals"."Drugs"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Antivirals\Write To Database.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[(localdb)\ProjectsV13.Clypeus]"
+                  connectionManagerRefId="Package.ConnectionManagers[(localdb)\ProjectsV13.Clypeus]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import Antivirals\Write To Database.Inputs[ADO NET Destination Input]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="ADO NET Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Antivirals\Write To Database.Inputs[ADO NET Destination Input].Columns[atc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="7"
+                      cachedName="atc"
+                      externalMetadataColumnId="Package\Import Antivirals\Write To Database.Inputs[ADO NET Destination Input].ExternalColumns[Atc]"
+                      lineageId="Package\Import Antivirals\Join File To DB.Outputs[Merge Join Output].Columns[atc]" />
+                    <inputColumn
+                      refId="Package\Import Antivirals\Write To Database.Inputs[ADO NET Destination Input].Columns[DrugTypeId]"
+                      cachedDataType="i4"
+                      cachedName="DrugTypeId"
+                      externalMetadataColumnId="Package\Import Antivirals\Write To Database.Inputs[ADO NET Destination Input].ExternalColumns[DrugTypeId]"
+                      lineageId="Package\Import Antivirals\Add Drug Type.Outputs[Derived Column Output].Columns[DrugTypeId]" />
+                    <inputColumn
+                      refId="Package\Import Antivirals\Write To Database.Inputs[ADO NET Destination Input].Columns[Active]"
+                      cachedDataType="bool"
+                      cachedName="Active"
+                      externalMetadataColumnId="Package\Import Antivirals\Write To Database.Inputs[ADO NET Destination Input].ExternalColumns[Active]"
+                      lineageId="Package\Import Antivirals\Add Drug Type.Outputs[Derived Column Output].Columns[Active]" />
+                    <inputColumn
+                      refId="Package\Import Antivirals\Write To Database.Inputs[ADO NET Destination Input].Columns[Code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedName="Code"
+                      externalMetadataColumnId="Package\Import Antivirals\Write To Database.Inputs[ADO NET Destination Input].ExternalColumns[Code]"
+                      lineageId="Package\Import Antivirals\Add Drug Type.Outputs[Derived Column Output].Columns[Code]" />
+                    <inputColumn
+                      refId="Package\Import Antivirals\Write To Database.Inputs[ADO NET Destination Input].Columns[name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="67"
+                      cachedName="name"
+                      externalMetadataColumnId="Package\Import Antivirals\Write To Database.Inputs[ADO NET Destination Input].ExternalColumns[Description]"
+                      lineageId="Package\Import Antivirals\Join File To DB.Outputs[Merge Join Output].Columns[name]" />
+                    <inputColumn
+                      refId="Package\Import Antivirals\Write To Database.Inputs[ADO NET Destination Input].Columns[Id]"
+                      cachedDataType="i4"
+                      cachedName="Id"
+                      externalMetadataColumnId="Package\Import Antivirals\Write To Database.Inputs[ADO NET Destination Input].ExternalColumns[PrincipleDrugGroupId]"
+                      lineageId="Package\Import Antivirals\Join File To DB.Outputs[Merge Join Output].Columns[Id]" />
+                    <inputColumn
+                      refId="Package\Import Antivirals\Write To Database.Inputs[ADO NET Destination Input].Columns[Inserted]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Inserted"
+                      externalMetadataColumnId="Package\Import Antivirals\Write To Database.Inputs[ADO NET Destination Input].ExternalColumns[Inserted]"
+                      lineageId="Package\Import Antivirals\Add Drug Type.Outputs[Derived Column Output].Columns[Inserted]" />
+                    <inputColumn
+                      refId="Package\Import Antivirals\Write To Database.Inputs[ADO NET Destination Input].Columns[Updated]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Updated"
+                      externalMetadataColumnId="Package\Import Antivirals\Write To Database.Inputs[ADO NET Destination Input].ExternalColumns[Updated]"
+                      lineageId="Package\Import Antivirals\Add Drug Type.Outputs[Derived Column Output].Columns[Updated]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Antivirals\Write To Database.Inputs[ADO NET Destination Input].ExternalColumns[Id]"
+                      dataType="i4"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\Import Antivirals\Write To Database.Inputs[ADO NET Destination Input].ExternalColumns[Code]"
+                      dataType="wstr"
+                      length="5"
+                      name="Code" />
+                    <externalMetadataColumn
+                      refId="Package\Import Antivirals\Write To Database.Inputs[ADO NET Destination Input].ExternalColumns[Description]"
+                      dataType="wstr"
+                      length="100"
+                      name="Description" />
+                    <externalMetadataColumn
+                      refId="Package\Import Antivirals\Write To Database.Inputs[ADO NET Destination Input].ExternalColumns[DrugTypeId]"
+                      dataType="i4"
+                      name="DrugTypeId" />
+                    <externalMetadataColumn
+                      refId="Package\Import Antivirals\Write To Database.Inputs[ADO NET Destination Input].ExternalColumns[PrincipleDrugGroupId]"
+                      dataType="i4"
+                      name="PrincipleDrugGroupId" />
+                    <externalMetadataColumn
+                      refId="Package\Import Antivirals\Write To Database.Inputs[ADO NET Destination Input].ExternalColumns[Active]"
+                      dataType="bool"
+                      name="Active" />
+                    <externalMetadataColumn
+                      refId="Package\Import Antivirals\Write To Database.Inputs[ADO NET Destination Input].ExternalColumns[Inserted]"
+                      dataType="dbTimeStamp"
+                      name="Inserted" />
+                    <externalMetadataColumn
+                      refId="Package\Import Antivirals\Write To Database.Inputs[ADO NET Destination Input].ExternalColumns[Updated]"
+                      dataType="dbTimeStamp"
+                      name="Updated" />
+                    <externalMetadataColumn
+                      refId="Package\Import Antivirals\Write To Database.Inputs[ADO NET Destination Input].ExternalColumns[Atc]"
+                      dataType="wstr"
+                      length="8"
+                      name="Atc" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Antivirals\Write To Database.Outputs[ADO NET Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="ADO NET Destination Error Output"
+                  synchronousInputId="Package\Import Antivirals\Write To Database.Inputs[ADO NET Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Antivirals\Write To Database.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Antivirals\Write To Database.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Antivirals\Write To Database.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Antivirals\Write To Database.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Import Antivirals.Paths[ADO NET Source Output]"
+              endId="Package\Import Antivirals\Sort 1.Inputs[Sort Input]"
+              name="ADO NET Source Output"
+              startId="Package\Import Antivirals\Get antiviral group information.Outputs[ADO NET Source Output]" />
+            <path
+              refId="Package\Import Antivirals.Paths[Derived Column Output]"
+              endId="Package\Import Antivirals\Write To Database.Inputs[ADO NET Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Import Antivirals\Add Drug Type.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Import Antivirals.Paths[Flat File Source Output]"
+              endId="Package\Import Antivirals\Sort.Inputs[Sort Input]"
+              name="Flat File Source Output"
+              startId="Package\Import Antivirals\Get antivirals from file.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Import Antivirals.Paths[Merge Join Output]"
+              endId="Package\Import Antivirals\Add Drug Type.Inputs[Derived Column Input]"
+              name="Merge Join Output"
+              startId="Package\Import Antivirals\Join File To DB.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Import Antivirals.Paths[Sort Output]"
+              endId="Package\Import Antivirals\Join File To DB.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Import Antivirals\Sort.Outputs[Sort Output]" />
+            <path
+              refId="Package\Import Antivirals.Paths[Sort Output1]"
+              endId="Package\Import Antivirals\Join File To DB.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Import Antivirals\Sort 1.Outputs[Sort Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -2563,6 +3838,14 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\Update Group With ATC" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{887098A2-C2D2-4501-BAA9-52CA71858DD8}"
+      DTS:From="Package\Update Group With ATC"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Import Antivirals" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -2575,18 +3858,18 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="209.6,41.6"
           Id="Package\Import Antiviral Drug Groups"
-          TopLeft="5.5,5.5" />
+          TopLeft="7.49999992052715,5.5" />
         <NodeLayout
           Size="190.4,41.6"
           Id="Package\Update Group With ATC"
-          TopLeft="25.3333323266772,96.3733340992398" />
+          TopLeft="27.3333322472044,96.3733340992398" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="110.3,47.1">
+          TopLeft="112.299999920527,47.1">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2618,6 +3901,32 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Import Antivirals"
+          TopLeft="46.6666648123001,192.053334859636" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="122.799998529752,137.97333409924">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54.0800007603963"
+              Start="0,0"
+              End="0,46.5800007603963">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.5800007603963" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -2627,13 +3936,21 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="231.2,41.6"
-          Id="Package\Import Antiviral Drug Groups\Import Groups From Antiviral File"
-          TopLeft="162.4,25.6" />
-        <NodeLayout
           Size="152.8,41.6"
           Id="Package\Import Antiviral Drug Groups\Derived Column"
           TopLeft="201.6,116.8" />
+        <NodeLayout
+          Size="126.4,41.6"
+          Id="Package\Import Antiviral Drug Groups\Aggregate"
+          TopLeft="212.8,200.8" />
+        <NodeLayout
+          Size="179.2,41.6"
+          Id="Package\Import Antiviral Drug Groups\ADO NET Destination"
+          TopLeft="204,297.6" />
+        <NodeLayout
+          Size="231.2,41.6"
+          Id="Package\Import Antiviral Drug Groups\Import Groups From Antiviral File"
+          TopLeft="162.4,25.6" />
         <EdgeLayout
           Id="Package\Import Antiviral Drug Groups.Paths[Flat File Source Output]"
           TopLeft="278,67.2">
@@ -2656,10 +3973,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="126.4,41.6"
-          Id="Package\Import Antiviral Drug Groups\Aggregate"
-          TopLeft="212.8,200.8" />
         <EdgeLayout
           Id="Package\Import Antiviral Drug Groups.Paths[Derived Column Output]"
           TopLeft="277,158.4">
@@ -2682,10 +3995,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="179.2,41.6"
-          Id="Package\Import Antiviral Drug Groups\ADO NET Destination"
-          TopLeft="204,297.6" />
         <EdgeLayout
           Id="Package\Import Antiviral Drug Groups.Paths[Aggregate Output 1]"
           TopLeft="276,242.4">
@@ -2735,241 +4044,47 @@
     design-time-name="Package\Update Group With ATC">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="131.2,41.6"
-          Id="Package\Update Group With ATC\Read Code"
-          TopLeft="103.2,29.6" />
-        <NodeLayout
-          Size="200,41.6"
-          Id="Package\Update Group With ATC\Get a reasonable atc code"
-          TopLeft="84.8,109.6" />
-        <EdgeLayout
-          Id="Package\Update Group With ATC.Paths[Flat File Source Output]"
-          TopLeft="168.8,71.2">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="16.0000000000001,38.4"
-              Start="0,0"
-              End="16.0000000000001,30.9">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15.2" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,15.2"
-                    Point2="0,19.2"
-                    Point3="4,19.2" />
-                  <mssgle:LineSegment
-                    End="12.0000000000001,19.2" />
-                  <mssgle:CubicBezierSegment
-                    Point1="12.0000000000001,19.2"
-                    Point2="16.0000000000001,19.2"
-                    Point3="16.0000000000001,23.2" />
-                  <mssgle:LineSegment
-                    End="16.0000000000001,30.9" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="176.8,41.6"
-          Id="Package\Update Group With ATC\Existing Drug Groups"
-          TopLeft="341.6,25.6" />
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="97.6,41.6"
           Id="Package\Update Group With ATC\Sort"
           TopLeft="118.4,250.4" />
         <NodeLayout
-          Size="106.4,41.6"
-          Id="Package\Update Group With ATC\Sort 1"
-          TopLeft="451.2,230.4" />
-        <NodeLayout
           Size="156,41.6"
           Id="Package\Update Group With ATC\Data Conversion"
           TopLeft="244,378.4" />
         <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\Update Group With ATC\Derived Column"
-          TopLeft="121.6,169.6" />
-        <EdgeLayout
-          Id="Package\Update Group With ATC.Paths[Derived Column Output]"
-          TopLeft="184.8,151.2">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-63.1999999999999,39.2"
-              Start="0,0"
-              End="-55.6999999999999,39.2">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.2" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,35.2"
-                    Point2="0,39.2"
-                    Point3="-4,39.2" />
-                  <mssgle:LineSegment
-                    End="-55.6999999999999,39.2" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Update Group With ATC.Paths[Derived Column Output1]"
-          TopLeft="198,211.2">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-30.8000000000001,39.2"
-              Start="0,0"
-              End="-30.8000000000001,31.7">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15.6" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,15.6"
-                    Point2="0,19.6"
-                    Point3="-4,19.6" />
-                  <mssgle:LineSegment
-                    End="-26.8000000000001,19.6" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-26.8000000000001,19.6"
-                    Point2="-30.8000000000001,19.6"
-                    Point3="-30.8000000000001,23.6" />
-                  <mssgle:LineSegment
-                    End="-30.8000000000001,31.7" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="161.6,41.6"
-          Id="Package\Update Group With ATC\Derived Column 1"
-          TopLeft="464,126.4" />
-        <EdgeLayout
-          Id="Package\Update Group With ATC.Paths[ADO NET Source Output]"
-          TopLeft="430,67.2">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="114.8,59.2"
-              Start="0,0"
-              End="114.8,51.7">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.6" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25.6"
-                    Point2="0,29.6"
-                    Point3="4,29.6" />
-                  <mssgle:LineSegment
-                    End="110.8,29.6" />
-                  <mssgle:CubicBezierSegment
-                    Point1="110.8,29.6"
-                    Point2="114.8,29.6"
-                    Point3="114.8,33.6" />
-                  <mssgle:LineSegment
-                    End="114.8,51.7" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Update Group With ATC.Paths[Derived Column Output2]"
-          TopLeft="544.8,168">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-40.4,62.4"
-              Start="0,0"
-              End="-40.4,54.9">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.2" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,27.2"
-                    Point2="0,31.2"
-                    Point3="-4,31.2" />
-                  <mssgle:LineSegment
-                    End="-36.4,31.2" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-36.4,31.2"
-                    Point2="-40.4,31.2"
-                    Point3="-40.4,35.2" />
-                  <mssgle:LineSegment
-                    End="-40.4,54.9" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="106.4,41.6"
+          Id="Package\Update Group With ATC\Sort 1"
+          TopLeft="451.2,230.4" />
         <NodeLayout
           Size="129.6,41.6"
           Id="Package\Update Group With ATC\Merge Join"
           TopLeft="335.2,306.4" />
-        <EdgeLayout
-          Id="Package\Update Group With ATC.Paths[Sort Output]"
-          TopLeft="216,271.2">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="119.2,55.9999999999999"
-              Start="0,0"
-              End="111.7,55.9999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="55.6,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="55.6,0"
-                    Point2="59.6,0"
-                    Point3="59.6,4" />
-                  <mssgle:LineSegment
-                    End="59.6,51.9999999999999" />
-                  <mssgle:CubicBezierSegment
-                    Point1="59.6,51.9999999999999"
-                    Point2="59.6,55.9999999999999"
-                    Point3="63.6,55.9999999999999" />
-                  <mssgle:LineSegment
-                    End="111.7,55.9999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\Update Group With ATC\Derived Column 1"
+          TopLeft="464,126.4" />
+        <NodeLayout
+          Size="200,41.6"
+          Id="Package\Update Group With ATC\Get a reasonable atc code"
+          TopLeft="84.8,109.6" />
+        <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\Update Group With ATC\OLE DB Command"
+          TopLeft="279.2,472.8" />
+        <NodeLayout
+          Size="176.8,41.6"
+          Id="Package\Update Group With ATC\Existing Drug Groups"
+          TopLeft="341.6,25.6" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Update Group With ATC\Derived Column"
+          TopLeft="121.6,169.6" />
+        <NodeLayout
+          Size="131.2,41.6"
+          Id="Package\Update Group With ATC\Read Code"
+          TopLeft="103.2,29.6" />
         <EdgeLayout
           Id="Package\Update Group With ATC.Paths[Sort Output1]"
           TopLeft="504.4,272">
@@ -3001,7 +4116,45 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Update Group With ATC.Paths[Sort Output]"
+          TopLeft="216,271.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="119.2,55.9999999999999"
+              Start="0,0"
+              End="111.7,55.9999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="55.6,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="55.6,0"
+                    Point2="59.6,0"
+                    Point3="59.6,4" />
+                  <mssgle:LineSegment
+                    End="59.6,51.9999999999999" />
+                  <mssgle:CubicBezierSegment
+                    Point1="59.6,51.9999999999999"
+                    Point2="59.6,55.9999999999999"
+                    Point3="63.6,55.9999999999999" />
+                  <mssgle:LineSegment
+                    End="111.7,55.9999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3035,13 +4188,149 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="167.2,41.6"
-          Id="Package\Update Group With ATC\OLE DB Command"
-          TopLeft="279.2,472.8" />
+        <EdgeLayout
+          Id="Package\Update Group With ATC.Paths[Flat File Source Output]"
+          TopLeft="168.8,71.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="16.0000000000001,38.4"
+              Start="0,0"
+              End="16.0000000000001,30.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.2"
+                    Point2="0,19.2"
+                    Point3="4,19.2" />
+                  <mssgle:LineSegment
+                    End="12.0000000000001,19.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="12.0000000000001,19.2"
+                    Point2="16.0000000000001,19.2"
+                    Point3="16.0000000000001,23.2" />
+                  <mssgle:LineSegment
+                    End="16.0000000000001,30.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Update Group With ATC.Paths[Derived Column Output2]"
+          TopLeft="544.8,168">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-40.4,62.4"
+              Start="0,0"
+              End="-40.4,54.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.2"
+                    Point2="0,31.2"
+                    Point3="-4,31.2" />
+                  <mssgle:LineSegment
+                    End="-36.4,31.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-36.4,31.2"
+                    Point2="-40.4,31.2"
+                    Point3="-40.4,35.2" />
+                  <mssgle:LineSegment
+                    End="-40.4,54.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Update Group With ATC.Paths[Derived Column Output1]"
+          TopLeft="198,211.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-30.8000000000001,39.2"
+              Start="0,0"
+              End="-30.8000000000001,31.7">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.6"
+                    Point2="0,19.6"
+                    Point3="-4,19.6" />
+                  <mssgle:LineSegment
+                    End="-26.8000000000001,19.6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-26.8000000000001,19.6"
+                    Point2="-30.8000000000001,19.6"
+                    Point3="-30.8000000000001,23.6" />
+                  <mssgle:LineSegment
+                    End="-30.8000000000001,31.7" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Update Group With ATC.Paths[Derived Column Output]"
+          TopLeft="184.8,151.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-63.1999999999999,39.2"
+              Start="0,0"
+              End="-55.6999999999999,39.2">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.2"
+                    Point2="0,39.2"
+                    Point3="-4,39.2" />
+                  <mssgle:LineSegment
+                    End="-55.6999999999999,39.2" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Update Group With ATC.Paths[Data Conversion Output]"
           TopLeft="322,420">
@@ -3073,7 +4362,45 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Update Group With ATC.Paths[ADO NET Source Output]"
+          TopLeft="430,67.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="114.8,59.2"
+              Start="0,0"
+              End="114.8,51.7">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.6"
+                    Point2="0,29.6"
+                    Point3="4,29.6" />
+                  <mssgle:LineSegment
+                    End="110.8,29.6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="110.8,29.6"
+                    Point2="114.8,29.6"
+                    Point3="114.8,33.6" />
+                  <mssgle:LineSegment
+                    End="114.8,51.7" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3081,6 +4408,238 @@
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Update Group With ATC\Existing Drug Groups">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Import Antivirals">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="179.2,41.6"
+          Id="Package\Import Antivirals\Get antivirals from file"
+          TopLeft="83.1999999999999,24.8" />
+        <NodeLayout
+          Size="217.6,41.6"
+          Id="Package\Import Antivirals\Get antiviral group information"
+          TopLeft="337.6,23.2" />
+        <NodeLayout
+          Size="97.6,41.6"
+          Id="Package\Import Antivirals\Sort"
+          TopLeft="133.6,120" />
+        <EdgeLayout
+          Id="Package\Import Antivirals.Paths[Flat File Source Output]"
+          TopLeft="172.8,66.4">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="9.60000000000014,53.6000000000001"
+              Start="0,0"
+              End="9.60000000000014,46.1000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.8" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.8"
+                    Point2="0,26.8"
+                    Point3="4,26.8" />
+                  <mssgle:LineSegment
+                    End="5.60000000000014,26.8" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5.60000000000014,26.8"
+                    Point2="9.60000000000014,26.8"
+                    Point3="9.60000000000014,30.8" />
+                  <mssgle:LineSegment
+                    End="9.60000000000014,46.1000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="106.4,41.6"
+          Id="Package\Import Antivirals\Sort 1"
+          TopLeft="396.8,120" />
+        <EdgeLayout
+          Id="Package\Import Antivirals.Paths[ADO NET Source Output]"
+          TopLeft="448.2,64.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55.2"
+              Start="0,0"
+              End="0,47.7">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.7" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\Import Antivirals\Join File To DB"
+          TopLeft="269.6,222.4" />
+        <EdgeLayout
+          Id="Package\Import Antivirals.Paths[Sort Output]"
+          TopLeft="182.4,161.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="138.4,60.8"
+              Start="0,0"
+              End="138.4,53.3">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.0939682539682" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.0939682539682"
+                    Point2="0,36.0939682539682"
+                    Point3="4,36.0939682539682" />
+                  <mssgle:LineSegment
+                    End="134.4,36.0939682539682" />
+                  <mssgle:CubicBezierSegment
+                    Point1="134.4,36.0939682539682"
+                    Point2="138.4,36.0939682539682"
+                    Point3="138.4,40.0939682539682" />
+                  <mssgle:LineSegment
+                    End="138.4,53.3" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Antivirals.Paths[Sort Output1]"
+          TopLeft="450,161.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-82.0000000000001,60.8"
+              Start="0,0"
+              End="-82.0000000000001,53.3">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.0939682539682" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.0939682539682"
+                    Point2="0,36.0939682539682"
+                    Point3="-4,36.0939682539682" />
+                  <mssgle:LineSegment
+                    End="-78.0000000000001,36.0939682539682" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-78.0000000000001,36.0939682539682"
+                    Point2="-82.0000000000001,36.0939682539682"
+                    Point3="-82.0000000000001,40.0939682539682" />
+                  <mssgle:LineSegment
+                    End="-82.0000000000001,53.3" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="148,41.6"
+          Id="Package\Import Antivirals\Add Drug Type"
+          TopLeft="258.4,297.6" />
+        <EdgeLayout
+          Id="Package\Import Antivirals.Paths[Merge Join Output]"
+          TopLeft="344.4,264">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-11.9999999999999,33.6"
+              Start="0,0"
+              End="-11.9999999999999,26.1">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.8" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.8"
+                    Point2="0,16.8"
+                    Point3="-4,16.8" />
+                  <mssgle:LineSegment
+                    End="-7.99999999999994,16.8" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-7.99999999999994,16.8"
+                    Point2="-11.9999999999999,16.8"
+                    Point3="-11.9999999999999,20.8" />
+                  <mssgle:LineSegment
+                    End="-11.9999999999999,26.1" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Import Antivirals\Write To Database"
+          TopLeft="246.4,396" />
+        <EdgeLayout
+          Id="Package\Import Antivirals.Paths[Derived Column Output]"
+          TopLeft="330.6,339.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56.8"
+              Start="0,0"
+              End="0,49.3">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.3" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Antivirals\Get antiviral group information">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Antivirals\Write To Database">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
