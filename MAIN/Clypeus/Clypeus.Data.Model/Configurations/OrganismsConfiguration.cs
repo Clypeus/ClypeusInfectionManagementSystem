@@ -14,15 +14,15 @@ namespace Clypeus.Data.Model.Configurations
 
             entity.Property(e => e.Code)
                 .IsRequired()
-                .HasMaxLength(15)
+                .HasMaxLength(25)
                 .IsUnicode(false);
 
             entity.Property(e => e.Description)
-                .HasMaxLength(75)
+                .HasMaxLength(150)
                 .IsUnicode(false);
 
             entity.Property(e => e.Species)
-                .HasMaxLength(75)
+                .HasMaxLength(125)
                 .IsUnicode(false);
 
             entity.Property(e => e.Inserted).HasColumnType("datetime");
