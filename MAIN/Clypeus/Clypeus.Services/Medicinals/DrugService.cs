@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Clypeus.Services.Medicinals
 {
@@ -17,9 +18,16 @@ namespace Clypeus.Services.Medicinals
             this.drugRespository = drugRespository; 
         }
 
-        public IEnumerable<GenericViewModel> GetDrugs()
+        public Task<IEnumerable<GenericViewModel>> GetDrugs()
         {
-            return new List<GenericViewModel>().AsEnumerable();
+            var drugs = drugRespository.GetAll(1, false);
+
+            var l = new List<GenericViewModel>();
+
+            foreach (var r in drugs)
+                l.Add(new GenericViewModel() { Code = r.Code, Description = r.Description, IsUsed = r.Active.GetValueOrDefault()});
+
+            return Task.FromResult(l.AsEnumerable());
         }
     }
 }
