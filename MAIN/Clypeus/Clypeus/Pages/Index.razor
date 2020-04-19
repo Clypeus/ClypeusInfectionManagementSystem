@@ -3,6 +3,8 @@
 
     <div class="container">
 
+       <Paging NumberOfResults=@Count ResultsPerPage="20" PageChanged="@PageChanged"></Paging>
+
         <h1>Drugs</h1>
 
         @if (drugs == null)
@@ -38,9 +40,18 @@
 @code {
     IEnumerable<Clypeus.DataTransfer.ViewModels.Generic.GenericViewModel> drugs;
 
+    public int Count = 0;
+
     protected override async Task OnInitializedAsync()
     {
         drugs = await drugService.GetDrugs();
+        Count = drugs.Count();
+
+    }
+
+    protected void PageChanged(int p)
+    {
+        System.Diagnostics.Debug.WriteLine("User Has Clicked: " + p);
     }
 }
 
