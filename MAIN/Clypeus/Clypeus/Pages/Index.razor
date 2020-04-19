@@ -1,39 +1,39 @@
 ﻿@page "/"
 @inject Clypeus.Services.Interfaces.Medicinals.IDrugService drugService
 
-<h1>Drugs</h1>
+    <div class="container">
 
-<div class="container">
+        <h1>Drugs</h1>
 
-    @if (drugs == null)
-    {
-        <p><em>Loading...</em></p>
-    }
-    else
-    {
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Code</th>
-                    <th>Atc</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var drug in drugs)
-                {
-                <tr>
-                    <td>@drug.Code</td>
-                    <td></td>
-                    <td>@drug.Description</td>
-                    
-                </tr>
-                }
-            </tbody>
-        </table>
-    }
+        @if (drugs == null)
+        {
+            <p><em>Loading...</em></p>
+        }
+        else
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Atc</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var drug in drugs)
+                    {
+                        <tr>
+                            <td>@drug.Code</td>
+                            <td></td>
+                            <td>@drug.Description</td>
 
-</div>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+
+    </div>
 
 @code {
     IEnumerable<Clypeus.DataTransfer.ViewModels.Generic.GenericViewModel> drugs;
