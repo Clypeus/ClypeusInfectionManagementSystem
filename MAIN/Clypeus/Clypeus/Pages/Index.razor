@@ -3,31 +3,37 @@
 
 <h1>Drugs</h1>
 
-@if (drugs == null)
-{
-    <p><em>Loading...</em></p>
-}
-else
-{
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Code</th>
-                <th>Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var drug in drugs)
-            {
+<div class="container">
+
+    @if (drugs == null)
+    {
+        <p><em>Loading...</em></p>
+    }
+    else
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Code</th>
+                    <th>Atc</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var drug in drugs)
+                {
                 <tr>
                     <td>@drug.Code</td>
+                    <td></td>
                     <td>@drug.Description</td>
+                    
                 </tr>
-            }
-        </tbody>
-    </table>
+                }
+            </tbody>
+        </table>
+    }
 
-}
+</div>
 
 @code {
     IEnumerable<Clypeus.DataTransfer.ViewModels.Generic.GenericViewModel> drugs;
