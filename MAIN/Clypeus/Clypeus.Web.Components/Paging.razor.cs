@@ -36,8 +36,8 @@ namespace Clypeus.Web.Components
                 PageCount = (int)Math.Ceiling((double)NumberOfResults.Value / ResultsPerPage.Value);
             }
 
-            StartIndex = Math.Max(CurrentPage - 5, 1);
-            FinishIndex = Math.Min(CurrentPage + 5,PageCount);
+            StartIndex = Math.Max(CurrentPage - 3, 1);
+            FinishIndex = Math.Min(CurrentPage + 3,PageCount);
 
             base.OnParametersSet();
         }
@@ -45,6 +45,9 @@ namespace Clypeus.Web.Components
         protected void PagerButtonClicked(int page)
         {
             CurrentPage = page;
+            StartIndex = Math.Max(CurrentPage - 3, 1);
+            FinishIndex = Math.Min(CurrentPage + 3, PageCount);
+            
             PageChanged?.Invoke(page);
         }
     }
