@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Clypeus.Data.DatabaseWorkers
 {
-    class UnitOfWork
+    public class UnitOfWork:IUnitOfWork
     {
         private readonly ClypeusContext _context;
 

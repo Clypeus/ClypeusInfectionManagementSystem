@@ -34,8 +34,8 @@ namespace Clypeus
 
             // These are defined as extensions in the support classes in this project
             services.AddDataServices(Configuration);
+            services.AddImplementionServices(Configuration);
 
-            
         }
 
        

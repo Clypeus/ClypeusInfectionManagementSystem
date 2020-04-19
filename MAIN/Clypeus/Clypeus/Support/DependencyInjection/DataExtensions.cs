@@ -7,6 +7,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
+using Clypeus.Data.DatabaseWorkers.Repositories;
+using Clypeus.Data.DatabaseWorkers.Repositories.Implementions;
+using Clypeus.Data.DatabaseWorkers;
 
 namespace Clypeus.Support.DependencyInjection
 {
@@ -16,6 +19,9 @@ namespace Clypeus.Support.DependencyInjection
         {
             services.AddDbContext<ClypeusContext>(options =>
                 options.UseSqlServer(ConfigurationExtensions.GetConnectionString(configuration, name: "ClypeusConnectionString")));
+
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
+            services.AddTransient<IDrugRespository, DrugRepository>();
         }
     }
 }
