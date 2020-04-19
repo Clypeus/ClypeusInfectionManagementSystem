@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Clypeus.Web.Components.Support;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Mvc;
 
@@ -45,6 +44,7 @@ namespace Clypeus.Web.Components
 
         protected void PagerButtonClicked(int page)
         {
+            CurrentPage = page;
             PageChanged?.Invoke(page);
         }
     }

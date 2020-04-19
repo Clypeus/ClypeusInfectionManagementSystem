@@ -1,0 +1,20 @@
+﻿@import "../colors.scss";
+
+#pagination-control {
+    margin-top:0.3rem;
+    margin-bottom:0.3rem;
+}
+
+#pagination-control .btn {
+
+    margin-right:0.2rem;
+    color: lightgray;
+    border-color:lightgray;
+}
+
+#pagination-control .btn-primary {
+    margin-right: 0.2rem;
+    color: $color-primary-0;
+    border-color: $color-primary-0;
+    background-color:$color-primary-1;
+}
