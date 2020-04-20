@@ -29,6 +29,8 @@ namespace Clypeus.Web.Components
 
         protected int PageCount =0;
 
+        protected string FiltrText = string.Empty;
+        
         protected override void OnParametersSet()
         {
             if (NumberOfResults.HasValue && ResultsPerPage.HasValue)

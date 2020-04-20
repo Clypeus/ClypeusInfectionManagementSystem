@@ -54,7 +54,13 @@
 
     protected void PageChanged(int p)
     {
-        System.Diagnostics.Debug.WriteLine("User Has Clicked: " + p);
+        var results = drugService.GetDrugs(1, false, string.Empty, p, 15, string.Empty, true).Result;
+        drugs = results.Collection;
+
+        InvokeAsync(() =>
+        {
+            base.StateHasChanged();
+        });
     }
 }
 
