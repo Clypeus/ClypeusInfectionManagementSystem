@@ -1,5 +1,6 @@
 ﻿using Clypeus.Data.DatabaseWorkers.Repositories;
 using Clypeus.DataTransfer.ViewModels.Generic;
+using Clypeus.DataTransfer.ViewModels.Reference;
 using Clypeus.Services.Interfaces.Medicinals;
 using System;
 using System.Collections.Generic;
@@ -18,14 +19,14 @@ namespace Clypeus.Services.Medicinals
             this.drugRespository = drugRespository; 
         }
 
-        public Task<IEnumerable<GenericViewModel>> GetDrugs()
+        public Task<IEnumerable<DrugsViewModel>> GetDrugs()
         {
             var drugs = drugRespository.GetAll(1, false);
 
-            var l = new List<GenericViewModel>();
+            var l = new List<DrugsViewModel>();
 
             foreach (var r in drugs)
-                l.Add(new GenericViewModel() { Code = r.Code, Description = r.Description, IsUsed = r.Active.GetValueOrDefault()});
+                l.Add(new DrugsViewModel() { Code = r.Code, Description = r.Description, IsUsed = r.Active.GetValueOrDefault(), AtcCode = r.Atc });
 
             return Task.FromResult(l.AsEnumerable());
         }

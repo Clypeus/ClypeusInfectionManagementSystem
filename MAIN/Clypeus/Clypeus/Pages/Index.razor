@@ -16,9 +16,9 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Code</th>
-                        <th>Atc</th>
-                        <th>Description</th>
+                        <th class="col-sm-1 col-md-1 col-lg-1">Code</th>
+                        <th class="col-sm-2 col-md-2 col-lg-2">Atc</th>
+                        <th class="col-sm-9 col-md-9 col-lg-9">Description</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -26,7 +26,7 @@
                     {
                         <tr>
                             <td>@drug.Code</td>
-                            <td></td>
+                            <td>@drug.AtcCode</td>
                             <td>@drug.Description</td>
 
                         </tr>
@@ -38,7 +38,7 @@
     </div>
 
 @code {
-    IEnumerable<Clypeus.DataTransfer.ViewModels.Generic.GenericViewModel> drugs;
+    IEnumerable<Clypeus.DataTransfer.ViewModels.Reference.DrugsViewModel> drugs;
 
     public int Count = 0;
 
@@ -46,7 +46,6 @@
     {
         drugs = await drugService.GetDrugs();
         Count = drugs.Count();
-
     }
 
     protected void PageChanged(int p)
