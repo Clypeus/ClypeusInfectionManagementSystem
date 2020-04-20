@@ -2,11 +2,9 @@
 @inject Clypeus.Services.Interfaces.Medicinals.IDrugService drugService
 
     <div class="container">
-
-       <Paging NumberOfResults=@Count ResultsPerPage="20" PageChanged="@PageChanged"></Paging>
-
-        <h1>Drugs</h1>
-
+        
+        <h1 style="margin-top:1.5rem;margin-bottom:1.5rem">Drugs</h1>
+      
         @if (drugs == null)
         {
             <p><em>Loading...</em></p>
@@ -35,6 +33,11 @@
             </table>
         }
 
+        <div id="page-section" style="margin-top:1rem;margin-bottom:1rem">
+            <Paging NumberOfResults=@Count ResultsPerPage=Convert.ToInt32(Clypeus.DataTransfer.Resources.GenericResources.RecordsPerPage) PageChanged="@PageChanged"></Paging>
+        </div>
+
+
     </div>
 
 @code {
@@ -44,8 +47,9 @@
 
     protected override async Task OnInitializedAsync()
     {
-        drugs = await drugService.GetDrugs();
-        Count = drugs.Count();
+        var results = await drugService.GetDrugs();
+        drugs = results.Collection;
+        Count = results.Count;
     }
 
     protected void PageChanged(int p)

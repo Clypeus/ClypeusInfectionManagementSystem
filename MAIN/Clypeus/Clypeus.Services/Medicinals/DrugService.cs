@@ -16,10 +16,25 @@ namespace Clypeus.Services.Medicinals
 
         public DrugService(IDrugRespository drugRespository)
         {
-            this.drugRespository = drugRespository; 
+            this.drugRespository = drugRespository;
         }
 
-        public Task<IEnumerable<DrugsViewModel>> GetDrugs()
+        public Task<GenericReferenceModel<DrugsViewModel>> GetDrugs()
+        {
+            var drugData = GetDrugsData();
+            var drugCount = Count();
+
+            Task.WaitAll(drugData, drugCount);
+
+            var model = new GenericReferenceModel<DrugsViewModel>()
+            {
+                Count = drugCount.Result,
+                Collection = drugData.Result
+            };
+
+            return Task.FromResult(model);
+        }
+        private Task<IEnumerable<DrugsViewModel>> GetDrugsData()
         {
             var drugs = drugRespository.GetAll(1, false);
 
@@ -29,6 +44,11 @@ namespace Clypeus.Services.Medicinals
                 l.Add(new DrugsViewModel() { Code = r.Code, Description = r.Description, IsUsed = r.Active.GetValueOrDefault(), AtcCode = r.Atc });
 
             return Task.FromResult(l.AsEnumerable());
+        }
+
+        private Task<int> Count()
+        {
+            return Task.FromResult(drugRespository.Count(1, false, string.Empty));
         }
     }
 }

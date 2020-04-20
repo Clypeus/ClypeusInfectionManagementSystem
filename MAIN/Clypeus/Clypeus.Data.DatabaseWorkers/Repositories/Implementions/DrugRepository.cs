@@ -15,19 +15,30 @@ namespace Clypeus.Data.DatabaseWorkers.Repositories.Implementions
             _clypeusContext = context;
         }
 
-        public IEnumerable<Drugs> GetAll(int drugType = 1, bool includeInactive = false,string filter="", int page = 1, int recordPerPage = 20, string sortBy = "Description", bool sortAscending = true)
+        public IEnumerable<Drugs> GetAll(int drugType = 1, bool includeInactive = false,string filter="", int page = 1, int recordPerPage = 15, string sortBy = "Description", bool sortAscending = true)
         {
             var data = _clypeusContext.Drugs.Where(f => f.DrugTypeId == drugType);
 
             if (includeInactive)
                 data = data.Where(f => f.Active == true);
 
-
             data = ApplyFilter(data, filter);
             data = Sort(data, sortBy, sortAscending);
             data = ApplyPage(data,page, recordPerPage);
 
             return data;
+        }
+
+        public int Count(int drugType = 1, bool includeInactive = false, string filter = "")
+        {
+            var data = _clypeusContext.Drugs.Where(f => f.DrugTypeId == drugType);
+
+            if (includeInactive)
+                data = data.Where(f => f.Active == true);
+
+            data = ApplyFilter(data, filter);
+
+            return data.Count();
         }
 
         private IQueryable<Drugs> ApplyPage(IQueryable<Drugs> data, int page, int recordPerPage)
