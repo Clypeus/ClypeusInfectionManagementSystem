@@ -39,9 +39,11 @@ namespace Clypeus.Web.Components
 
         private void OnTextInputFinished(Object source, ElapsedEventArgs e)
         {
+
             InvokeAsync(() =>
             {
                 StateHasChanged();
+                FilterTextChanged(FilterString);
             });
         }
     }

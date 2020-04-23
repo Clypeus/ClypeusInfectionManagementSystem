@@ -4,6 +4,7 @@
     <div class="container">
         
         <h1 style="margin-top:1.5rem;margin-bottom:1.5rem">Drugs</h1>
+        <FilterBox Debounce="1000" FilterString="@FilterString" FilterCleared="@FilterHasBeenCleared" FilterTextChanged="@FilterHasBeenChanged"></FilterBox>
       
         @if (drugs == null)
         {
@@ -43,6 +44,11 @@
 @code {
     IEnumerable<Clypeus.DataTransfer.ViewModels.Reference.DrugsViewModel> drugs;
 
+    private string FilterString = "Hello";
+
+
+
+
     public int Count = 0;
 
     protected override async Task OnInitializedAsync()
@@ -50,6 +56,19 @@
         var results = await drugService.GetDrugs();
         drugs = results.Collection;
         Count = results.Count;
+    }
+
+    protected void FilterHasBeenCleared()
+    {
+        System.Diagnostics.Debug.WriteLine("The filter has been cleared" + DateTime.Now);
+    }
+
+    protected void FilterHasBeenChanged(string v)
+    {
+
+        FilterString = v;
+        System.Diagnostics.Debug.WriteLine("The filter has been updated to" + FilterString+ DateTime.Now);
+        
     }
 
     protected void PageChanged(int p)
