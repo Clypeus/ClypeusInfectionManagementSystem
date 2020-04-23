@@ -6,6 +6,11 @@
 @import "controlStyles/paginationControl.scss";
 
 html, body {
-    font-family: RobotoThin,'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: RobotoRegular,'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size:14px;
+}
+
+h1 {
+    font-family: RobotoBlack,'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size:28px;
 }

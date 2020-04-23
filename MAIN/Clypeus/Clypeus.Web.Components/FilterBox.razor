@@ -1,13 +1,15 @@
 ﻿@inherits FilterBoxModel
 @using Microsoft.AspNetCore.Components.Web
 
-    <div id="filter-text-box-row" class="row">
-        <div class="col-sm-4 col-md-4 col-lg-4">
-            <input id="filterText" name="filterText" type="text" class="form-control" @bind-value="FilterString" @bind-value:event="oninput" @onkeyup="@HandleKeyUp" />
-        </div>
-        <div class="col-sm-1 col-md-1 col-lg-1">
-            <div id="clear-filter-button" class="btn btn-default" @onclick="()=>FilterCleared()">
-                Clear
+    <div style="margin-top:1.5rem;margin-bottom:1.5rem">
+        <div id="filter-text-box-row" class="row">
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                <input id="filterText" name="filterText" type="text" class="form-control" @bind-value="FilterString" @bind-value:event="oninput" @onkeyup="@HandleKeyUp" />
             </div>
-        </div>        
+            <div class="col-sm-1 col-md-1 col-lg-1">
+                <div id="clear-filter-button" class="btn btn-default" @onclick="()=>FilterCleared()">
+                    Clear
+                </div>
+            </div>
+        </div>
     </div>

@@ -3,16 +3,18 @@
 
     <div class="container">
         
-        <h1 style="margin-top:1.5rem;margin-bottom:1.5rem">Drugs</h1>
+        <h1 style="margin-top:1.5rem">Drugs</h1>
+
         <FilterBox Debounce="1000" FilterString="@FilterString" FilterCleared="@FilterHasBeenCleared" FilterTextChanged="@FilterHasBeenChanged"></FilterBox>
       
+
         @if (drugs == null)
         {
             <p><em>Loading...</em></p>
         }
         else
         {
-            <table class="table">
+            <table class="table table-striped">
                 <thead>
                     <tr>
                         <th class="col-sm-1 col-md-1 col-lg-1">Code</th>
