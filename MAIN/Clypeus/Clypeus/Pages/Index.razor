@@ -54,9 +54,7 @@
 
     protected override async Task OnInitializedAsync()
     {
-        var results = await drugService.GetDrugs();
-        drugs = results.Collection;
-        Count = results.Count;
+        PerformAquistion();
     }
 
     protected void FilterHasBeenCleared()
@@ -80,6 +78,7 @@
     {
         var results = drugService.GetDrugs(1, false, FilterString, p, 15, string.Empty, true).Result;
         drugs = results.Collection;
+        Count = results.Count;
 
         InvokeAsync(() =>
         {
