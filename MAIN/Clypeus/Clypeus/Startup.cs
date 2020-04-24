@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Clypeus.Data.Model;
 using Clypeus.Support.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
@@ -31,6 +32,8 @@ namespace Clypeus
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddProtectedBrowserStorage();
+            services.AddAutoMapper(typeof(Startup),typeof(Clypeus.Automapper.Profiles.Medicinals.DrugsProfile));
+
 
             // These are defined as extensions in the support classes in this project
             services.AddDataServices(Configuration);

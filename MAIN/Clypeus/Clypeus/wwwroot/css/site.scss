@@ -4,6 +4,7 @@
 @import url('fonts.css');
 @import "menusStructure.scss";
 @import "controlStyles/paginationControl.scss";
+@import "controlStyles/filterboxStyles.scss";
 
 html, body {
     font-family: RobotoRegular,'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -13,4 +14,8 @@ html, body {
 h1 {
     font-family: RobotoBlack,'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size:28px;
+}
+
+#clypeus .no-left-padding {
+    padding-left:0px;
 }

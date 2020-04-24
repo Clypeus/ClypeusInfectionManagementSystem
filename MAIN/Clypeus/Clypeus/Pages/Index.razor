@@ -19,18 +19,20 @@
                     <tr>
                         <th class="col-sm-1 col-md-1 col-lg-1">Code</th>
                         <th class="col-sm-2 col-md-2 col-lg-2">Atc</th>
-                        <th class="col-sm-9 col-md-9 col-lg-9">Description</th>
+                        <th class="col-sm-5 col-md-5 col-lg-5">Description</th>
+                        <th class="col-sm-4 col-md-4 col-lg-4">Group</th>
+
                     </tr>
                 </thead>
                 <tbody>
                     @foreach (var drug in drugs)
                     {
-                        <tr>
-                            <td>@drug.Code</td>
-                            <td>@drug.AtcCode</td>
-                            <td>@drug.Description</td>
-
-                        </tr>
+                    <tr>
+                        <td>@drug.Code</td>
+                        <td>@drug.AtcCode</td>
+                        <td>@drug.Description</td>
+                        <td>@drug.DrugGroup</td>
+                    </tr>
                     }
                 </tbody>
             </table>
@@ -46,10 +48,7 @@
 @code {
     IEnumerable<Clypeus.DataTransfer.ViewModels.Reference.DrugsViewModel> drugs;
 
-    private string FilterString = "Hello";
-
-
-
+    private string FilterString;
 
     public int Count = 0;
 
@@ -62,20 +61,24 @@
 
     protected void FilterHasBeenCleared()
     {
-        System.Diagnostics.Debug.WriteLine("The filter has been cleared" + DateTime.Now);
+        FilterString = string.Empty;
+        PerformAquistion();
     }
 
-    protected void FilterHasBeenChanged(string v)
+    protected void FilterHasBeenChanged(string updatedFilterString)
     {
-
-        FilterString = v;
-        System.Diagnostics.Debug.WriteLine("The filter has been updated to" + FilterString+ DateTime.Now);
-        
+        FilterString = updatedFilterString;
+        PerformAquistion();
     }
 
     protected void PageChanged(int p)
     {
-        var results = drugService.GetDrugs(1, false, string.Empty, p, 15, string.Empty, true).Result;
+        PerformAquistion(p);
+    }
+
+    protected void PerformAquistion(int p = 1)
+    {
+        var results = drugService.GetDrugs(1, false, FilterString, p, 15, string.Empty, true).Result;
         drugs = results.Collection;
 
         InvokeAsync(() =>
@@ -83,6 +86,8 @@
             base.StateHasChanged();
         });
     }
+
+
 }
 
 

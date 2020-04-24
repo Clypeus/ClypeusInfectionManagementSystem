@@ -8,6 +8,7 @@ namespace Clypeus.Data.Model
         public DrugGroup()
         {
             DrugGroupMembers = new HashSet<DrugGroupMembers>();
+            Drugs = new HashSet<Drugs>();
         }
 
         public int Id { get; set; }
@@ -17,7 +18,7 @@ namespace Clypeus.Data.Model
         public bool? Active { get; set; }
         public DateTime? Inserted { get; set; }
         public DateTime? Updated { get; set; }
-
+        public virtual ICollection<Drugs> Drugs { get; set; } 
         public virtual DrugTypes DrugType { get; set; }
         public virtual ICollection<DrugGroupMembers> DrugGroupMembers { get; set; }
     }

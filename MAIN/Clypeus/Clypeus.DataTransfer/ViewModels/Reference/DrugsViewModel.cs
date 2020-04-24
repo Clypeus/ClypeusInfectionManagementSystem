@@ -8,5 +8,7 @@ namespace Clypeus.DataTransfer.ViewModels.Reference
     public class DrugsViewModel:GenericViewModel
     {
         public string AtcCode { get; set; }
+
+        public string DrugGroup { get; set; }
     }
 }

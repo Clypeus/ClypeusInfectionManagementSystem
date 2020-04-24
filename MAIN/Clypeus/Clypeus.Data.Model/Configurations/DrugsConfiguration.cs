@@ -31,12 +31,12 @@ namespace Clypeus.Data.Model.Configurations
             entity.Property(e => e.Updated).HasColumnType("datetime");
 
             entity.HasOne(d => d.DrugType)
-                .WithMany(p => p.InverseDrugType)
+                .WithMany(p =>p.Drugs)
                 .HasForeignKey(d => d.DrugTypeId)
                 .HasConstraintName("FK_Drugs_ToDrugsTypes");
 
             entity.HasOne(d => d.PrincipleDrugGroup)
-                .WithMany(p => p.InversePrincipleDrugGroup)
+                .WithMany(p => p.Drugs)
                 .HasForeignKey(d => d.PrincipleDrugGroupId)
                 .HasConstraintName("FK_Drugs_ToDrugsGroup");
         }

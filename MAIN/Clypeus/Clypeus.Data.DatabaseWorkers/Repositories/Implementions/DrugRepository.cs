@@ -1,4 +1,5 @@
 ﻿using Clypeus.Data.Model;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,16 +16,18 @@ namespace Clypeus.Data.DatabaseWorkers.Repositories.Implementions
             _clypeusContext = context;
         }
 
-        public IEnumerable<Drugs> GetAll(int drugType = 1, bool includeInactive = false,string filter="", int page = 1, int recordPerPage = 15, string sortBy = "Description", bool sortAscending = true)
+        public IEnumerable<Drugs> GetAll(int drugType = 1, bool includeInactive = false, string filter = "", int page = 1, int recordPerPage = 15, string sortBy = "Description", bool sortAscending = true)
         {
-            var data = _clypeusContext.Drugs.Where(f => f.DrugTypeId == drugType);
+            var data = _clypeusContext.Drugs
+                .Include(f => f.PrincipleDrugGroup)
+                .Where(f => f.DrugTypeId == drugType);
 
             if (includeInactive)
                 data = data.Where(f => f.Active == true);
 
             data = ApplyFilter(data, filter);
             data = Sort(data, sortBy, sortAscending);
-            data = ApplyPage(data,page, recordPerPage);
+            data = ApplyPage(data, page, recordPerPage);
 
             return data;
         }
@@ -46,12 +49,12 @@ namespace Clypeus.Data.DatabaseWorkers.Repositories.Implementions
             return data.Skip((page - 1) * recordPerPage).Take(recordPerPage);
         }
 
-        private IQueryable<Drugs> Sort(IQueryable<Drugs> data, string sortBy,bool sortAscending)
-        {   
+        private IQueryable<Drugs> Sort(IQueryable<Drugs> data, string sortBy, bool sortAscending)
+        {
             switch (sortBy)
             {
                 case "Code":
-                        return sortAscending ? data.OrderBy(f => f.Code) : data.OrderByDescending(f => f.Code);
+                    return sortAscending ? data.OrderBy(f => f.Code) : data.OrderByDescending(f => f.Code);
                 case "Atc":
                     return sortAscending ? data.OrderBy(f => f.Atc) : data.OrderByDescending(f => f.Atc);
                 case "Description":
@@ -61,12 +64,14 @@ namespace Clypeus.Data.DatabaseWorkers.Repositories.Implementions
             }
         }
 
-        private IQueryable<Drugs> ApplyFilter(IQueryable<Drugs> data,string filter)
+        private IQueryable<Drugs> ApplyFilter(IQueryable<Drugs> data, string filter)
         {
             if (string.IsNullOrEmpty(filter))
                 return data;
             else
-                return data.Where(f => f.Code == filter && f.Description == filter);
+                return data.Where(f => f.Code.Contains(filter)
+                || f.Description.Contains(filter)
+                || f.PrincipleDrugGroup.Description.Contains(filter));
         }
     }
 }

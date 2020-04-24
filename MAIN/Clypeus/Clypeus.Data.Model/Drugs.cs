@@ -8,8 +8,6 @@ namespace Clypeus.Data.Model
         public Drugs()
         {
             DrugGroupMembers = new HashSet<DrugGroupMembers>();
-            InverseDrugType = new HashSet<Drugs>();
-            InversePrincipleDrugGroup = new HashSet<Drugs>();
         }
 
         public int Id { get; set; }
@@ -22,10 +20,8 @@ namespace Clypeus.Data.Model
         public DateTime? Inserted { get; set; }
         public DateTime? Updated { get; set; }
 
-        public virtual Drugs DrugType { get; set; }
-        public virtual Drugs PrincipleDrugGroup { get; set; }
+        public virtual DrugTypes DrugType { get; set; }
+        public virtual DrugGroup PrincipleDrugGroup { get; set; }
         public virtual ICollection<DrugGroupMembers> DrugGroupMembers { get; set; }
-        public virtual ICollection<Drugs> InverseDrugType { get; set; }
-        public virtual ICollection<Drugs> InversePrincipleDrugGroup { get; set; }
     }
 }

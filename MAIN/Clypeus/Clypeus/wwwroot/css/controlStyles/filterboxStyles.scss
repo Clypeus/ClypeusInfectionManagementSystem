@@ -1,0 +1,21 @@
+﻿@import "../colors.scss";
+
+#filterbox-control {
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+}
+
+#filterbox-control .btn {
+    margin-right: 0.2rem;
+    color: $color-primary-3;
+    border-color: lightgray;
+    box-shadow: none;
+}
+
+#filterbox-control .btn-primary {
+    margin-right: 0.2rem;
+    color: white;
+    border-color: $color-primary-0;
+    background-color: $color-primary-1;
+    box-shadow: none;
+}
