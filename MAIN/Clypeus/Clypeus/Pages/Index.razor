@@ -17,10 +17,10 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th class="col-sm-1 col-md-1 col-lg-1">Code</th>
-                        <th class="col-sm-2 col-md-2 col-lg-2">Atc</th>
-                        <th class="col-sm-5 col-md-5 col-lg-5">Description</th>
-                        <th class="col-sm-4 col-md-4 col-lg-4">Group</th>
+                        <th class="col-sm-1 col-md-1 col-lg-1" @onclick='(e=>SortList("Code"))'>Code</th>
+                        <th class="col-sm-2 col-md-2 col-lg-2" @onclick='(e=>SortList("Atc"))'>Atc</th>
+                        <th class="col-sm-5 col-md-5 col-lg-5" @onclick='(e=>SortList("Description"))'> Description</th>
+                        <th class="col-sm-4 col-md-4 col-lg-4" @onclick='(e=>SortList("Group"))'> Group</th>
 
                     </tr>
                 </thead>
@@ -39,7 +39,7 @@
         }
 
         <div id="page-section" style="margin-top:1rem;margin-bottom:1rem">
-            <Paging NumberOfResults=@Count ResultsPerPage=Convert.ToInt32(Clypeus.DataTransfer.Resources.GenericResources.RecordsPerPage) PageChanged="@PageChanged"></Paging>
+            <Paging CurrentPage="@CurrentPage" NumberOfResults=@Count ResultsPerPage=Convert.ToInt32(Clypeus.DataTransfer.Resources.GenericResources.RecordsPerPage) PageChanged="@PageChanged"></Paging>
         </div>
 
 
@@ -50,7 +50,20 @@
 
     private string FilterString;
 
+    private string sortColumn = "Description";
+    private bool sortAscending = true;
+
     public int Count = 0;
+
+    public int CurrentPage = 1;
+
+    protected void SortList(string sortColumn)
+    {
+        this.sortColumn = sortColumn;
+        sortAscending = !sortAscending;
+
+        PerformAquistion(1);
+    }
 
     protected override async Task OnInitializedAsync()
     {
@@ -76,9 +89,10 @@
 
     protected void PerformAquistion(int p = 1)
     {
-        var results = drugService.GetDrugs(1, false, FilterString, p, 15, string.Empty, true).Result;
+        var results = drugService.GetDrugs(1, false, FilterString, p, 15, sortColumn, sortAscending).Result;
         drugs = results.Collection;
         Count = results.Count;
+        CurrentPage = p; 
 
         InvokeAsync(() =>
         {

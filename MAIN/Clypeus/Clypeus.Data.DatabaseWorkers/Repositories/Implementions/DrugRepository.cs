@@ -59,6 +59,8 @@ namespace Clypeus.Data.DatabaseWorkers.Repositories.Implementions
                     return sortAscending ? data.OrderBy(f => f.Atc) : data.OrderByDescending(f => f.Atc);
                 case "Description":
                     return sortAscending ? data.OrderBy(f => f.Description) : data.OrderByDescending(f => f.Description);
+                case "Group":
+                    return sortAscending ? data.OrderBy(f => f.PrincipleDrugGroup.Description) : data.OrderByDescending(f => f.PrincipleDrugGroup.Description);
                 default:
                     return sortAscending ? data.OrderBy(f => f.Code) : data.OrderByDescending(f => f.Code);
             }
