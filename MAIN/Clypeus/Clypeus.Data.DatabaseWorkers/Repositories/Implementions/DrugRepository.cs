@@ -71,6 +71,7 @@ namespace Clypeus.Data.DatabaseWorkers.Repositories.Implementions
             else
                 return data.Where(f => f.Code.Contains(filter)
                 || f.Description.Contains(filter)
+                || f.Atc.Contains(filter)
                 || f.PrincipleDrugGroup.Description.Contains(filter));
         }
     }
