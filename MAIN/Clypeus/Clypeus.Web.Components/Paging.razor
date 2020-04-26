@@ -3,30 +3,32 @@
 @inherits PagerModel
 @using Microsoft.AspNetCore.Components.Web
 
-@if (NumberOfResults.HasValue && ResultsPerPage.HasValue)
-{
-    <div id="pagination-control" class="row">
-        <div class="col-md-8 col-sm-8">
-            @if (PageCount > 1)
-            {
-                <ul class="pagination pull-right">
-                    <li><button @onclick="() => PagerButtonClicked(1)" class="btn">&laquo;</button></li>
-                    @for (var i = StartIndex; i <= FinishIndex; i++)
-                    {
-                        var currentIndex = i;
-                        @if (i == CurrentPage)
+<div id="page-section" class="vertical-margin-one-rem">
+    @if (NumberOfResults.HasValue && ResultsPerPage.HasValue)
+    {
+        <div id="pagination-control" class="row">
+            <div class="col-md-8 col-sm-8">
+                @if (PageCount > 1)
+                {
+                    <ul class="pagination pull-right">
+                        <li><button @onclick="() => PagerButtonClicked(1)" class="btn">&laquo;</button></li>
+                        @for (var i = StartIndex; i <= FinishIndex; i++)
                         {
-                            <li><span class="btn btn-primary">@i</span></li>
+                            var currentIndex = i;
+                            @if (i == CurrentPage)
+                            {
+                                <li><span class="btn btn-primary">@i</span></li>
+                            }
+                            else
+                            {
+                                <li><button @onclick="() => PagerButtonClicked(currentIndex)" class="btn">@i</button></li>
+                            }
                         }
-                        else
-                        {
-                            <li><button @onclick="() => PagerButtonClicked(currentIndex)" class="btn">@i</button></li>
-                        }
-                    }
-                    <li><button @onclick="() => PagerButtonClicked(PageCount)" class="btn">&raquo;</button></li>
-                </ul>
-            }
+                        <li><button @onclick="() => PagerButtonClicked(PageCount)" class="btn">&raquo;</button></li>
+                    </ul>
+                }
+            </div>
         </div>
-    </div>
-}
+    }
+</div>
 

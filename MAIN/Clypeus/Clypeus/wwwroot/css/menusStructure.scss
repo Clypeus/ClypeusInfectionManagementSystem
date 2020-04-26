@@ -141,9 +141,23 @@ $title-tagline-size: 1.1rem;
     font-size:1.25rem;
 }
 
-#title-banner .sectionLink {
-    margin-top: 0.3rem;
+#title-banner a.linkingElement {
+    padding: 0px !important;
     font-family: RobotoThin;
     font-size: 1.10rem;
+    line-height:21px;
+    float: left;
+    color:black;
 }
+
+#title-banner a.linkingElement:hover {
+    padding: 0px !important;
+    font-family: RobotoThin;
+    font-size: 1.10rem;
+    line-height: 21px;
+    float: left;
+    color: black;
+    background-color:white;
+}
+
 

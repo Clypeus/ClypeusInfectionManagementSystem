@@ -1,0 +1,41 @@
+﻿@page "/drugs"
+@page "/ReferenceData/drugs"
+@inherits DrugsRazorModel
+
+<div class="container">
+    <PageTitle Title="Drugs"></PageTitle>
+    <FilterBox Debounce="1000" FilterString="@FilterString" FilterCleared="@FilterHasBeenCleared" FilterTextChanged="@FilterHasBeenChanged"></FilterBox>
+
+    @if (drugs == null)
+    {
+        <p><em>Loading...</em></p>
+    }
+    else
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th class="col-sm-1 col-md-1 col-lg-1" @onclick='(e=>SortList("Code"))'>Code</th>
+                    <th class="col-sm-2 col-md-2 col-lg-2" @onclick='(e=>SortList("Atc"))'>Atc</th>
+                    <th class="col-sm-5 col-md-5 col-lg-5" @onclick='(e=>SortList("Description"))'> Description</th>
+                    <th class="col-sm-4 col-md-4 col-lg-4" @onclick='(e=>SortList("Group"))'> Group</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var drug in drugs)
+                {
+                    <tr>
+                        <td>@drug.Code</td>
+                        <td>@drug.AtcCode</td>
+                        <td>@drug.Description</td>
+                        <td>@drug.DrugGroup</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+
+    <Paging CurrentPage="@CurrentPage" NumberOfResults=@Count ResultsPerPage=Convert.ToInt32(Clypeus.DataTransfer.Resources.GenericResources.RecordsPerPage) PageChanged="@PageChanged"></Paging>
+
+</div>
