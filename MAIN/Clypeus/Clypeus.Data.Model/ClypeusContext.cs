@@ -35,8 +35,7 @@ namespace Clypeus.Data.Model
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseSqlServer("Server=(localdb)\\ProjectsV13;Database=Clypeus;Trusted_Connection=True;");
-
-                
+   
             }
         }
 

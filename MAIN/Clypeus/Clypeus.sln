@@ -38,6 +38,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data Files", "Data Files", 
 		Data Files\antibiotics.txt = Data Files\antibiotics.txt
 		Data Files\antivirals.txt = Data Files\antivirals.txt
 		Data Files\microorganisms.txt = Data Files\microorganisms.txt
+		Data Files\NotifiableDisease.txt = Data Files\NotifiableDisease.txt
 	EndProjectSection
 EndProject
 Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Clypeus.Sql.SSDT", "Clypeus.Sql.SSDT\Clypeus.Sql.SSDT.dtproj", "{31FD1B7F-64BB-4E25-B6C8-EEDAE54F80F1}"

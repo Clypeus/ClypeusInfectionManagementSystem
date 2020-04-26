@@ -1,0 +1,33 @@
+AE	Acute encephalitis
+AIH	Acute infectious hepatitis
+AM	Acute meningitis
+AP	Acute poliomyelitis
+AN	Anthrax
+BO	Botulism
+BR	Brucellosis
+CH	Cholera
+C19	COVID-19
+DIP	Diphtheria
+EF	Enteric fever (typhoid or paratyphoid fever)
+FP	Food poisoning
+HUS	Haemolytic uraemic syndrome (HUS)
+IBD	Infectious bloody diarrhoea
+IGA	Invasive group A streptococcal disease
+LD	Legionnaires’ disease
+LP	Leprosy
+MA	Malaria
+ME	Measles
+MES	Meningococcal septicaemia
+MU	Mumps
+PL	Plague
+RA	Rabies
+RU	Rubella
+SARS	Severe Acute Respiratory Syndrome (SARS)
+SF	Scarlet fever
+SM	Smallpox
+TET	Tetanus
+TB	Tuberculosis
+TY	Typhus
+VHF	Viral haemorrhagic fever (VHF)
+WC	Whooping cough
+YF	Yellow fever
