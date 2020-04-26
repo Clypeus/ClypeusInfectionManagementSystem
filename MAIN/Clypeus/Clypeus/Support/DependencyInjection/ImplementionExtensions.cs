@@ -14,6 +14,7 @@ namespace Clypeus.Support.DependencyInjection
         public static void AddImplementionServices(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddTransient<IDrugService, DrugService>();
+            services.AddTransient<INotifiableDiseaseService, NotifiableDiseaseService>();
         }
     }
 }

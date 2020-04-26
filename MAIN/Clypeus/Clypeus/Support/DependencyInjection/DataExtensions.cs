@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Clypeus.Data.DatabaseWorkers.Repositories;
 using Clypeus.Data.DatabaseWorkers.Repositories.Implementions;
 using Clypeus.Data.DatabaseWorkers;
+using Clypeus.Data.DatabaseWorkers.Repositories.Interfaces;
 
 namespace Clypeus.Support.DependencyInjection
 {
@@ -22,6 +23,7 @@ namespace Clypeus.Support.DependencyInjection
 
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddTransient<IDrugRespository, DrugRepository>();
+            services.AddTransient<INotifiableDiseaseRespository, NotifiableDiseaseRepository>();
         }
     }
 }

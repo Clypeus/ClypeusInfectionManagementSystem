@@ -15,8 +15,6 @@ namespace Clypeus.Automapper.Profiles.Medicinals
                 .ForMember(dest => dest.AtcCode, source => source.MapFrom(f => f.Atc))
                 .ForMember(dest => dest.Description, source => source.MapFrom(f => f.Description))
                 .ForMember(dest => dest.DrugGroup, source => source.MapFrom(f => f.PrincipleDrugGroup != null ? f.PrincipleDrugGroup.Description : string.Empty));
-
-
         }
     }
 }
