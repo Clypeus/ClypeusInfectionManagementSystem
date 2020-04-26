@@ -1,4 +1,5 @@
 ﻿using Clypeus.Data.Model;
+using Clypeus.Data.Model.Medicinals;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

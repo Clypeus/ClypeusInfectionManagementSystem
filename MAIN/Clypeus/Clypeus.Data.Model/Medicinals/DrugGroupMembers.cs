@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Clypeus.Data.Model
+namespace Clypeus.Data.Model.Medicinals
 {
     public partial class DrugGroupMembers
     {

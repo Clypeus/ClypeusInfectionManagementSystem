@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Clypeus.Data.Model
+namespace Clypeus.Data.Model.Users
 {
-    public partial class Users
+    public partial class User
     {
         public int Id { get; set; }
         public string UserName { get; set; }

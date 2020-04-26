@@ -1,4 +1,5 @@
 ﻿using Clypeus.Data.Model;
+using Clypeus.Data.Model.Medicinals;
 using System;
 using System.Collections.Generic;
 using System.Text;

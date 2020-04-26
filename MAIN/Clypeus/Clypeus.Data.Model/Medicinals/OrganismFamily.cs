@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Clypeus.Data.Model
+namespace Clypeus.Data.Model.Medicinals
 {
-    public class OrganismOrder
+    public class OrganismFamily
     {
-        public OrganismOrder()
+        public OrganismFamily()
         {
             Organisms = new HashSet<Organisms>();
         }

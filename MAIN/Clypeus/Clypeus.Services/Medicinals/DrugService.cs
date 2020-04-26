@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Clypeus.Data.DatabaseWorkers.Repositories;
 using Clypeus.Data.Model;
+using Clypeus.Data.Model.Medicinals;
 using Clypeus.DataTransfer.ViewModels.Generic;
 using Clypeus.DataTransfer.ViewModels.Reference;
 using Clypeus.Services.Interfaces.Medicinals;

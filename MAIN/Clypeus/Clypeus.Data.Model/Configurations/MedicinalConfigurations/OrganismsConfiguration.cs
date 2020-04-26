@@ -1,16 +1,19 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Clypeus.Data.Model.Medicinals;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Clypeus.Data.Model.Configurations
+namespace Clypeus.Data.Model.Configurations.Medicinals
 {
     public class OrganismsConfiguration : IEntityTypeConfiguration<Organisms>
     {
         public void Configure(EntityTypeBuilder<Organisms> entity)
         {
             entity.ToTable("Organisms", "medicinals");
+
+            entity.HasKey(e =>e.Id);
 
             entity.Property(e => e.Code)
                 .IsRequired()

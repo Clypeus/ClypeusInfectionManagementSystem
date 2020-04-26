@@ -1,5 +1,10 @@
 ﻿using System;
 using Clypeus.Data.Model.Configurations;
+using Clypeus.Data.Model.Configurations.MedicinalConfigurations;
+using Clypeus.Data.Model.Configurations.Medicinals;
+using Clypeus.Data.Model.Configurations.Users;
+using Clypeus.Data.Model.Medicinals;
+using Clypeus.Data.Model.Users;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -23,7 +28,7 @@ namespace Clypeus.Data.Model
         public virtual DbSet<Organisation> Organisation { get; set; }
         public virtual DbSet<OrganismGenus> OrganismTypes { get; set; }
         public virtual DbSet<Organisms> Organisms { get; set; }
-        public virtual DbSet<Users> Users { get; set; }
+        public virtual DbSet<User> Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -37,11 +42,26 @@ namespace Clypeus.Data.Model
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder = OnModelCreatingMedicinals(modelBuilder);
+            modelBuilder = OnModelCreatingUsers(modelBuilder);
+            
+            OnModelCreatingPartial(modelBuilder);
+        }
+
+        protected ModelBuilder OnModelCreatingUsers(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new UserConfiguration());
+            modelBuilder.ApplyConfiguration(new OrganisationsConfiguration());
+
+            return modelBuilder;
+        }
+
+        protected ModelBuilder OnModelCreatingMedicinals(ModelBuilder modelBuilder)
+        {
             modelBuilder.ApplyConfiguration(new DrugGroupConfiguration());
             modelBuilder.ApplyConfiguration(new DrugGroupMembersConfiguration());
             modelBuilder.ApplyConfiguration(new DrugsConfiguration());
             modelBuilder.ApplyConfiguration(new DrugTypeConfiguration());
-            modelBuilder.ApplyConfiguration(new OrganisationsConfiguration());
             modelBuilder.ApplyConfiguration(new OrganismClassConfiguration());
             modelBuilder.ApplyConfiguration(new OrganismFamilyConfiguration());
             modelBuilder.ApplyConfiguration(new OrganismKingdomConfiguration());
@@ -49,10 +69,10 @@ namespace Clypeus.Data.Model
             modelBuilder.ApplyConfiguration(new OrganismPhylumConfiguration());
             modelBuilder.ApplyConfiguration(new OrganismsConfiguration());
             modelBuilder.ApplyConfiguration(new OrganismTypesConfiguration());
-            modelBuilder.ApplyConfiguration(new UserConfiguration());
-         
+            modelBuilder.ApplyConfiguration(new NotifiableDiseaseConfiguration());
+            modelBuilder.ApplyConfiguration(new NotifiableDiseaseOrganismConfiguration());
 
-            OnModelCreatingPartial(modelBuilder);
+            return modelBuilder;
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);

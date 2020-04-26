@@ -1,10 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Clypeus.Data.Model.Medicinals;
+using Clypeus.Data.Model.Users;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Clypeus.Data.Model.Configurations
+namespace Clypeus.Data.Model.Configurations.Users
 {
     public class OrganisationsConfiguration : IEntityTypeConfiguration<Organisation>
     {

@@ -1,14 +1,15 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Clypeus.Data.Model.Users;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Clypeus.Data.Model.Configurations
+namespace Clypeus.Data.Model.Configurations.Users
 {
-    public class UserConfiguration : IEntityTypeConfiguration<Users>
+    public class UserConfiguration : IEntityTypeConfiguration<User>
     {
-        public void Configure(EntityTypeBuilder<Users> entity)
+        public void Configure(EntityTypeBuilder<User> entity)
         {
             entity.ToTable("Users", "users");
 

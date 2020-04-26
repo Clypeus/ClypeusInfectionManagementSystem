@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Clypeus.Data.Model
+namespace Clypeus.Data.Model.Users
 {
     public partial class Organisation
     {
         public Organisation()
         {
-            Users = new HashSet<Users>();
+            Users = new HashSet<User>();
         }
 
         public int Id { get; set; }
@@ -19,6 +19,6 @@ namespace Clypeus.Data.Model
         public string AddressLine5 { get; set; }
         public string TelephoneNumber { get; set; }
 
-        public virtual ICollection<Users> Users { get; set; }
+        public virtual ICollection<User> Users { get; set; }
     }
 }

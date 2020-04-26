@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
-namespace Clypeus.Data.Model
+namespace Clypeus.Data.Model.Medicinals
 {
-    public partial class OrganismGenus
+    public partial class OrganismKingdom
     {
-        public OrganismGenus()
+        public OrganismKingdom()
         {
             Organisms = new HashSet<Organisms>();
         }
@@ -18,4 +19,6 @@ namespace Clypeus.Data.Model
 
         public virtual ICollection<Organisms> Organisms { get; set; }
     }
+
+
 }

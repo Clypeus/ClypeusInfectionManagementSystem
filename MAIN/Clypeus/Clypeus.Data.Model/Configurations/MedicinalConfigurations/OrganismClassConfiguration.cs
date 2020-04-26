@@ -1,16 +1,17 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Clypeus.Data.Model.Medicinals;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Clypeus.Data.Model.Configurations
+namespace Clypeus.Data.Model.Configurations.Medicinals
 {
-    public class OrganismTypesConfiguration : IEntityTypeConfiguration<OrganismGenus>
+    public class OrganismClassConfiguration : IEntityTypeConfiguration<OrganismClass>
     {
-        public void Configure(EntityTypeBuilder<OrganismGenus> entity)
+        public void Configure(EntityTypeBuilder<OrganismClass> entity)
         {
-            entity.ToTable("OrganismTypes", "medicinals");
+            entity.ToTable("OrganismClass", "medicinals");
 
             entity.Property(e => e.Description)
                 .HasMaxLength(75)

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Clypeus.Data.Model
+namespace Clypeus.Data.Model.Medicinals
 {
     public partial class Organisms
     {
@@ -30,5 +30,7 @@ namespace Clypeus.Data.Model
         public virtual OrganismClass OrganismClass { get; set; }
 
         public virtual OrganismOrder OrganismOrder { get; set; }
+
+        public ICollection<NotifiableDiseaseOrganism> NotifiableDiseaseOrganisms { get; set; }
     }
 }

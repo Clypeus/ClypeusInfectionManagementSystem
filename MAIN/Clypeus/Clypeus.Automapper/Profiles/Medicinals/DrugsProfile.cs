@@ -1,4 +1,4 @@
-﻿using Clypeus.Data.Model;
+﻿using Clypeus.Data.Model.Medicinals;
 using Clypeus.DataTransfer.ViewModels.Reference;
 using System;
 using System.Collections.Generic;
