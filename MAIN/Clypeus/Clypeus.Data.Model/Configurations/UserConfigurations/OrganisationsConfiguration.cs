@@ -33,6 +33,11 @@ namespace Clypeus.Data.Model.Configurations.Users
                 .WithMany(p =>p.Organisations)
                 .HasForeignKey(d => d.AddressId)
                 .HasConstraintName("FK_Address_ToOrganisation");
+
+            entity.HasOne(d => d.ParentOrganisation)
+               .WithMany(p => p.Organisations)
+               .HasForeignKey(d => d.ParentOrganisationId)
+               .HasConstraintName("FK_Organisation_ToOrganisations");
         }   
     }
 }

@@ -16,7 +16,11 @@ namespace Clypeus.Data.Model.Users
         public string ContactName { get; set; }
         public int AddressId { get; set; }
         public string TelephoneNumber { get; set; }
+        public int ParentOrganisationId { get; set; }
         public virtual ICollection<User> Users { get; set; }
         public virtual Address Address { get; set; }
+        public virtual Organisation ParentOrganisation { get; set; }
+        public virtual ICollection<Organisation> Organisations { get; set; }
+
     }
 }
