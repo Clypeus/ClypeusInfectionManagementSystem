@@ -1,4 +1,5 @@
 ﻿using Clypeus.Data.Model.Geography;
+using Clypeus.Data.Model.People;
 using Clypeus.Data.Model.Users;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,7 @@ namespace Clypeus.Data.Model.Organisations
         public virtual Address Address { get; set; }
         public virtual Organisation ParentOrganisation { get; set; }
         public virtual Organisation SecondaryOrganisation { get; set; }
+        public virtual MedicalPractioner SeniorPracticeMember { get; set; }
 
     }
 }
