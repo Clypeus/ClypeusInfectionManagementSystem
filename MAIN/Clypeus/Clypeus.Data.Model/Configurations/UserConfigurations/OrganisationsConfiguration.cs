@@ -14,41 +14,25 @@ namespace Clypeus.Data.Model.Configurations.Users
         {
             entity.ToTable("Organisation", "users");
 
-            entity.Property(e => e.AddressLine1)
-                .IsRequired()
-                .HasMaxLength(25)
-                .IsUnicode(false);
-
-            entity.Property(e => e.AddressLine2)
+            entity.Property(e => e.Name)
                         .IsRequired()
-                        .HasMaxLength(25)
-                        .IsUnicode(false);
-
-            entity.Property(e => e.AddressLine3)
-                        .IsRequired()
-                        .HasMaxLength(25)
-                        .IsUnicode(false);
-
-            entity.Property(e => e.AddressLine4)
-                        .IsRequired()
-                        .HasMaxLength(25)
-                        .IsUnicode(false);
-
-            entity.Property(e => e.AddressLine5)
-                        .IsRequired()
-                        .HasMaxLength(25)
+                        .HasMaxLength(100)
                         .IsUnicode(false);
 
             entity.Property(e => e.Name)
                         .IsRequired()
-                        .HasMaxLength(50)
+                        .HasMaxLength(100)
                         .IsUnicode(false);
 
             entity.Property(e => e.TelephoneNumber)
                         .IsRequired()
                         .HasMaxLength(25)
                         .IsUnicode(false);
-        }
-           
+
+            entity.HasOne(d => d.Address)
+                .WithMany(p =>p.Organisations)
+                .HasForeignKey(d => d.AddressId)
+                .HasConstraintName("FK_Address_ToOrganisation");
+        }   
     }
 }

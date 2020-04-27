@@ -4,14 +4,16 @@ using Clypeus.Data.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Clypeus.Data.Model.Migrations
 {
     [DbContext(typeof(ClypeusContext))]
-    partial class ClypeusContextModelSnapshot : ModelSnapshot
+    [Migration("20200427175943_Update field length, add contact name")]
+    partial class Updatefieldlengthaddcontactname
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

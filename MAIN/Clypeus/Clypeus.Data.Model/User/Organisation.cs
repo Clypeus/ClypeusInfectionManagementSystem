@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Clypeus.Data.Model.Geography;
+using System;
 using System.Collections.Generic;
 
 namespace Clypeus.Data.Model.Users
@@ -12,13 +13,10 @@ namespace Clypeus.Data.Model.Users
 
         public int Id { get; set; }
         public string Name { get; set; }
-        public string AddressLine1 { get; set; }
-        public string AddressLine2 { get; set; }
-        public string AddressLine3 { get; set; }
-        public string AddressLine4 { get; set; }
-        public string AddressLine5 { get; set; }
+        public string ContactName { get; set; }
+        public int AddressId { get; set; }
         public string TelephoneNumber { get; set; }
-
         public virtual ICollection<User> Users { get; set; }
+        public virtual Address Address { get; set; }
     }
 }

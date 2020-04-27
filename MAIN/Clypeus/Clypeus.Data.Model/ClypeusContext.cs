@@ -1,8 +1,10 @@
 ﻿using System;
 using Clypeus.Data.Model.Configurations;
+using Clypeus.Data.Model.Configurations.GeographyConfigurations;
 using Clypeus.Data.Model.Configurations.MedicinalConfigurations;
 using Clypeus.Data.Model.Configurations.Medicinals;
 using Clypeus.Data.Model.Configurations.Users;
+using Clypeus.Data.Model.Geography;
 using Clypeus.Data.Model.Medicinals;
 using Clypeus.Data.Model.Users;
 using Microsoft.EntityFrameworkCore;
@@ -21,6 +23,8 @@ namespace Clypeus.Data.Model
         {
         }
 
+
+        public virtual DbSet<Address> Addresses { get; set; }
         public virtual DbSet<DrugGroup> DrugGroup { get; set; }
         public virtual DbSet<DrugGroupMembers> DrugGroupMembers { get; set; }
         public virtual DbSet<DrugTypes> DrugTypes { get; set; }
@@ -30,7 +34,7 @@ namespace Clypeus.Data.Model
         public virtual DbSet<OrganismGenus> OrganismTypes { get; set; }
         public virtual DbSet<Organisms> Organisms { get; set; }
         public virtual DbSet<User> Users { get; set; }
-
+        
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -53,6 +57,13 @@ namespace Clypeus.Data.Model
             modelBuilder.ApplyConfiguration(new UserConfiguration());
             modelBuilder.ApplyConfiguration(new OrganisationsConfiguration());
 
+            return modelBuilder;
+        }
+
+        protected ModelBuilder OnModelGeographyUsers(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new AddressConfiguration());
+          
             return modelBuilder;
         }
 

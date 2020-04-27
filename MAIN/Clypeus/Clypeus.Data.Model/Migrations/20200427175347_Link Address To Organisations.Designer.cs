@@ -4,14 +4,16 @@ using Clypeus.Data.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Clypeus.Data.Model.Migrations
 {
     [DbContext(typeof(ClypeusContext))]
-    partial class ClypeusContextModelSnapshot : ModelSnapshot
+    [Migration("20200427175347_Link Address To Organisations")]
+    partial class LinkAddressToOrganisations
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -82,12 +84,12 @@ namespace Clypeus.Data.Model.Migrations
                     b.Property<DateTime?>("Inserted")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime")
-                        .HasDefaultValue(new DateTime(2020, 4, 27, 18, 59, 42, 970, DateTimeKind.Local).AddTicks(6977));
+                        .HasDefaultValue(new DateTime(2020, 4, 27, 18, 53, 46, 724, DateTimeKind.Local).AddTicks(5982));
 
                     b.Property<DateTime?>("Updated")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime")
-                        .HasDefaultValue(new DateTime(2020, 4, 27, 18, 59, 42, 977, DateTimeKind.Local).AddTicks(2217));
+                        .HasDefaultValue(new DateTime(2020, 4, 27, 18, 53, 46, 730, DateTimeKind.Local).AddTicks(4470));
 
                     b.HasKey("Id");
 
