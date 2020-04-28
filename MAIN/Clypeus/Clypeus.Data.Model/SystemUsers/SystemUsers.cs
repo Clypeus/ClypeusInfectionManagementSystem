@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Clypeus.Data.Model.Users
 {
-    public partial class User
+    public partial class SystemUser
     {
         public int Id { get; set; }
         public string UserName { get; set; }
@@ -22,6 +22,6 @@ namespace Clypeus.Data.Model.Users
         public string EmailAddress { get; set; }
         public bool Active { get; set; }
 
-        public virtual Organisation Organisation { get; set; }
+        public virtual SystemOrganisations SystemOrganisation { get; set; }
     }
 }

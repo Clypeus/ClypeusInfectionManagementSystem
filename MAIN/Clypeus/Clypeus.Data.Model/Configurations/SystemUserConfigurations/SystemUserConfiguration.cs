@@ -7,11 +7,11 @@ using System.Text;
 
 namespace Clypeus.Data.Model.Configurations.Users
 {
-    public class UserConfiguration : IEntityTypeConfiguration<User>
+    public class SystemUserConfiguration : IEntityTypeConfiguration<SystemUser>
     {
-        public void Configure(EntityTypeBuilder<User> entity)
+        public void Configure(EntityTypeBuilder<SystemUser> entity)
         {
-            entity.ToTable("Users", "users");
+            entity.ToTable("SystemUsers", "SystemUsers");
 
             entity.HasIndex(e => e.OrganisationId)
                 .HasName("IX_Users_OrganisationsId");
@@ -75,7 +75,7 @@ namespace Clypeus.Data.Model.Configurations.Users
                 .HasMaxLength(12)
                 .IsUnicode(false);
 
-            entity.HasOne(d => d.Organisation)
+            entity.HasOne(d => d.SystemOrganisation)
                 .WithMany(p => p.Users)
                 .HasForeignKey(d => d.OrganisationId)
                 .OnDelete(DeleteBehavior.ClientSetNull)

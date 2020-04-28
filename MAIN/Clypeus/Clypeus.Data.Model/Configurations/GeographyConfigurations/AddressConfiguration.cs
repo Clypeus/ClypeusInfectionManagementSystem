@@ -11,7 +11,7 @@ namespace Clypeus.Data.Model.Configurations.GeographyConfigurations
     {
         public void Configure(EntityTypeBuilder<Address> entity)
         {
-            entity.ToTable("Address", "geography");
+            entity.ToTable("Address", "Geography");
 
             entity.Property(e => e.Address1)
                 .IsRequired()

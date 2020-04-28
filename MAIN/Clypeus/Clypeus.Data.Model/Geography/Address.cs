@@ -1,4 +1,5 @@
-﻿using Clypeus.Data.Model.Users;
+﻿using Clypeus.Data.Model.Organisations;
+using Clypeus.Data.Model.Users;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,7 +10,8 @@ namespace Clypeus.Data.Model.Geography
     {
         public Address()
         {
-            Organisations = new HashSet<Organisation>();
+            SystemOrganisations = new HashSet<SystemOrganisations>();
+            PrimaryCarePractices = new HashSet<PrimaryCarePractice>();
         }
 
         public int Id { get; set; }
@@ -22,6 +24,8 @@ namespace Clypeus.Data.Model.Geography
         public DateTime? Inserted { get; set; }
         public DateTime? Updated { get; set; }
 
-        public virtual ICollection<Organisation> Organisations { get; set; }
+        public virtual ICollection<SystemOrganisations> SystemOrganisations { get; set; }
+
+        public virtual ICollection<PrimaryCarePractice> PrimaryCarePractices { get; set; }
     }
 }

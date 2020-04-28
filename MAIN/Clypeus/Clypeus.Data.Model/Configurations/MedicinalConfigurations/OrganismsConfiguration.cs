@@ -11,7 +11,7 @@ namespace Clypeus.Data.Model.Configurations.Medicinals
     {
         public void Configure(EntityTypeBuilder<Organisms> entity)
         {
-            entity.ToTable("Organisms", "medicinals");
+            entity.ToTable("Organisms", "Medicinals");
 
             entity.HasKey(e =>e.Id);
 

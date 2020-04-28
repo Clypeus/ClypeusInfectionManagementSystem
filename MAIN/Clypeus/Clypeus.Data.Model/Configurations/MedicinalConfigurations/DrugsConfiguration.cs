@@ -11,7 +11,7 @@ namespace Clypeus.Data.Model.Configurations.Medicinals
     {
         public void Configure(EntityTypeBuilder<Drugs> entity)
         {
-            entity.ToTable("Drugs", "medicinals");
+            entity.ToTable("Drugs", "Medicinals");
 
             entity.Property(e => e.Atc)
                .IsRequired()

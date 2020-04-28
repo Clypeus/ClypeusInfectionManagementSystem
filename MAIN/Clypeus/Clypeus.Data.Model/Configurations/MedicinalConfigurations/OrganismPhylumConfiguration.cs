@@ -12,7 +12,7 @@ namespace Clypeus.Data.Model.Configurations.Medicinals
 
         public void Configure(EntityTypeBuilder<OrganismPhylum> entity)
         {
-            entity.ToTable("OrganismPhylum", "medicinals");
+            entity.ToTable("OrganismPhylum", "Medicinals");
 
             entity.Property(e => e.Description)
                 .HasMaxLength(75)

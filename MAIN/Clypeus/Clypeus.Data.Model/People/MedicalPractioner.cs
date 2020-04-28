@@ -10,7 +10,7 @@ namespace Clypeus.Data.Model.People
     {
         public int Id { get; set; }
         public string Code { get; set; }
-        public string PrinciplePracticeId { get; set; }
+        public string Name { get; set; }
         public PrimaryCarePractice PrinciplePractice { get; set; }
     }
 }

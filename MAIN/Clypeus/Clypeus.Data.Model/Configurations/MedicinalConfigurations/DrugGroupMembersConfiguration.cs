@@ -15,7 +15,7 @@ namespace Clypeus.Data.Model.Configurations.Medicinals
             entity.HasKey(e => new { e.DrugGroupId, e.DrugId })
                     .HasName("PK__DrugGrou__B7C2CA7426EEAF2F");
 
-            entity.ToTable("DrugGroupMembers", "medicinals");
+            entity.ToTable("DrugGroupMembers", "Medicinals");
 
             entity.HasOne(d => d.DrugGroup)
                 .WithMany(p => p.DrugGroupMembers)

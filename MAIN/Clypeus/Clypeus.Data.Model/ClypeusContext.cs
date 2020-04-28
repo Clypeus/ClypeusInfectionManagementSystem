@@ -3,9 +3,13 @@ using Clypeus.Data.Model.Configurations;
 using Clypeus.Data.Model.Configurations.GeographyConfigurations;
 using Clypeus.Data.Model.Configurations.MedicinalConfigurations;
 using Clypeus.Data.Model.Configurations.Medicinals;
+using Clypeus.Data.Model.Configurations.Organisations;
+using Clypeus.Data.Model.Configurations.PeopleConfigurations;
 using Clypeus.Data.Model.Configurations.Users;
 using Clypeus.Data.Model.Geography;
 using Clypeus.Data.Model.Medicinals;
+using Clypeus.Data.Model.Organisations;
+using Clypeus.Data.Model.People;
 using Clypeus.Data.Model.Users;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
@@ -24,16 +28,18 @@ namespace Clypeus.Data.Model
         }
 
 
-        public virtual DbSet<Address> Addresses { get; set; }
+        public virtual DbSet<Address> Address { get; set; }
         public virtual DbSet<DrugGroup> DrugGroup { get; set; }
         public virtual DbSet<DrugGroupMembers> DrugGroupMembers { get; set; }
         public virtual DbSet<DrugTypes> DrugTypes { get; set; }
         public virtual DbSet<Drugs> Drugs { get; set; }
+        public virtual DbSet<MedicalPractioner> MedicalPractioners { get; set; }
         public virtual DbSet<NotifiableDisease> NotifiableDiseases { get; set; }
-        public virtual DbSet<Organisation> Organisation { get; set; }
+        public virtual DbSet<SystemOrganisations> Organisation { get; set; }
         public virtual DbSet<OrganismGenus> OrganismTypes { get; set; }
         public virtual DbSet<Organisms> Organisms { get; set; }
-        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<PrimaryCarePractice> PrimaryCarePractices { get; set; }
+        public virtual DbSet<SystemUser> Users { get; set; }
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -54,8 +60,10 @@ namespace Clypeus.Data.Model
 
         protected ModelBuilder OnModelCreatingUsers(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new UserConfiguration());
-            modelBuilder.ApplyConfiguration(new OrganisationsConfiguration());
+            modelBuilder.ApplyConfiguration(new SystemUserConfiguration());
+            modelBuilder.ApplyConfiguration(new MedicalPractionerConfiguration());
+            modelBuilder.ApplyConfiguration(new SystemOrganisationConfiguration());
+            modelBuilder.ApplyConfiguration(new PrimaryCarePracticeConfiguration());
 
             return modelBuilder;
         }
@@ -63,6 +71,7 @@ namespace Clypeus.Data.Model
         protected ModelBuilder OnModelGeographyUsers(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new AddressConfiguration());
+            
           
             return modelBuilder;
         }

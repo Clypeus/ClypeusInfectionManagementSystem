@@ -8,11 +8,11 @@ using System.Text;
 
 namespace Clypeus.Data.Model.Configurations.Users
 {
-    public class OrganisationsConfiguration : IEntityTypeConfiguration<Organisation>
+    public class SystemOrganisationConfiguration : IEntityTypeConfiguration<SystemOrganisations>
     {
-        public void Configure(EntityTypeBuilder<Organisation> entity)
+        public void Configure(EntityTypeBuilder<SystemOrganisations> entity)
         {
-            entity.ToTable("Organisation", "users");
+            entity.ToTable("SystemOrganisation", "SystemUsers");
 
             entity.Property(e => e.Name)
                         .IsRequired()
@@ -30,14 +30,9 @@ namespace Clypeus.Data.Model.Configurations.Users
                         .IsUnicode(false);
 
             entity.HasOne(d => d.Address)
-                .WithMany(p =>p.Organisations)
+                .WithMany(p =>p.SystemOrganisations)
                 .HasForeignKey(d => d.AddressId)
                 .HasConstraintName("FK_Address_ToOrganisation");
-
-            entity.HasOne(d => d.ParentOrganisation)
-               .WithMany(p => p.Organisations)
-               .HasForeignKey(d => d.ParentOrganisationId)
-               .HasConstraintName("FK_Organisation_ToOrganisations");
         }   
     }
 }

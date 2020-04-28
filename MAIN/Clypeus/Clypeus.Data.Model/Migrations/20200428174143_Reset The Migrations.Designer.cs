@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Clypeus.Data.Model.Migrations
 {
     [DbContext(typeof(ClypeusContext))]
-    [Migration("20200427180718_Make organisations hieracical")]
-    partial class Makeorganisationshieracical
+    [Migration("20200428174143_Reset The Migrations")]
+    partial class ResetTheMigrations
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -54,7 +54,7 @@ namespace Clypeus.Data.Model.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Addresses");
+                    b.ToTable("Address");
                 });
 
             modelBuilder.Entity("Clypeus.Data.Model.Medicinals.DrugGroup", b =>
@@ -82,20 +82,16 @@ namespace Clypeus.Data.Model.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("Inserted")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
-                        .HasDefaultValue(new DateTime(2020, 4, 27, 19, 7, 18, 252, DateTimeKind.Local).AddTicks(7674));
+                        .HasColumnType("datetime");
 
                     b.Property<DateTime?>("Updated")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
-                        .HasDefaultValue(new DateTime(2020, 4, 27, 19, 7, 18, 262, DateTimeKind.Local).AddTicks(1252));
+                        .HasColumnType("datetime");
 
                     b.HasKey("Id");
 
                     b.HasIndex("DrugTypeId");
 
-                    b.ToTable("DrugGroup","medicinals");
+                    b.ToTable("DrugGroup","Medicinals");
                 });
 
             modelBuilder.Entity("Clypeus.Data.Model.Medicinals.DrugGroupMembers", b =>
@@ -111,7 +107,7 @@ namespace Clypeus.Data.Model.Migrations
 
                     b.HasIndex("DrugId");
 
-                    b.ToTable("DrugGroupMembers","medicinals");
+                    b.ToTable("DrugGroupMembers","Medicinals");
                 });
 
             modelBuilder.Entity("Clypeus.Data.Model.Medicinals.DrugTypes", b =>
@@ -137,7 +133,7 @@ namespace Clypeus.Data.Model.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("DrugTypes","medicinals");
+                    b.ToTable("DrugTypes","Medicinals");
                 });
 
             modelBuilder.Entity("Clypeus.Data.Model.Medicinals.Drugs", b =>
@@ -185,7 +181,7 @@ namespace Clypeus.Data.Model.Migrations
 
                     b.HasIndex("PrincipleDrugGroupId");
 
-                    b.ToTable("Drugs","medicinals");
+                    b.ToTable("Drugs","Medicinals");
                 });
 
             modelBuilder.Entity("Clypeus.Data.Model.Medicinals.NotifiableDisease", b =>
@@ -217,7 +213,7 @@ namespace Clypeus.Data.Model.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("NotifiableDiseases","medicinals");
+                    b.ToTable("NotifiableDiseases","Medicinals");
                 });
 
             modelBuilder.Entity("Clypeus.Data.Model.Medicinals.NotifiableDiseaseOrganism", b =>
@@ -232,7 +228,7 @@ namespace Clypeus.Data.Model.Migrations
 
                     b.HasIndex("OrganismId");
 
-                    b.ToTable("NotifiableDiseasesOrganisms","medicinals");
+                    b.ToTable("NotifiableDiseasesOrganisms","Medicinals");
                 });
 
             modelBuilder.Entity("Clypeus.Data.Model.Medicinals.OrganismClass", b =>
@@ -258,7 +254,7 @@ namespace Clypeus.Data.Model.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("OrganismClass","medicinals");
+                    b.ToTable("OrganismClass","Medicinals");
                 });
 
             modelBuilder.Entity("Clypeus.Data.Model.Medicinals.OrganismFamily", b =>
@@ -284,7 +280,7 @@ namespace Clypeus.Data.Model.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("OrganismFamily","medicinals");
+                    b.ToTable("OrganismFamily","Medicinals");
                 });
 
             modelBuilder.Entity("Clypeus.Data.Model.Medicinals.OrganismGenus", b =>
@@ -310,7 +306,7 @@ namespace Clypeus.Data.Model.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("OrganismTypes","medicinals");
+                    b.ToTable("OrganismTypes","Medicinals");
                 });
 
             modelBuilder.Entity("Clypeus.Data.Model.Medicinals.OrganismKingdom", b =>
@@ -336,7 +332,7 @@ namespace Clypeus.Data.Model.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("OrganismKingdom","medicinals");
+                    b.ToTable("OrganismKingdom","Medicinals");
                 });
 
             modelBuilder.Entity("Clypeus.Data.Model.Medicinals.OrganismOrder", b =>
@@ -362,7 +358,7 @@ namespace Clypeus.Data.Model.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("OrganismOrder","medicinals");
+                    b.ToTable("OrganismOrder","Medicinals");
                 });
 
             modelBuilder.Entity("Clypeus.Data.Model.Medicinals.OrganismPhylum", b =>
@@ -388,7 +384,7 @@ namespace Clypeus.Data.Model.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("OrganismPhylum","medicinals");
+                    b.ToTable("OrganismPhylum","Medicinals");
                 });
 
             modelBuilder.Entity("Clypeus.Data.Model.Medicinals.Organisms", b =>
@@ -455,10 +451,103 @@ namespace Clypeus.Data.Model.Migrations
 
                     b.HasIndex("OrganismPhylumId");
 
-                    b.ToTable("Organisms","medicinals");
+                    b.ToTable("Organisms","Medicinals");
                 });
 
-            modelBuilder.Entity("Clypeus.Data.Model.Users.Organisation", b =>
+            modelBuilder.Entity("Clypeus.Data.Model.Organisations.PrimaryCarePractice", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("AddressId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnType("varchar(15)")
+                        .HasMaxLength(15)
+                        .IsUnicode(false);
+
+                    b.Property<string>("EmailAddress")
+                        .IsRequired()
+                        .HasColumnType("varchar(75)")
+                        .HasMaxLength(75)
+                        .IsUnicode(false);
+
+                    b.Property<string>("LongCode")
+                        .IsRequired()
+                        .HasColumnType("varchar(30)")
+                        .HasMaxLength(30)
+                        .IsUnicode(false);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("varchar(75)")
+                        .HasMaxLength(75)
+                        .IsUnicode(false);
+
+                    b.Property<int?>("ParentOrganisationId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("PrincipleContactName")
+                        .IsRequired()
+                        .HasColumnType("varchar(75)")
+                        .HasMaxLength(75)
+                        .IsUnicode(false);
+
+                    b.Property<int?>("SecondaryOrganisationId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("SeniorPracticeMemberId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Status")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TelephoneNumber")
+                        .IsRequired()
+                        .HasColumnType("varchar(25)")
+                        .HasMaxLength(25)
+                        .IsUnicode(false);
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AddressId");
+
+                    b.HasIndex("SeniorPracticeMemberId")
+                        .IsUnique()
+                        .HasFilter("[SeniorPracticeMemberId] IS NOT NULL");
+
+                    b.ToTable("PrimaryCarePractice","Organisations");
+                });
+
+            modelBuilder.Entity("Clypeus.Data.Model.People.MedicalPractioner", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnType("varchar(25)")
+                        .HasMaxLength(25)
+                        .IsUnicode(false);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("varchar(75)")
+                        .HasMaxLength(75)
+                        .IsUnicode(false);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("MedicalPractioner","People");
+                });
+
+            modelBuilder.Entity("Clypeus.Data.Model.Users.SystemOrganisations", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -477,9 +566,6 @@ namespace Clypeus.Data.Model.Migrations
                         .HasMaxLength(100)
                         .IsUnicode(false);
 
-                    b.Property<int>("ParentOrganisationId")
-                        .HasColumnType("int");
-
                     b.Property<string>("TelephoneNumber")
                         .IsRequired()
                         .HasColumnType("varchar(25)")
@@ -490,12 +576,10 @@ namespace Clypeus.Data.Model.Migrations
 
                     b.HasIndex("AddressId");
 
-                    b.HasIndex("ParentOrganisationId");
-
-                    b.ToTable("Organisation","users");
+                    b.ToTable("SystemOrganisation","SystemUsers");
                 });
 
-            modelBuilder.Entity("Clypeus.Data.Model.Users.User", b =>
+            modelBuilder.Entity("Clypeus.Data.Model.Users.SystemUser", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -585,7 +669,7 @@ namespace Clypeus.Data.Model.Migrations
                     b.HasIndex("OrganisationId")
                         .HasName("IX_Users_OrganisationsId");
 
-                    b.ToTable("Users","users");
+                    b.ToTable("SystemUsers","SystemUsers");
                 });
 
             modelBuilder.Entity("Clypeus.Data.Model.Medicinals.DrugGroup", b =>
@@ -672,26 +756,32 @@ namespace Clypeus.Data.Model.Migrations
                         .HasConstraintName("FK_Organisms_ToOrganismPhylum");
                 });
 
-            modelBuilder.Entity("Clypeus.Data.Model.Users.Organisation", b =>
+            modelBuilder.Entity("Clypeus.Data.Model.Organisations.PrimaryCarePractice", b =>
                 {
                     b.HasOne("Clypeus.Data.Model.Geography.Address", "Address")
-                        .WithMany("Organisations")
+                        .WithMany("PrimaryCarePractices")
+                        .HasForeignKey("AddressId")
+                        .HasConstraintName("FK_Address_ToPrimaryCarePrictice");
+
+                    b.HasOne("Clypeus.Data.Model.People.MedicalPractioner", "SeniorPracticeMember")
+                        .WithOne("PrinciplePractice")
+                        .HasForeignKey("Clypeus.Data.Model.Organisations.PrimaryCarePractice", "SeniorPracticeMemberId")
+                        .HasConstraintName("FK_Principle_ToPrimaryCarePrictice");
+                });
+
+            modelBuilder.Entity("Clypeus.Data.Model.Users.SystemOrganisations", b =>
+                {
+                    b.HasOne("Clypeus.Data.Model.Geography.Address", "Address")
+                        .WithMany("SystemOrganisations")
                         .HasForeignKey("AddressId")
                         .HasConstraintName("FK_Address_ToOrganisation")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("Clypeus.Data.Model.Users.Organisation", "ParentOrganisation")
-                        .WithMany("Organisations")
-                        .HasForeignKey("ParentOrganisationId")
-                        .HasConstraintName("FK_Organisation_ToOrganisations")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
-            modelBuilder.Entity("Clypeus.Data.Model.Users.User", b =>
+            modelBuilder.Entity("Clypeus.Data.Model.Users.SystemUser", b =>
                 {
-                    b.HasOne("Clypeus.Data.Model.Users.Organisation", "Organisation")
+                    b.HasOne("Clypeus.Data.Model.Users.SystemOrganisations", "SystemOrganisation")
                         .WithMany("Users")
                         .HasForeignKey("OrganisationId")
                         .HasConstraintName("FK_Users_ToOrganisations")
