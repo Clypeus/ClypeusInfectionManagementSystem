@@ -17,7 +17,35 @@ namespace Clypeus.Data.Model.Configurations.SensitivityConfigurations
 
             entity.Property(e => e.Inserted).HasColumnType("datetime");
 
-            
+            entity.Property(e => e.LabSpecimenCode)
+                       .IsRequired()
+                       .HasMaxLength(50)
+                       .IsUnicode(false);
+
+            entity.Property(e => e.LabEpisodeCode)
+                       .IsRequired()
+                       .HasMaxLength(65)
+                       .IsUnicode(false);
+
+            entity.Property(e => e.LabPatientIdentifier)
+                       .IsRequired()
+                       .HasMaxLength(65)
+                       .IsUnicode(false);
+
+            entity.Property(e => e.LabPatientCode)
+                       .IsRequired()
+                       .HasMaxLength(65)
+                       .IsUnicode(false);
+
+            entity.Property(e => e.LabPatientSurname)
+                       .IsRequired()
+                       .HasMaxLength(65)
+                       .IsUnicode(false);
+
+            entity.Property(e => e.LabPatientDateOfBirth)
+                       .IsRequired()
+                       .HasMaxLength(10)
+                       .IsUnicode(false);
         }
     }
 }
