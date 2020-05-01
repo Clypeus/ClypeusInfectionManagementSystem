@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Clypeus.Data.Model.Specimens;
+using System;
 using System.Collections.Generic;
 
 namespace Clypeus.Data.Model.Medicinals
@@ -32,5 +33,7 @@ namespace Clypeus.Data.Model.Medicinals
         public virtual OrganismOrder OrganismOrder { get; set; }
 
         public ICollection<NotifiableDiseaseOrganism> NotifiableDiseaseOrganisms { get; set; }
+
+        public virtual ICollection<SpecimenSensitivity> SpecimenSensitivity { get; set; }
     }
 }

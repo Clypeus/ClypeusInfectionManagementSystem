@@ -5,11 +5,13 @@ using Clypeus.Data.Model.Configurations.MedicinalConfigurations;
 using Clypeus.Data.Model.Configurations.Medicinals;
 using Clypeus.Data.Model.Configurations.Organisations;
 using Clypeus.Data.Model.Configurations.PeopleConfigurations;
+using Clypeus.Data.Model.Configurations.SensitivityConfigurations;
 using Clypeus.Data.Model.Configurations.Users;
 using Clypeus.Data.Model.Geography;
 using Clypeus.Data.Model.Medicinals;
 using Clypeus.Data.Model.Organisations;
 using Clypeus.Data.Model.People;
+using Clypeus.Data.Model.Specimens;
 using Clypeus.Data.Model.Users;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
@@ -39,6 +41,7 @@ namespace Clypeus.Data.Model
         public virtual DbSet<OrganismGenus> OrganismTypes { get; set; }
         public virtual DbSet<Organisms> Organisms { get; set; }
         public virtual DbSet<PrimaryCarePractice> PrimaryCarePractices { get; set; }
+        public virtual DbSet<Sensitivity> Sensitivities { get; set; }
         public virtual DbSet<SystemUser> Users { get; set; }
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -54,6 +57,7 @@ namespace Clypeus.Data.Model
         {
             modelBuilder = OnModelCreatingMedicinals(modelBuilder);
             modelBuilder = OnModelCreatingUsers(modelBuilder);
+            modelBuilder = OnModelSpecimens(modelBuilder);
             
             OnModelCreatingPartial(modelBuilder);
         }
@@ -64,6 +68,15 @@ namespace Clypeus.Data.Model
             modelBuilder.ApplyConfiguration(new MedicalPractionerConfiguration());
             modelBuilder.ApplyConfiguration(new SystemOrganisationConfiguration());
             modelBuilder.ApplyConfiguration(new PrimaryCarePracticeConfiguration());
+           
+            return modelBuilder;
+        }
+
+
+        protected ModelBuilder OnModelSpecimens(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new SensitivityConfiguration());
+            modelBuilder.ApplyConfiguration(new SpecimenSensitivityConfiguration());
 
             return modelBuilder;
         }
@@ -91,6 +104,7 @@ namespace Clypeus.Data.Model
             modelBuilder.ApplyConfiguration(new OrganismTypesConfiguration());
             modelBuilder.ApplyConfiguration(new NotifiableDiseaseConfiguration());
             modelBuilder.ApplyConfiguration(new NotifiableDiseaseOrganismConfiguration());
+         
 
             return modelBuilder;
         }

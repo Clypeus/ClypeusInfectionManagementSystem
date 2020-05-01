@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="35"
-  DTS:VersionGUID="{1E0D892F-9702-45A3-AC10-225B48BFEF39}">
+  DTS:VersionBuild="37"
+  DTS:VersionGUID="{C885EAE9-D6CB-490D-8EA0-1CDBB6C7B827}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2649,6 +2649,7 @@
       DTS:refId="Package\Map into single record"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{440233DD-2581-4374-B0B1-3443B04D824B}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -9770,92 +9771,92 @@
               name="Flat File Source Output"
               startId="Package\Map into single record\Flat File Source.Outputs[Flat File Source Output]" />
             <path
-              refId="Package\Map into single record.Paths[Merge Join Output3]"
-              endId="Package\Map into single record\Sort File Family.Inputs[Sort Input]"
-              name="Merge Join Output"
-              startId="Package\Map into single record\Class Information.Outputs[Merge Join Output]" />
-            <path
               refId="Package\Map into single record.Paths[Merge Join Output5]"
-              endId="Package\Map into single record\Add Date Columns.Inputs[Derived Column Input]"
-              name="Merge Join Output"
-              startId="Package\Map into single record\Genus Information.Outputs[Merge Join Output]" />
-            <path
-              refId="Package\Map into single record.Paths[Merge Join Output1]"
               endId="Package\Map into single record\Sort Order Information.Inputs[Sort Input]"
               name="Merge Join Output"
               startId="Package\Map into single record\Kingdom Information.Outputs[Merge Join Output]" />
             <path
+              refId="Package\Map into single record.Paths[Merge Join Output3]"
+              endId="Package\Map into single record\Add Date Columns.Inputs[Derived Column Input]"
+              name="Merge Join Output"
+              startId="Package\Map into single record\Genus Information.Outputs[Merge Join Output]" />
+            <path
               refId="Package\Map into single record.Paths[Merge Join Output4]"
+              endId="Package\Map into single record\Sort File Family.Inputs[Sort Input]"
+              name="Merge Join Output"
+              startId="Package\Map into single record\Class Information.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Map into single record.Paths[Merge Join Output1]"
               endId="Package\Map into single record\Sort By Genus.Inputs[Sort Input]"
               name="Merge Join Output"
               startId="Package\Map into single record\Phylum Information.Outputs[Merge Join Output]" />
             <path
               refId="Package\Map into single record.Paths[Merge Join Output]"
-              endId="Package\Map into single record\Sort Phylum File.Inputs[Sort Input]"
-              name="Merge Join Output"
-              startId="Package\Map into single record\Order Information.Outputs[Merge Join Output]" />
-            <path
-              refId="Package\Map into single record.Paths[Merge Join Output2]"
               endId="Package\Map into single record\Sort File Kingdom.Inputs[Sort Input]"
               name="Merge Join Output"
               startId="Package\Map into single record\Family Information.Outputs[Merge Join Output]" />
             <path
-              refId="Package\Map into single record.Paths[Sort Output11]"
-              endId="Package\Map into single record\Genus Information.Inputs[Merge Join Right Input]"
-              name="Sort Output"
-              startId="Package\Map into single record\Sort By Genus.Outputs[Sort Output]" />
+              refId="Package\Map into single record.Paths[Merge Join Output2]"
+              endId="Package\Map into single record\Sort Phylum File.Inputs[Sort Input]"
+              name="Merge Join Output"
+              startId="Package\Map into single record\Order Information.Outputs[Merge Join Output]" />
             <path
               refId="Package\Map into single record.Paths[Sort Output10]"
-              endId="Package\Map into single record\Genus Information.Inputs[Merge Join Left Input]"
-              name="Sort Output"
-              startId="Package\Map into single record\Sort Genus.Outputs[Sort Output]" />
-            <path
-              refId="Package\Map into single record.Paths[Sort Output9]"
-              endId="Package\Map into single record\Phylum Information.Inputs[Merge Join Right Input]"
-              name="Sort Output"
-              startId="Package\Map into single record\Sort Phylum File.Outputs[Sort Output]" />
-            <path
-              refId="Package\Map into single record.Paths[Sort Output7]"
-              endId="Package\Map into single record\Class Information.Inputs[Merge Join Left Input]"
-              name="Sort Output"
-              startId="Package\Map into single record\Sort.Outputs[Sort Output]" />
-            <path
-              refId="Package\Map into single record.Paths[Sort Output6]"
-              endId="Package\Map into single record\Class Information.Inputs[Merge Join Right Input]"
-              name="Sort Output"
-              startId="Package\Map into single record\Sort 1.Outputs[Sort Output]" />
-            <path
-              refId="Package\Map into single record.Paths[Sort Output5]"
-              endId="Package\Map into single record\Order Information.Inputs[Merge Join Left Input]"
-              name="Sort Output"
-              startId="Package\Map into single record\Sort Order Information.Outputs[Sort Output]" />
-            <path
-              refId="Package\Map into single record.Paths[Sort Output4]"
-              endId="Package\Map into single record\Order Information.Inputs[Merge Join Right Input]"
-              name="Sort Output"
-              startId="Package\Map into single record\Sort Order.Outputs[Sort Output]" />
-            <path
-              refId="Package\Map into single record.Paths[Sort Output2]"
-              endId="Package\Map into single record\Kingdom Information.Inputs[Merge Join Right Input]"
-              name="Sort Output"
-              startId="Package\Map into single record\Sort Kingdom.Outputs[Sort Output]" />
-            <path
-              refId="Package\Map into single record.Paths[Sort Output1]"
-              endId="Package\Map into single record\Kingdom Information.Inputs[Merge Join Left Input]"
-              name="Sort Output"
-              startId="Package\Map into single record\Sort File Kingdom.Outputs[Sort Output]" />
-            <path
-              refId="Package\Map into single record.Paths[Sort Output]"
               endId="Package\Map into single record\Phylum Information.Inputs[Merge Join Left Input]"
               name="Sort Output"
               startId="Package\Map into single record\Sort Phylum.Outputs[Sort Output]" />
             <path
-              refId="Package\Map into single record.Paths[Sort Output8]"
+              refId="Package\Map into single record.Paths[Sort Output]"
               endId="Package\Map into single record\Family Information.Inputs[Merge Join Right Input]"
               name="Sort Output"
               startId="Package\Map into single record\Sort File Family.Outputs[Sort Output]" />
             <path
+              refId="Package\Map into single record.Paths[Sort Output1]"
+              endId="Package\Map into single record\Genus Information.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Map into single record\Sort By Genus.Outputs[Sort Output]" />
+            <path
+              refId="Package\Map into single record.Paths[Sort Output2]"
+              endId="Package\Map into single record\Genus Information.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Map into single record\Sort Genus.Outputs[Sort Output]" />
+            <path
               refId="Package\Map into single record.Paths[Sort Output3]"
+              endId="Package\Map into single record\Phylum Information.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Map into single record\Sort Phylum File.Outputs[Sort Output]" />
+            <path
+              refId="Package\Map into single record.Paths[Sort Output4]"
+              endId="Package\Map into single record\Class Information.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Map into single record\Sort.Outputs[Sort Output]" />
+            <path
+              refId="Package\Map into single record.Paths[Sort Output5]"
+              endId="Package\Map into single record\Class Information.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Map into single record\Sort 1.Outputs[Sort Output]" />
+            <path
+              refId="Package\Map into single record.Paths[Sort Output6]"
+              endId="Package\Map into single record\Order Information.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Map into single record\Sort Order Information.Outputs[Sort Output]" />
+            <path
+              refId="Package\Map into single record.Paths[Sort Output7]"
+              endId="Package\Map into single record\Order Information.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Map into single record\Sort Order.Outputs[Sort Output]" />
+            <path
+              refId="Package\Map into single record.Paths[Sort Output8]"
+              endId="Package\Map into single record\Kingdom Information.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Map into single record\Sort Kingdom.Outputs[Sort Output]" />
+            <path
+              refId="Package\Map into single record.Paths[Sort Output9]"
+              endId="Package\Map into single record\Kingdom Information.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Map into single record\Sort File Kingdom.Outputs[Sort Output]" />
+            <path
+              refId="Package\Map into single record.Paths[Sort Output11]"
               endId="Package\Map into single record\Family Information.Inputs[Merge Join Left Input]"
               name="Sort Output"
               startId="Package\Map into single record\Sort Family.Outputs[Sort Output]" />
@@ -10507,293 +10508,117 @@
     design-time-name="Package\Map into single record">
     <LayoutInfo>
       <GraphLayout
-        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="157.6,41.6"
-          Id="Package\Map into single record\Get Family Table"
-          TopLeft="230.285705134983,185.813334810045" />
-        <NodeLayout
-          Size="127.2,41.6"
-          Id="Package\Map into single record\Sort Order"
-          TopLeft="737.142827851433,603.657146210444" />
-        <NodeLayout
-          Size="174.4,41.6"
-          Id="Package\Map into single record\Kingdom Information"
-          TopLeft="468.571409952073,523.809527391101" />
-        <NodeLayout
-          Size="106.4,41.6"
-          Id="Package\Map into single record\Sort 1"
-          TopLeft="523.333312537936,94.2933340827094" />
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="168,41.6"
           Id="Package\Map into single record\Get Kingdom Table"
           TopLeft="580.952357867408,273.904763990735" />
         <NodeLayout
+          Size="154.4,41.6"
+          Id="Package\Map into single record\Sort Phylum File"
+          TopLeft="610.476166218047,788.723812231639" />
+        <NodeLayout
           Size="168,41.6"
           Id="Package\Map into single record\Phylum Information"
           TopLeft="517.142836593447,899.809527391101" />
         <NodeLayout
-          Size="181.6,41.6"
-          Id="Package\Map into single record\Sort Order Information"
-          TopLeft="468.571409952074,606.40000285739" />
+          Size="174.4,41.6"
+          Id="Package\Map into single record\Kingdom Information"
+          TopLeft="468.571409952073,523.809527391101" />
         <NodeLayout
           Size="131.2,41.6"
-          Id="Package\Map into single record\Sort Family"
-          TopLeft="249.904751974439,274.064764082833" />
+          Id="Package\Map into single record\Sort Genus"
+          TopLeft="297.999988158544,985.173335752275" />
+        <NodeLayout
+          Size="106.4,41.6"
+          Id="Package\Map into single record\Sort 1"
+          TopLeft="523.333312537936,94.2933340827094" />
+        <NodeLayout
+          Size="183.2,41.6"
+          Id="Package\Map into single record\Get Genus Information"
+          TopLeft="269.333322630989,903.360001768748" />
+        <NodeLayout
+          Size="222.4,41.6"
+          Id="Package\Map into single record\Write Informatiom To Database"
+          TopLeft="373.999985138576,1296.48000257874" />
         <NodeLayout
           Size="150.4,41.6"
           Id="Package\Map into single record\Sort File Family"
           TopLeft="407.333317147362,272.373335173713" />
         <NodeLayout
-          Size="179.2,41.6"
-          Id="Package\Map into single record\Get Order Information"
-          TopLeft="709.523781329868,522.438097945925" />
-        <NodeLayout
-          Size="187.2,41.6"
-          Id="Package\Map into single record\Gte Phylum Information"
-          TopLeft="369.523794840253,714.285717001415" />
-        <NodeLayout
-          Size="160,41.6"
-          Id="Package\Map into single record\Order Information"
-          TopLeft="600.95235707268,714.742859953018" />
-        <NodeLayout
-          Size="135.2,41.6"
-          Id="Package\Map into single record\Sort Phylum"
-          TopLeft="398.095222276355,790.019049728636" />
+          Size="164,41.6"
+          Id="Package\Map into single record\Family Information"
+          TopLeft="315.333320803113,353.493335653093" />
         <NodeLayout
           Size="152.8,41.6"
           Id="Package\Map into single record\Get Class Table"
           TopLeft="297.333321518369,20.8000001653036" />
         <NodeLayout
-          Size="154.4,41.6"
-          Id="Package\Map into single record\Sort Phylum File"
-          TopLeft="610.476166218047,788.723812231639" />
-        <NodeLayout
           Size="164,41.6"
-          Id="Package\Map into single record\Family Information"
-          TopLeft="315.333320803113,353.493335653093" />
+          Id="Package\Map into single record\Genus Information"
+          TopLeft="401.33331738578,1100.26666925642" />
         <NodeLayout
-          Size="141.6,41.6"
-          Id="Package\Map into single record\Sort Kingdom"
-          TopLeft="598.09521432907,348.19047886682" />
+          Size="135.2,41.6"
+          Id="Package\Map into single record\Sort Phylum"
+          TopLeft="398.095222276355,790.019049728636" />
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\Map into single record\Gte Phylum Information"
+          TopLeft="369.523794840253,714.285717001415" />
+        <NodeLayout
+          Size="127.2,41.6"
+          Id="Package\Map into single record\Sort Order"
+          TopLeft="737.142827851433,603.657146210444" />
+        <NodeLayout
+          Size="97.6,41.6"
+          Id="Package\Map into single record\Sort"
+          TopLeft="326.6666536861,94.2933340827094" />
+        <NodeLayout
+          Size="145.6,41.6"
+          Id="Package\Map into single record\Sort By Genus"
+          TopLeft="499.33331349161,980.000001735687" />
+        <NodeLayout
+          Size="160,41.6"
+          Id="Package\Map into single record\Order Information"
+          TopLeft="600.95235707268,714.742859953018" />
+        <NodeLayout
+          Size="157.6,41.6"
+          Id="Package\Map into single record\Get Family Table"
+          TopLeft="230.285705134983,185.813334810045" />
+        <NodeLayout
+          Size="181.6,41.6"
+          Id="Package\Map into single record\Sort Order Information"
+          TopLeft="468.571409952074,606.40000285739" />
+        <NodeLayout
+          Size="179.2,41.6"
+          Id="Package\Map into single record\Get Order Information"
+          TopLeft="709.523781329868,522.438097945925" />
+        <NodeLayout
+          Size="131.2,41.6"
+          Id="Package\Map into single record\Sort Family"
+          TopLeft="249.904751974439,274.064764082833" />
         <NodeLayout
           Size="159.2,41.6"
           Id="Package\Map into single record\Class Information"
           TopLeft="401.33331738578,184.426668132358" />
         <NodeLayout
+          Size="141.6,41.6"
+          Id="Package\Map into single record\Sort Kingdom"
+          TopLeft="598.09521432907,348.19047886682" />
+        <NodeLayout
           Size="160.8,41.6"
           Id="Package\Map into single record\Sort File Kingdom"
           TopLeft="311.428559053512,428.723812822009" />
         <NodeLayout
-          Size="97.6,41.6"
-          Id="Package\Map into single record\Sort"
-          TopLeft="326.6666536861,94.2933340827094" />
+          Size="151.2,41.6"
+          Id="Package\Map into single record\Flat File Source"
+          TopLeft="482.666647487217,12.4800000991821" />
+        <NodeLayout
+          Size="165.6,41.6"
+          Id="Package\Map into single record\Add Date Columns"
+          TopLeft="404.666650586659,1194.66666909112" />
         <EdgeLayout
-          Id="Package\Map into single record.Paths[Sort Output9]"
-          TopLeft="687.676166218047,830.323812231639">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-59.8666629579336,69.4857151594614"
-              Start="0,0"
-              End="-59.8666629579336,61.9857151594614">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.2981137268497" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,37.2981137268497"
-                    Point2="0,41.2981137268497"
-                    Point3="-4,41.2981137268497" />
-                  <mssgle:LineSegment
-                    End="-55.8666629579336,41.2981137268497" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-55.8666629579336,41.2981137268497"
-                    Point2="-59.8666629579336,41.2981137268497"
-                    Point3="-59.8666629579336,45.2981137268497" />
-                  <mssgle:LineSegment
-                    End="-59.8666629579336,61.9857151594614" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Map into single record.Paths[Sort Output8]"
-          TopLeft="482.533317147362,313.973335173713">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-59.1999963442485,39.5200004793803"
-              Start="0,0"
-              End="-59.1999963442485,32.0200004793803">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.4828988355738" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.4828988355738"
-                    Point2="0,23.4828988355738"
-                    Point3="-4,23.4828988355738" />
-                  <mssgle:LineSegment
-                    End="-55.1999963442485,23.4828988355738" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-55.1999963442485,23.4828988355738"
-                    Point2="-59.1999963442485,23.4828988355738"
-                    Point3="-59.1999963442485,27.4828988355738" />
-                  <mssgle:LineSegment
-                    End="-59.1999963442485,32.0200004793803" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Map into single record.Paths[Sort Output7]"
-          TopLeft="375.4666536861,135.893334082709">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="80.26666369968,48.5333340496487"
-              Start="0,0"
-              End="80.26666369968,41.0333340496487">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.8302491817317" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24.8302491817317"
-                    Point2="0,28.8302491817317"
-                    Point3="4,28.8302491817317" />
-                  <mssgle:LineSegment
-                    End="76.26666369968,28.8302491817317" />
-                  <mssgle:CubicBezierSegment
-                    Point1="76.26666369968,28.8302491817317"
-                    Point2="80.26666369968,28.8302491817317"
-                    Point3="80.26666369968,32.8302491817317" />
-                  <mssgle:LineSegment
-                    End="80.26666369968,41.0333340496487" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Map into single record.Paths[Sort Output6]"
-          TopLeft="576.533312537936,135.893334082709">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-70.399995152156,48.5333340496487"
-              Start="0,0"
-              End="-70.399995152156,41.0333340496487">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.8302491817316" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24.8302491817316"
-                    Point2="0,28.8302491817316"
-                    Point3="-4,28.8302491817316" />
-                  <mssgle:LineSegment
-                    End="-66.399995152156,28.8302491817316" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-66.399995152156,28.8302491817316"
-                    Point2="-70.399995152156,28.8302491817316"
-                    Point3="-70.399995152156,32.8302491817316" />
-                  <mssgle:LineSegment
-                    End="-70.399995152156,41.0333340496487" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Map into single record.Paths[Sort Output5]"
-          TopLeft="559.371409952074,648.00000285739">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="96.2476137872731,66.7428570956276"
-              Start="0,0"
-              End="96.2476137872731,59.2428570956276">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.6492220370065" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,35.6492220370065"
-                    Point2="0,39.6492220370065"
-                    Point3="4,39.6492220370065" />
-                  <mssgle:LineSegment
-                    End="92.2476137872731,39.6492220370065" />
-                  <mssgle:CubicBezierSegment
-                    Point1="92.2476137872731,39.6492220370065"
-                    Point2="96.2476137872731,39.6492220370065"
-                    Point3="96.2476137872731,43.6492220370065" />
-                  <mssgle:LineSegment
-                    End="96.2476137872731,59.2428570956276" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Map into single record.Paths[Sort Output4]"
-          TopLeft="800.742827851433,645.257146210444">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-94.4571374454196,69.485713742574"
-              Start="0,0"
-              End="-94.4571374454196,61.985713742574">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.2786418272717" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,37.2786418272717"
-                    Point2="0,41.2786418272717"
-                    Point3="-4,41.2786418272717" />
-                  <mssgle:LineSegment
-                    End="-90.4571374454196,41.2786418272717" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-90.4571374454196,41.2786418272717"
-                    Point2="-94.4571374454196,41.2786418272717"
-                    Point3="-94.4571374454196,45.2786418272717" />
-                  <mssgle:LineSegment
-                    End="-94.4571374454196,61.985713742574" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Map into single record.Paths[Sort Output3]"
+          Id="Package\Map into single record.Paths[Sort Output11]"
           TopLeft="315.504751974439,315.664764082833">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -10823,79 +10648,13 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Map into single record.Paths[Sort Output2]"
-          TopLeft="668.89521432907,389.79047886682">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-85.390471043663,134.019048524281"
-              Start="0,0"
-              End="-85.390471043663,126.519048524281">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,75.6804161226183" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,75.6804161226183"
-                    Point2="0,79.6804161226183"
-                    Point3="-4,79.6804161226183" />
-                  <mssgle:LineSegment
-                    End="-81.390471043663,79.6804161226183" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-81.390471043663,79.6804161226183"
-                    Point2="-85.390471043663,79.6804161226183"
-                    Point3="-85.390471043663,83.6804161226183" />
-                  <mssgle:LineSegment
-                    End="-85.390471043663,126.519048524281" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Map into single record.Paths[Sort Output1]"
-          TopLeft="391.828559053512,470.323812822009">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="136.209517565228,53.485714569092"
-              Start="0,0"
-              End="136.209517565228,45.985714569092">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.7996884801692" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,27.7996884801692"
-                    Point2="0,31.7996884801692"
-                    Point3="4,31.7996884801692" />
-                  <mssgle:LineSegment
-                    End="132.209517565228,31.7996884801692" />
-                  <mssgle:CubicBezierSegment
-                    Point1="132.209517565228,31.7996884801692"
-                    Point2="136.209517565228,31.7996884801692"
-                    Point3="136.209517565228,35.7996884801692" />
-                  <mssgle:LineSegment
-                    End="136.209517565228,45.985714569092" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Map into single record.Paths[Sort Output]"
+          Id="Package\Map into single record.Paths[Sort Output10]"
           TopLeft="465.695222276355,831.619049728636">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -10925,281 +10684,265 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Map into single record.Paths[Merge Join Output3]"
-          TopLeft="481.733317266571,226.026668132358">
+          Id="Package\Map into single record.Paths[Sort Output9]"
+          TopLeft="391.828559053512,470.323812822009">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,46.3466670413547"
+              EndConnector="136.209517565228,53.485714569092"
               Start="0,0"
-              End="0,38.8466670413547">
+              End="136.209517565228,45.985714569092">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,38.8466670413547" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Map into single record.Paths[Merge Join Output2]"
-          TopLeft="394.580939928313,395.093335653093">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,33.6304771689158"
-              Start="0,0"
-              End="0,26.1304771689158">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.1304771689158" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Map into single record.Paths[Merge Join Output1]"
-          TopLeft="557.571409952074,565.409527391101">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,40.9904754662889"
-              Start="0,0"
-              End="0,33.4904754662889">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.4904754662889" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Map into single record.Paths[Merge Join Output]"
-          TopLeft="684.314261645364,756.342859953018">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,32.3809522786215"
-              Start="0,0"
-              End="0,24.8809522786215">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.8809522786215" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Map into single record.Paths[ADO NET Source Output4]"
-          TopLeft="666.923786098239,315.504763990735">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,32.6857148760843"
-              Start="0,0"
-              End="0,25.1857148760843">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.1857148760843" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Map into single record.Paths[ADO NET Source Output3]"
-          TopLeft="799.93330459065,564.038097945925">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,39.6190482645187"
-              Start="0,0"
-              End="0,32.1190482645187">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.1190482645187" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Map into single record.Paths[ADO NET Source Output2]"
-          TopLeft="312.295228554711,227.413334810045">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,46.651429272788"
-              Start="0,0"
-              End="0,39.151429272788">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,39.151429272788" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Map into single record.Paths[ADO NET Source Output1]"
-          TopLeft="464.409508558304,755.885717001416">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,34.1333327272204"
-              Start="0,0"
-              End="0,26.6333327272204">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.6333327272204" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Map into single record.Paths[ADO NET Source Output]"
-          TopLeft="374.599987602234,62.4000001653036">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,31.8933339174059"
-              Start="0,0"
-              End="0,24.3933339174059">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.3933339174059" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="183.2,41.6"
-          Id="Package\Map into single record\Get Genus Information"
-          TopLeft="269.333322630989,903.360001768748" />
-        <NodeLayout
-          Size="131.2,41.6"
-          Id="Package\Map into single record\Sort Genus"
-          TopLeft="297.999988158544,985.173335752275" />
-        <EdgeLayout
-          Id="Package\Map into single record.Paths[ADO NET Source Output5]"
-          TopLeft="362.266655394767,944.960001768748">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,40.2133339835273"
-              Start="0,0"
-              End="0,32.7133339835273">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.7133339835273" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="145.6,41.6"
-          Id="Package\Map into single record\Sort By Genus"
-          TopLeft="499.33331349161,980.000001735687" />
-        <EdgeLayout
-          Id="Package\Map into single record.Paths[Merge Join Output4]"
-          TopLeft="601.142836593447,941.409527391101">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-29.0095231018369,38.5904743445864"
-              Start="0,0"
-              End="-29.0095231018369,31.0904743445864">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15.2952371722932" />
+                    End="0,27.7996884801692" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,15.2952371722932"
-                    Point2="0,19.2952371722932"
-                    Point3="-4,19.2952371722932" />
+                    Point1="0,27.7996884801692"
+                    Point2="0,31.7996884801692"
+                    Point3="4,31.7996884801692" />
                   <mssgle:LineSegment
-                    End="-25.0095231018369,19.2952371722932" />
+                    End="132.209517565228,31.7996884801692" />
                   <mssgle:CubicBezierSegment
-                    Point1="-25.0095231018369,19.2952371722932"
-                    Point2="-29.0095231018369,19.2952371722932"
-                    Point3="-29.0095231018369,23.2952371722932" />
+                    Point1="132.209517565228,31.7996884801692"
+                    Point2="136.209517565228,31.7996884801692"
+                    Point3="136.209517565228,35.7996884801692" />
                   <mssgle:LineSegment
-                    End="-29.0095231018369,31.0904743445864" />
+                    End="136.209517565228,45.985714569092" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="164,41.6"
-          Id="Package\Map into single record\Genus Information"
-          TopLeft="401.33331738578,1100.26666925642" />
         <EdgeLayout
-          Id="Package\Map into single record.Paths[Sort Output10]"
+          Id="Package\Map into single record.Paths[Sort Output8]"
+          TopLeft="668.89521432907,389.79047886682">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-85.390471043663,134.019048524281"
+              Start="0,0"
+              End="-85.390471043663,126.519048524281">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,75.6804161226183" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,75.6804161226183"
+                    Point2="0,79.6804161226183"
+                    Point3="-4,79.6804161226183" />
+                  <mssgle:LineSegment
+                    End="-81.390471043663,79.6804161226183" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-81.390471043663,79.6804161226183"
+                    Point2="-85.390471043663,79.6804161226183"
+                    Point3="-85.390471043663,83.6804161226183" />
+                  <mssgle:LineSegment
+                    End="-85.390471043663,126.519048524281" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Map into single record.Paths[Sort Output7]"
+          TopLeft="800.742827851433,645.257146210444">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-94.4571374454196,69.485713742574"
+              Start="0,0"
+              End="-94.4571374454196,61.985713742574">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.2786418272717" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37.2786418272717"
+                    Point2="0,41.2786418272717"
+                    Point3="-4,41.2786418272717" />
+                  <mssgle:LineSegment
+                    End="-90.4571374454196,41.2786418272717" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-90.4571374454196,41.2786418272717"
+                    Point2="-94.4571374454196,41.2786418272717"
+                    Point3="-94.4571374454196,45.2786418272717" />
+                  <mssgle:LineSegment
+                    End="-94.4571374454196,61.985713742574" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Map into single record.Paths[Sort Output6]"
+          TopLeft="559.371409952074,648.00000285739">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="96.2476137872731,66.7428570956276"
+              Start="0,0"
+              End="96.2476137872731,59.2428570956276">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.6492220370065" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.6492220370065"
+                    Point2="0,39.6492220370065"
+                    Point3="4,39.6492220370065" />
+                  <mssgle:LineSegment
+                    End="92.2476137872731,39.6492220370065" />
+                  <mssgle:CubicBezierSegment
+                    Point1="92.2476137872731,39.6492220370065"
+                    Point2="96.2476137872731,39.6492220370065"
+                    Point3="96.2476137872731,43.6492220370065" />
+                  <mssgle:LineSegment
+                    End="96.2476137872731,59.2428570956276" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Map into single record.Paths[Sort Output5]"
+          TopLeft="576.533312537936,135.893334082709">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-70.399995152156,48.5333340496487"
+              Start="0,0"
+              End="-70.399995152156,41.0333340496487">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.8302491817316" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.8302491817316"
+                    Point2="0,28.8302491817316"
+                    Point3="-4,28.8302491817316" />
+                  <mssgle:LineSegment
+                    End="-66.399995152156,28.8302491817316" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-66.399995152156,28.8302491817316"
+                    Point2="-70.399995152156,28.8302491817316"
+                    Point3="-70.399995152156,32.8302491817316" />
+                  <mssgle:LineSegment
+                    End="-70.399995152156,41.0333340496487" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Map into single record.Paths[Sort Output4]"
+          TopLeft="375.4666536861,135.893334082709">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="80.26666369968,48.5333340496487"
+              Start="0,0"
+              End="80.26666369968,41.0333340496487">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.8302491817317" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.8302491817317"
+                    Point2="0,28.8302491817317"
+                    Point3="4,28.8302491817317" />
+                  <mssgle:LineSegment
+                    End="76.26666369968,28.8302491817317" />
+                  <mssgle:CubicBezierSegment
+                    Point1="76.26666369968,28.8302491817317"
+                    Point2="80.26666369968,28.8302491817317"
+                    Point3="80.26666369968,32.8302491817317" />
+                  <mssgle:LineSegment
+                    End="80.26666369968,41.0333340496487" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Map into single record.Paths[Sort Output3]"
+          TopLeft="687.676166218047,830.323812231639">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-59.8666629579336,69.4857151594614"
+              Start="0,0"
+              End="-59.8666629579336,61.9857151594614">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.2981137268497" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37.2981137268497"
+                    Point2="0,41.2981137268497"
+                    Point3="-4,41.2981137268497" />
+                  <mssgle:LineSegment
+                    End="-55.8666629579336,41.2981137268497" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-55.8666629579336,41.2981137268497"
+                    Point2="-59.8666629579336,41.2981137268497"
+                    Point3="-59.8666629579336,45.2981137268497" />
+                  <mssgle:LineSegment
+                    End="-59.8666629579336,61.9857151594614" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Map into single record.Paths[Sort Output2]"
           TopLeft="363.599988158544,1026.77333575228">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -11229,11 +10972,13 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Map into single record.Paths[Sort Output11]"
+          Id="Package\Map into single record.Paths[Sort Output1]"
           TopLeft="572.13331349161,1021.60000173569">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -11263,15 +11008,97 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="165.6,41.6"
-          Id="Package\Map into single record\Add Date Columns"
-          TopLeft="404.666650586659,1194.66666909112" />
+        <EdgeLayout
+          Id="Package\Map into single record.Paths[Sort Output]"
+          TopLeft="482.533317147362,313.973335173713">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-59.1999963442485,39.5200004793803"
+              Start="0,0"
+              End="-59.1999963442485,32.0200004793803">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.4828988355738" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.4828988355738"
+                    Point2="0,23.4828988355738"
+                    Point3="-4,23.4828988355738" />
+                  <mssgle:LineSegment
+                    End="-55.1999963442485,23.4828988355738" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-55.1999963442485,23.4828988355738"
+                    Point2="-59.1999963442485,23.4828988355738"
+                    Point3="-59.1999963442485,27.4828988355738" />
+                  <mssgle:LineSegment
+                    End="-59.1999963442485,32.0200004793803" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Map into single record.Paths[Merge Join Output5]"
+          TopLeft="557.571409952074,565.409527391101">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.9904754662889"
+              Start="0,0"
+              End="0,33.4904754662889">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.4904754662889" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Map into single record.Paths[Merge Join Output4]"
+          TopLeft="481.733317266571,226.026668132358">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46.3466670413547"
+              Start="0,0"
+              End="0,38.8466670413547">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.8466670413547" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Map into single record.Paths[Merge Join Output3]"
           TopLeft="485.399983986219,1141.86666925642">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -11289,39 +11116,95 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="222.4,41.6"
-          Id="Package\Map into single record\Write Informatiom To Database"
-          TopLeft="373.999985138576,1296.48000257874" />
         <EdgeLayout
-          Id="Package\Map into single record.Paths[Derived Column Output]"
-          TopLeft="486.333317862617,1236.26666909112">
+          Id="Package\Map into single record.Paths[Merge Join Output2]"
+          TopLeft="684.314261645364,756.342859953018">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60.2133334876166"
+              EndConnector="0,32.3809522786215"
               Start="0,0"
-              End="0,52.7133334876166">
+              End="0,24.8809522786215">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.7133334876166" />
+                    End="0,24.8809522786215" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="151.2,41.6"
-          Id="Package\Map into single record\Flat File Source"
-          TopLeft="482.666647487217,12.4800000991821" />
+        <EdgeLayout
+          Id="Package\Map into single record.Paths[Merge Join Output1]"
+          TopLeft="601.142836593447,941.409527391101">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-29.0095231018369,38.5904743445864"
+              Start="0,0"
+              End="-29.0095231018369,31.0904743445864">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.2952371722932" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.2952371722932"
+                    Point2="0,19.2952371722932"
+                    Point3="-4,19.2952371722932" />
+                  <mssgle:LineSegment
+                    End="-25.0095231018369,19.2952371722932" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-25.0095231018369,19.2952371722932"
+                    Point2="-29.0095231018369,19.2952371722932"
+                    Point3="-29.0095231018369,23.2952371722932" />
+                  <mssgle:LineSegment
+                    End="-29.0095231018369,31.0904743445864" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Map into single record.Paths[Merge Join Output]"
+          TopLeft="394.580939928313,395.093335653093">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.6304771689158"
+              Start="0,0"
+              End="0,26.1304771689158">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.1304771689158" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Map into single record.Paths[Flat File Source Output]"
           TopLeft="558.266647487217,54.0800000991821">
@@ -11353,46 +11236,184 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Map into single record.Paths[Derived Column Output]"
+          TopLeft="486.333317862617,1236.26666909112">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.2133334876166"
+              Start="0,0"
+              End="0,52.7133334876166">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.7133334876166" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Map into single record.Paths[ADO NET Source Output5]"
+          TopLeft="362.266655394767,944.960001768748">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.2133339835273"
+              Start="0,0"
+              End="0,32.7133339835273">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.7133339835273" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Map into single record.Paths[ADO NET Source Output4]"
+          TopLeft="666.923786098239,315.504763990735">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32.6857148760843"
+              Start="0,0"
+              End="0,25.1857148760843">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.1857148760843" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Map into single record.Paths[ADO NET Source Output3]"
+          TopLeft="799.93330459065,564.038097945925">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.6190482645187"
+              Start="0,0"
+              End="0,32.1190482645187">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.1190482645187" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Map into single record.Paths[ADO NET Source Output2]"
+          TopLeft="312.295228554711,227.413334810045">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46.651429272788"
+              Start="0,0"
+              End="0,39.151429272788">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.151429272788" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Map into single record.Paths[ADO NET Source Output1]"
+          TopLeft="464.409508558304,755.885717001416">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.1333327272204"
+              Start="0,0"
+              End="0,26.6333327272204">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.6333327272204" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Map into single record.Paths[ADO NET Source Output]"
+          TopLeft="374.599987602234,62.4000001653036">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.8933339174059"
+              Start="0,0"
+              End="0,24.3933339174059">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.3933339174059" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Map into single record\Get Family Table">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Map into single record\Get Kingdom Table">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Map into single record\Get Order Information">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Map into single record\Gte Phylum Information">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Map into single record\Get Class Table">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -11409,6 +11430,38 @@
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Map into single record\Write Informatiom To Database">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Map into single record\Get Class Table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Map into single record\Gte Phylum Information">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Map into single record\Get Family Table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Map into single record\Get Order Information">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

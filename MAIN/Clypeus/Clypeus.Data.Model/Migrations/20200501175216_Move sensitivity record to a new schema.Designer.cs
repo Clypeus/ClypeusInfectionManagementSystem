@@ -4,14 +4,16 @@ using Clypeus.Data.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Clypeus.Data.Model.Migrations
 {
     [DbContext(typeof(ClypeusContext))]
-    partial class ClypeusContextModelSnapshot : ModelSnapshot
+    [Migration("20200501175216_Move sensitivity record to a new schema")]
+    partial class Movesensitivityrecordtoanewschema
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -452,6 +454,29 @@ namespace Clypeus.Data.Model.Migrations
                     b.ToTable("Organisms","Medicinals");
                 });
 
+            modelBuilder.Entity("Clypeus.Data.Model.Medicinals.Sensitivity", b =>
+                {
+                    b.Property<short>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("smallint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnType("varchar(1)")
+                        .HasMaxLength(1)
+                        .IsUnicode(false);
+
+                    b.Property<string>("Description")
+                        .HasColumnType("varchar(25)")
+                        .HasMaxLength(25)
+                        .IsUnicode(false);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Sensitivity","Specimens");
+                });
+
             modelBuilder.Entity("Clypeus.Data.Model.Organisations.PrimaryCarePractice", b =>
                 {
                     b.Property<int>("Id")
@@ -543,75 +568,6 @@ namespace Clypeus.Data.Model.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("MedicalPractioner","People");
-                });
-
-            modelBuilder.Entity("Clypeus.Data.Model.Specimens.Sensitivity", b =>
-                {
-                    b.Property<short>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("smallint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Code")
-                        .IsRequired()
-                        .HasColumnType("varchar(1)")
-                        .HasMaxLength(1)
-                        .IsUnicode(false);
-
-                    b.Property<string>("Description")
-                        .HasColumnType("varchar(25)")
-                        .HasMaxLength(25)
-                        .IsUnicode(false);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Sensitivity","Specimens");
-                });
-
-            modelBuilder.Entity("Clypeus.Data.Model.Specimens.Specimen", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<bool>("Authorised")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("Inserted")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("Requested")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Specimen");
-                });
-
-            modelBuilder.Entity("Clypeus.Data.Model.Specimens.SpecimenSensitivity", b =>
-                {
-                    b.Property<long>("SpecimenId")
-                        .HasColumnType("bigint");
-
-                    b.Property<int>("OrganismId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("DrugId")
-                        .HasColumnType("int");
-
-                    b.Property<short>("SensitivityId")
-                        .HasColumnType("smallint");
-
-                    b.HasKey("SpecimenId", "OrganismId", "DrugId");
-
-                    b.HasIndex("DrugId");
-
-                    b.HasIndex("OrganismId");
-
-                    b.HasIndex("SensitivityId");
-
-                    b.ToTable("SpecimenSensitivity","Specimens");
                 });
 
             modelBuilder.Entity("Clypeus.Data.Model.Users.SystemOrganisations", b =>
@@ -834,37 +790,6 @@ namespace Clypeus.Data.Model.Migrations
                         .WithOne("PrinciplePractice")
                         .HasForeignKey("Clypeus.Data.Model.Organisations.PrimaryCarePractice", "SeniorPracticeMemberId")
                         .HasConstraintName("FK_Principle_ToPrimaryCarePrictice");
-                });
-
-            modelBuilder.Entity("Clypeus.Data.Model.Specimens.SpecimenSensitivity", b =>
-                {
-                    b.HasOne("Clypeus.Data.Model.Medicinals.Drugs", "Drug")
-                        .WithMany("SpecimenSensitivity")
-                        .HasForeignKey("DrugId")
-                        .HasConstraintName("FK_Drug_SpecimenSensitivity")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Clypeus.Data.Model.Medicinals.Organisms", "Organism")
-                        .WithMany("SpecimenSensitivity")
-                        .HasForeignKey("OrganismId")
-                        .HasConstraintName("FK_Organism_SpecimenSensitivity")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Clypeus.Data.Model.Specimens.Sensitivity", "Sensitivity")
-                        .WithMany("SpecimenSensitivity")
-                        .HasForeignKey("SensitivityId")
-                        .HasConstraintName("FK_Sensitivity_SpecimenSensitivity")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Clypeus.Data.Model.Specimens.Specimen", "Specimen")
-                        .WithMany("SpecimenSensitivity")
-                        .HasForeignKey("SpecimenId")
-                        .HasConstraintName("FK_Specimen_SpecimenSensitivity")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("Clypeus.Data.Model.Users.SystemOrganisations", b =>
