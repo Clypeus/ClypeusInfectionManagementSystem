@@ -1,4 +1,5 @@
 ﻿using Clypeus.Data.Model.Organisations;
+using Clypeus.Data.Model.Specimens;
 using Clypeus.Data.Model.Users;
 using System;
 using System.Collections.Generic;
@@ -27,5 +28,7 @@ namespace Clypeus.Data.Model.Geography
         public virtual ICollection<SystemOrganisations> SystemOrganisations { get; set; }
 
         public virtual ICollection<PrimaryCarePractice> PrimaryCarePractices { get; set; }
+
+        public virtual Lab Lab { get; set; }
     }
 }

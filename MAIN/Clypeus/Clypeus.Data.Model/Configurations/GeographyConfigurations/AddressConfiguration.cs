@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Clypeus.Data.Model.Geography;
+using Clypeus.Data.Model.Specimens;
 
 namespace Clypeus.Data.Model.Configurations.GeographyConfigurations
 {
@@ -43,6 +44,8 @@ namespace Clypeus.Data.Model.Configurations.GeographyConfigurations
                 .HasMaxLength(25)
                 .IsUnicode(false);
 
+           
+                
         }
     }
 }
