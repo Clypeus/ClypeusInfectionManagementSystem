@@ -1,4 +1,5 @@
 ﻿using Clypeus.Data.Model.Geography;
+using Clypeus.Data.Model.Organisations;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,5 +16,9 @@ namespace Clypeus.Data.Model.Specimens
         public string ContactTelephone { get; set; }
         public int AddressId { get; set; }
         public Address Address { get; set; }
+        public int HealthCareOrganisationId { get; set; }
+        public virtual HealthCareOrganisation HealthCareOrganisation { get; set; }
+
+
     }
 }

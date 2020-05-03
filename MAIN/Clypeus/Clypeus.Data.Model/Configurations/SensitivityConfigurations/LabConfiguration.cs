@@ -1,4 +1,5 @@
 ﻿using Clypeus.Data.Model.Geography;
+using Clypeus.Data.Model.Organisations;
 using Clypeus.Data.Model.Specimens;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -42,6 +43,10 @@ namespace Clypeus.Data.Model.Configurations.SensitivityConfigurations
             entity.HasOne(e => e.Address)
                 .WithOne(e => e.Lab)
                 .HasForeignKey<Lab>(e => e.AddressId);
+
+            entity.HasOne(e => e.HealthCareOrganisation)
+                .WithMany(e => e.Labs)
+                .HasForeignKey(e => e.HealthCareOrganisationId);
         }
     }
 }

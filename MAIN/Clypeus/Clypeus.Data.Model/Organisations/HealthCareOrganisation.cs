@@ -1,4 +1,5 @@
 ﻿using Clypeus.Data.Model.Geography;
+using Clypeus.Data.Model.Specimens;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -18,6 +19,7 @@ namespace Clypeus.Data.Model.Organisations
         public int? ParentId { get; set; }
         public virtual HealthCareOrganisation Parent { get; set; }
         public virtual ICollection<HealthCareOrganisation> Children { get; set; }
+        public virtual ICollection<Lab> Labs { get; set; }
     
 
 
