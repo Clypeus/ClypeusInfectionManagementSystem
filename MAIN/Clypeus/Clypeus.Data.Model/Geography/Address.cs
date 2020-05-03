@@ -29,6 +29,8 @@ namespace Clypeus.Data.Model.Geography
 
         public virtual ICollection<PrimaryCarePractice> PrimaryCarePractices { get; set; }
 
+        public virtual ICollection<HealthCareOrganisation> HealthCareOrganisations { get; set; }
+
         public virtual Lab Lab { get; set; }
     }
 }

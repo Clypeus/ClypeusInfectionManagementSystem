@@ -43,9 +43,6 @@ namespace Clypeus.Data.Model.Configurations.GeographyConfigurations
                 .IsRequired()
                 .HasMaxLength(25)
                 .IsUnicode(false);
-
-           
-                
         }
     }
 }
