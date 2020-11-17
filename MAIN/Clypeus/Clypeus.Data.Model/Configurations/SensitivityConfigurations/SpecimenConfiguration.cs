@@ -46,6 +46,11 @@ namespace Clypeus.Data.Model.Configurations.SensitivityConfigurations
                        .IsRequired()
                        .HasMaxLength(10)
                        .IsUnicode(false);
+
+            entity.Property(e => e.LocalPatientIdentifier)
+                       .IsRequired()
+                       .HasMaxLength(20)
+                       .IsUnicode(false);
         }
     }
 }

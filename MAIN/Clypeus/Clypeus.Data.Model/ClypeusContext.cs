@@ -29,7 +29,6 @@ namespace Clypeus.Data.Model
         {
         }
 
-
         public virtual DbSet<Address> Address { get; set; }
         public virtual DbSet<DrugGroup> DrugGroup { get; set; }
         public virtual DbSet<DrugGroupMembers> DrugGroupMembers { get; set; }
