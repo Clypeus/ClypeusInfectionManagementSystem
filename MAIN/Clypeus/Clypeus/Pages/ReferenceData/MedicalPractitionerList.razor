@@ -1,0 +1,39 @@
+﻿@page "/medicalPractitionerList"
+@page "/ReferenceData/medicalPractitionerList"
+@inherits MedicalPractitionerListModel
+
+<div class="container">
+    <PageTitle Title="Medical Practitioner"></PageTitle>
+    <div style="height:15px"></div>
+
+    <EditForm Model="@searchModel" OnValidSubmit="@HandleValidSubmit">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <div class="form-group">
+
+            <div class="row">
+                <div class="col-1">
+                    <label>Code:</label>
+                </div>
+
+                <div class="col-2">
+                    <InputText id="code" @bind-Value="searchModel.Code" class="form-control" />
+                </div>
+
+                <div class="col-2">
+                    <label>Name:</label>
+                </div>
+
+                <div class="col-7">
+                    <InputText id="name" @bind-Value="searchModel.Name" class="form-control" />
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-success" @onclick='e=>Search()'>Search</button>&nbsp;
+        <button type="button" class="btn btn-danger" @onclick='e=>ClearForm()'>Clear</button>&nbsp;
+    </EditForm>
+
+</div>
+
