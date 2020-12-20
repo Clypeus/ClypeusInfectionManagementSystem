@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Clypeus.DataTransfer.ViewModels.Organisations
+namespace Clypeus.DataTransfer.ViewModels.People
 {
     public class MedicalPractitionerSearchVewModel
     {

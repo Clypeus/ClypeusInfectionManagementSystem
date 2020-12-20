@@ -1,4 +1,4 @@
-﻿using Clypeus.DataTransfer.ViewModels.Organisations;
+﻿using Clypeus.DataTransfer.ViewModels.People;
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
