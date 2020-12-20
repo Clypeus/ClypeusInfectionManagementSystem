@@ -1,0 +1,26 @@
+﻿@page "/medicalPractitioner"
+@page "/ReferenceData/medicalPractitioner"
+@inherits MedicalPractitonerModel
+
+    <div class="container">
+        <PageTitle Title="Medical Practitioner"></PageTitle>
+
+        <EditForm Model="@mpModel" OnValidSubmit="@HandleValidSubmit">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+
+            <div class="form-group">
+
+                <label>Code:</label>
+                <InputText id="name" @bind-Value="mpModel.Code" class="form-control" />
+
+                <label>Name:</label>
+                <InputText id="name" @bind-Value="mpModel.Name" class="form-control" />
+            </div>
+
+           <button type="submit" class="btn btn-success">Save</button>&nbsp;
+           <a href="/medicalPractitioner" class="btn btn-danger">Cancel</a>  
+        </EditForm>
+
+    </div>
+
