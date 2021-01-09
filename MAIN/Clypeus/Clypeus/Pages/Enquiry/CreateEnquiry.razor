@@ -4,9 +4,124 @@
 
 <div class="container">
     <PageTitle Title="Creating a new enquiry."></PageTitle>
-
     <DisplayDateTime Title="Enquiry Date:"></DisplayDateTime>
-</div>
+
+    
+
+    <EditForm Model="@enquiryModel" OnValidSubmit="@HandleValidSubmit">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <div class="card m-3">
+            <h4 class="card-header">Enquirer Details</h4>
+            <div class="card-body">
+
+                <div class="form-row">
+                    <div class="form-group col">
+                        <label>Title</label>
+                        <InputSelect @bind-Value="enquiryModel.Title" class="form-control">
+                            <option value=""></option>
+                            <option value="Mr">Mr</option>
+                            <option value="Mrs">Mrs</option>
+                            <option value="Miss">Miss</option>
+                            <option value="Ms">Ms</option>
+                        </InputSelect>
+                    </div>
+                    <div class="form-group col-5">
+                        <label>First Name</label>
+                        <InputText @bind-Value="enquiryModel.Forename" class="form-control" />
+                    </div>
+                    <div class="form-group col-5">
+                        <label>Last Name</label>
+                        <InputText @bind-Value="enquiryModel.Surname" class="form-control" />
+                    </div>
+                </div>
+
+                <div height="0.25cm"></div>
+
+
+                <div class="form-row">
+                    <div class="form-group col">
+                        <label>House Name / Number</label>
+                        <InputText @bind-Value="enquiryModel.AddressLine1" class="form-control" />
+                    </div>
+                    <div class="form-group col">
+                        <label>Street</label>
+                        <InputText @bind-Value="enquiryModel.AddressLine2" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col">
+                        <label>Town</label>
+                        <InputText @bind-Value="enquiryModel.AddressLine3" class="form-control" />
+                    </div>
+                    <div class="form-group col">
+                        <label>Area</label>
+                        <InputText @bind-Value="enquiryModel.AddressLine4" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-6">
+                        <label>Postcode</label>
+                        <InputText @bind-Value="enquiryModel.Postcode" class="form-control" />
+                    </div>
+                </div>
+
+                <div height="0.25cm"></div>
+
+                <div class="form-row">
+                    <div class="form-group col">
+                        <label>Telephone</label>
+                        <InputText @bind-Value="enquiryModel.TelephoneNumber" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group col">
+                        <label>Mobile</label>
+                        <InputText @bind-Value="enquiryModel.MobileNumber" type="text" class="form-control" />
+                        <ValidationMessage For="@(() => enquiryModel.MobileNumber)" />
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col">
+                        <label>Enquiry Type</label>
+                        <InputSelect @bind-Value="enquiryModel.EnquiryId" class="form-control">
+                            <option value=""></option>
+                            <option value="1">Enuqiry about symptoms</option>
+                            <option value="2">Enquiry about media reports</option>
+                            <option value="3">Enquiry about existing case</option>
+                            <option value="4">Enquiry about public health outbreak</option>
+                        </InputSelect>
+                    </div>
+                    <div class="form-group col">
+                        <label>Relationship Type</label>
+                        <InputSelect @bind-Value="enquiryModel.RelationshipId" class="form-control">
+                            <option value=""></option>
+                            <option value="1">No Relationship</option>
+                            <option value="2">Family Member</option>
+                            <option value="3">Work Colleque</option>
+                            <option value="4">Friend</option>
+                            <option value="5">Other</option>
+                        </InputSelect>
+                    </div>
+                </div>
+
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary mr-1">Register</button>
+                    <button type="reset" class="btn btn-secondary">Cancel</button>
+                </div>
+
+            </div>
+        </div>
+
+    </EditForm>
+
+
+
+        </div>
+  
 
 @code {
 
