@@ -44,11 +44,16 @@ namespace Clypeus.DataTransfer.ViewModels.Enquiry
         public string RelationshipId { get; set; }
 
         [Required]
-        public int LocationId { get; set; }
-
-        [Required]
         [StringLength(125, ErrorMessage = "Location is too long.")]
         public string LocationDescription { get; set; }
+
+        [Required]
+        [StringLength(125, ErrorMessage = "Subject is too long.")]
+        public string EnquirySubject { get; set; }
+
+        [Required]
+        [StringLength(500, ErrorMessage = "Body is too long.")]
+        public string EnquiryBody { get; set; }
 
 
 

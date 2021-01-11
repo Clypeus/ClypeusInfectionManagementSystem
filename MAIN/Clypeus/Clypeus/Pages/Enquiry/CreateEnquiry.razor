@@ -6,7 +6,7 @@
     <PageTitle Title="Creating a new enquiry."></PageTitle>
     <DisplayDateTime Title="Enquiry Date:"></DisplayDateTime>
 
-    
+
 
     <EditForm Model="@enquiryModel" OnValidSubmit="@HandleValidSubmit">
         <DataAnnotationsValidator />
@@ -112,16 +112,43 @@
                     <button type="submit" class="btn btn-primary mr-1">Register</button>
                     <button type="reset" class="btn btn-secondary">Cancel</button>
                 </div>
+            </div>
+        </div>
 
+        <div class="card m-3">
+            <h4 class="card-header">Location</h4>
+            <div class="card-body">
+                <div class="form-row">
+                    <div class="form-group col">
+                        <label>Location</label>
+                        <InputText @bind-Value="enquiryModel.LocationDescription" type="text" class="form-control" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card m-3">
+            <h4 class="card-header">Subject</h4>
+            <div class="card-body">
+                <div class="form-row">
+                    <div class="form-group col">
+                        <label>Title</label>
+                        <InputText @bind-Value="enquiryModel.EnquirySubject" type="text" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col">
+                        <label>Details</label>
+                        <InputTextArea @bind-Value="enquiryModel.EnquiryBody" type="text" class="form-control" />
+                    </div>
+                </div>
             </div>
         </div>
 
     </EditForm>
+</div>
 
-
-
-        </div>
-  
 
 @code {
 
