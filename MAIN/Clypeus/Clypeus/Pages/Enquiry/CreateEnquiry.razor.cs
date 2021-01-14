@@ -10,7 +10,12 @@ namespace Clypeus.Pages.Enquiry
     public class CreateEnquiryModel:ComponentBase
     {
         public CreateEnquiryFormModel enquiryModel = new CreateEnquiryFormModel();
+        public string selectedTab = "home";
 
+        public void OnSelectedTabChanged(string name)
+        {
+            selectedTab = name;
+        }
         public void HandleValidSubmit()
         {
 

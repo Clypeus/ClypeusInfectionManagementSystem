@@ -13,6 +13,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Blazorise;
+using Blazorise.Bootstrap;
+using Blazorise.Icons.FontAwesome;
 
 namespace Clypeus
 {
@@ -29,19 +32,27 @@ namespace Clypeus
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddProtectedBrowserStorage();
-            services.AddAutoMapper(typeof(Startup),typeof(Clypeus.Automapper.Profiles.Medicinals.DrugsProfile));
-
+            services.AddAutoMapper(typeof(Startup), typeof(Clypeus.Automapper.Profiles.Medicinals.DrugsProfile));
 
             // These are defined as extensions in the support classes in this project
             services.AddDataServices(Configuration);
             services.AddImplementionServices(Configuration);
 
+            services.AddBlazorise(options =>
+             {
+                 options.ChangeTextOnKeyPress = true; // optional
+             })
+                .AddBootstrapProviders()
+                .AddFontAwesomeIcons();
+
+
         }
 
-       
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -61,6 +72,8 @@ namespace Clypeus
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.ApplicationServices.UseBootstrapProviders().UseFontAwesomeIcons();
 
             app.UseEndpoints(endpoints =>
             {

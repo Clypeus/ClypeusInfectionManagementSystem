@@ -5,12 +5,11 @@
 <div class="container">
     <PageTitle Title="Creating a new enquiry."></PageTitle>
     <DisplayDateTime Title="Enquiry Date:"></DisplayDateTime>
-
-
+    <div style="height:0.5cm"></div>
 
     <EditForm Model="@enquiryModel" OnValidSubmit="@HandleValidSubmit">
         <DataAnnotationsValidator />
-        <ValidationSummary />
+        <Microsoft.AspNetCore.Components.Forms.ValidationSummary />
 
         <div class="card m-3">
             <h4 class="card-header">Enquirer Details</h4>
@@ -107,11 +106,6 @@
                     </div>
                 </div>
 
-
-                <div class="text-center">
-                    <button type="submit" class="btn btn-primary mr-1">Register</button>
-                    <button type="reset" class="btn btn-secondary">Cancel</button>
-                </div>
             </div>
         </div>
 
@@ -146,10 +140,11 @@
             </div>
         </div>
 
+        <div class="text-left" style="padding-left:15px">
+            <button type="submit" class="btn btn-primary mr-1">Register</button>
+            <button type="reset" class="btn btn-secondary">Cancel</button>
+        </div>
+
     </EditForm>
 </div>
 
-
-@code {
-
-}
