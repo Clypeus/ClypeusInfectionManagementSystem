@@ -7,6 +7,7 @@ using Clypeus.Data.Model.Configurations.Organisations;
 using Clypeus.Data.Model.Configurations.PeopleConfigurations;
 using Clypeus.Data.Model.Configurations.SensitivityConfigurations;
 using Clypeus.Data.Model.Configurations.Users;
+using Clypeus.Data.Model.Internal;
 using Clypeus.Data.Model.Geography;
 using Clypeus.Data.Model.Medicinals;
 using Clypeus.Data.Model.Organisations;
@@ -15,6 +16,7 @@ using Clypeus.Data.Model.Specimens;
 using Clypeus.Data.Model.Users;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Clypeus.Data.Model.Configurations.Internals;
 
 namespace Clypeus.Data.Model
 {
@@ -42,6 +44,7 @@ namespace Clypeus.Data.Model
         public virtual DbSet<PrimaryCarePractice> PrimaryCarePractices { get; set; }
         public virtual DbSet<Sensitivity> Sensitivities { get; set; }
         public virtual DbSet<SystemUser> Users { get; set; }
+        public virtual DbSet<NoteText> NoteTexts { get; set; }
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -57,7 +60,8 @@ namespace Clypeus.Data.Model
             modelBuilder = OnModelCreatingMedicinals(modelBuilder);
             modelBuilder = OnModelCreatingUsers(modelBuilder);
             modelBuilder = OnModelSpecimens(modelBuilder);
-            
+            modelBuilder = OnModelInternals(modelBuilder);
+
             OnModelCreatingPartial(modelBuilder);
         }
 
@@ -68,6 +72,14 @@ namespace Clypeus.Data.Model
             modelBuilder.ApplyConfiguration(new SystemOrganisationConfiguration());
             modelBuilder.ApplyConfiguration(new PrimaryCarePracticeConfiguration());
            
+            return modelBuilder;
+        }
+
+        protected ModelBuilder OnModelInternals(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new NoteTextConfiguration());
+           
+
             return modelBuilder;
         }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Clypeus.Data.Model.Internal;
+using System;
 using System.Collections.Generic;
 
 namespace Clypeus.Data.Model.Users
@@ -23,5 +24,9 @@ namespace Clypeus.Data.Model.Users
         public bool Active { get; set; }
 
         public virtual SystemOrganisations SystemOrganisation { get; set; }
+
+        public virtual ICollection<NoteText> NotesCreated { get; set; }
+
+        public virtual ICollection<NoteText> NotesDeleted { get; set; }
     }
 }
