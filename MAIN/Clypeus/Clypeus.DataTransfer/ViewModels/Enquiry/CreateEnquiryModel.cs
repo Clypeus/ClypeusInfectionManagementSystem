@@ -7,8 +7,8 @@ namespace Clypeus.DataTransfer.ViewModels.Enquiry
 {
     public class EnquiryForm
     {
+        public int Id { get; set; }
         public DateTime? EnquiryDateAndTime { get; set; }
-
         public string AddressLine1 { get; set; }
         public string AddressLine2 { get; set; }
         public string AddressLine3 { get; set; }
