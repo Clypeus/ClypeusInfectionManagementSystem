@@ -7,9 +7,6 @@ namespace Clypeus.Services.Interfaces.Principles
 {
     public interface IEnquiryService
     {
-        public bool SaveEnquiry(CreateEnquiryFormModel model)
-        {
-            return false;
-        }
+        bool SaveEnquiry(EnquiryForm model);
     }
 }

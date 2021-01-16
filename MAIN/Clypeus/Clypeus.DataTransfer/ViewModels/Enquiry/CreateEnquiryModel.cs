@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Clypeus.DataTransfer.ViewModels.Enquiry
 {
-    public class CreateEnquiryFormModel
+    public class EnquiryForm
     {
         public DateTime? EnquiryDateAndTime { get; set; }
 

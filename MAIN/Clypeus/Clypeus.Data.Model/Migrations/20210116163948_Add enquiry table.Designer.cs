@@ -4,14 +4,16 @@ using Clypeus.Data.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Clypeus.Data.Model.Migrations
 {
     [DbContext(typeof(ClypeusContext))]
-    partial class ClypeusContextModelSnapshot : ModelSnapshot
+    [Migration("20210116163948_Add enquiry table")]
+    partial class Addenquirytable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

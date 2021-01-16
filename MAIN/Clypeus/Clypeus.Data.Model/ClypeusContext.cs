@@ -17,6 +17,7 @@ using Clypeus.Data.Model.Users;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Clypeus.Data.Model.Configurations.Internals;
+using Clypeus.Data.Model.Configurations.Principles;
 
 namespace Clypeus.Data.Model
 {
@@ -79,6 +80,14 @@ namespace Clypeus.Data.Model
         {
             modelBuilder.ApplyConfiguration(new NoteTextConfiguration());
            
+
+            return modelBuilder;
+        }
+
+        protected ModelBuilder OnModelPrincipals(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new EnquiryConfiguration());
+
 
             return modelBuilder;
         }
