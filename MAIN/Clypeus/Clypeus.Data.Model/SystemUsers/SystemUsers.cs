@@ -1,4 +1,5 @@
 ﻿using Clypeus.Data.Model.Internal;
+using Clypeus.Data.Model.Principles;
 using System;
 using System.Collections.Generic;
 
@@ -28,5 +29,7 @@ namespace Clypeus.Data.Model.Users
         public virtual ICollection<NoteText> NotesCreated { get; set; }
 
         public virtual ICollection<NoteText> NotesDeleted { get; set; }
+
+        public virtual ICollection<Enquiry> EnquiriesCreated { get; set; }
     }
 }
