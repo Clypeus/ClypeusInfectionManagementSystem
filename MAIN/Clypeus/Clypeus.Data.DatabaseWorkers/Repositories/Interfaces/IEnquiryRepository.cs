@@ -12,5 +12,7 @@ namespace Clypeus.Data.DatabaseWorkers.Repositories.Interfaces
         public bool SaveEnquiry(Enquiry enquiry);
 
         public Enquiry GetById(int id);
+
+        public Enquiry Populate(int id);
     }
 }

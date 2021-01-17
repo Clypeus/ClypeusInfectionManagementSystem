@@ -1,6 +1,7 @@
 ﻿using Clypeus.Data.DatabaseWorkers.Repositories.Interfaces;
 using Clypeus.Data.Model;
 using Clypeus.Data.Model.Principles;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Text;
 
 namespace Clypeus.Data.DatabaseWorkers.Repositories.Implementions
 {
-    public class EnquiryRepository: Repository<Enquiry>, IEnquiryRepository
+    public class EnquiryRepository : Repository<Enquiry>, IEnquiryRepository
     {
         private readonly ClypeusContext _clypeusContext;
 
@@ -38,11 +39,22 @@ namespace Clypeus.Data.DatabaseWorkers.Repositories.Implementions
                 else
                     return false;
 
-            } catch (Exception e)
+            }
+            catch (Exception e)
             {
                 return false;
             }
-            
+
+        }
+
+        public Enquiry Populate(int id)
+        {
+            return _clypeusContext.Enquiries
+                .Include(f => f.CreatedBySystemUser)
+                .Where(f => f.Id == id)
+                .FirstOrDefault();
         }
     }
+
+
 }

@@ -90,7 +90,8 @@ namespace Clypeus.Data.Model
         protected ModelBuilder OnModelInternals(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new NoteTextConfiguration());
-           
+            modelBuilder.ApplyConfiguration(new EnquiryRelationshipConfiguration());
+            modelBuilder.ApplyConfiguration(new EnquiryTypeConfiguration());
 
             return modelBuilder;
         }
