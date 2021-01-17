@@ -39,6 +39,8 @@ namespace Clypeus.Data.Model
         public virtual DbSet<DrugTypes> DrugTypes { get; set; }
         public virtual DbSet<Drugs> Drugs { get; set; }
         public virtual DbSet<Enquiry> Enquiries { get; set; }
+        public virtual DbSet<EnquiryRelationship> EnquiryRelationships { get; set; }
+        public virtual DbSet<EnquiryType> EnquiryTypes { get; set; }
         public virtual DbSet<MedicalPractioner> MedicalPractioners { get; set; }
         public virtual DbSet<NotifiableDisease> NotifiableDiseases { get; set; }
         public virtual DbSet<SystemOrganisations> Organisation { get; set; }

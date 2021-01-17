@@ -24,6 +24,7 @@ namespace Clypeus.Support.DependencyInjection
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddTransient<IDrugRespository, DrugRepository>();
             services.AddTransient<IEnquiryRepository, EnquiryRepository>();
+            services.AddTransient<ILookupRepostiory, LookupRepository>();
             services.AddTransient<INotifiableDiseaseRespository, NotifiableDiseaseRepository>();
         }
     }

@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Clypeus.Core\Clypeus.Core.csproj" />
     <ProjectReference Include="..\Clypeus.Data.DatabaseWorkers\Clypeus.Data.DatabaseWorkers.csproj" />
     <ProjectReference Include="..\Clypeus.DataTransfer\Clypeus.DataTransfer.csproj" />
   </ItemGroup>
