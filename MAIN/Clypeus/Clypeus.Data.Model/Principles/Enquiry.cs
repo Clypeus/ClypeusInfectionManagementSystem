@@ -23,8 +23,8 @@ namespace Clypeus.Data.Model.Principles
         public string Location { get; set; }
         public string SubjectTitle { get; set; }
         public string SubjectDescription { get; set; }
-        public string Created { get; set; }
-        public string CreatedBy { get; set; }
+        public DateTime Created { get; set; }
+        public int CreatedBy { get; set; }
         public string Archived { get; set; }
         public virtual SystemUser CreatedBySystemUser { get; set; }
 

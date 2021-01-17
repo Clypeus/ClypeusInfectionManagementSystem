@@ -18,6 +18,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Clypeus.Data.Model.Configurations.Internals;
 using Clypeus.Data.Model.Configurations.Principles;
+using Clypeus.Data.Model.Principles;
 
 namespace Clypeus.Data.Model
 {
@@ -37,6 +38,7 @@ namespace Clypeus.Data.Model
         public virtual DbSet<DrugGroupMembers> DrugGroupMembers { get; set; }
         public virtual DbSet<DrugTypes> DrugTypes { get; set; }
         public virtual DbSet<Drugs> Drugs { get; set; }
+        public virtual DbSet<Enquiry> Enquiries { get; set; }
         public virtual DbSet<MedicalPractioner> MedicalPractioners { get; set; }
         public virtual DbSet<NotifiableDisease> NotifiableDiseases { get; set; }
         public virtual DbSet<SystemOrganisations> Organisation { get; set; }
@@ -62,8 +64,17 @@ namespace Clypeus.Data.Model
             modelBuilder = OnModelCreatingUsers(modelBuilder);
             modelBuilder = OnModelSpecimens(modelBuilder);
             modelBuilder = OnModelInternals(modelBuilder);
+            modelBuilder = OnModelPrinciples(modelBuilder);
 
             OnModelCreatingPartial(modelBuilder);
+        }
+
+        protected ModelBuilder OnModelPrinciples(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new EnquiryConfiguration());
+
+
+            return modelBuilder;
         }
 
         protected ModelBuilder OnModelCreatingUsers(ModelBuilder modelBuilder)

@@ -1,5 +1,7 @@
 ﻿using Clypeus.Services.Interfaces.Medicinals;
+using Clypeus.Services.Interfaces.Principles;
 using Clypeus.Services.Medicinals;
+using Clypeus.Services.Principles;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -15,6 +17,7 @@ namespace Clypeus.Support.DependencyInjection
         {
             services.AddTransient<IDrugService, DrugService>();
             services.AddTransient<INotifiableDiseaseService, NotifiableDiseaseService>();
+            services.AddTransient<IEnquiryService, EnquiryService>();
         }
     }
 }

@@ -28,7 +28,8 @@ namespace Clypeus.Automapper.Profiles.Principle
                 .ForMember(dest => dest.MobileNumber, source => source.MapFrom(f => f.Mobile))
                 .ForMember(dest => dest.TelephoneNumber, source => source.MapFrom(f => f.Telephone))
                 .ForMember(dest => dest.RelationshipId, source => source.MapFrom(f => f.RelationshipTypeId))
-                .ForMember(dest => dest.EnquiryId, source => source.MapFrom(f => f.EnquiryTypeId));
+                .ForMember(dest => dest.EnquiryId, source => source.MapFrom(f => f.EnquiryTypeId))
+                .ReverseMap();
 
         }
     }

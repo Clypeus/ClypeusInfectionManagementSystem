@@ -11,7 +11,7 @@ namespace Clypeus.Data.Model.Configurations.Principles
     {
         public void Configure(EntityTypeBuilder<Enquiry> entity)
         {
-            entity.ToTable("Enquiries", "Principles");
+            entity.ToTable("Enquiry", "dbo");
 
             entity.HasKey(d => d.Id);
 

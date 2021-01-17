@@ -1,4 +1,5 @@
 ﻿using Clypeus.DataTransfer.ViewModels.Enquiry;
+using Clypeus.Services.Interfaces.Principles;
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,9 @@ namespace Clypeus.Pages.Enquiry
 {
     public class CreateEnquiryModel:ComponentBase
     {
+        [Inject] protected IEnquiryService enquiryService { get; set; }
+
+
         public DataTransfer.ViewModels.Enquiry.EnquiryForm enquiryModel = new DataTransfer.ViewModels.Enquiry.EnquiryForm();
         public string selectedTab = "home";
 
@@ -18,7 +22,7 @@ namespace Clypeus.Pages.Enquiry
         }
         public void HandleValidSubmit()
         {
-
+            enquiryService.SaveEnquiry(enquiryModel);
         }
     }
 }
